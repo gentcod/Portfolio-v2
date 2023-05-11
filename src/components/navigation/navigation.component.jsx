@@ -8,18 +8,14 @@ import { NavigationContainer, NavigationLinks } from './navigation.styles';
 const navData = [
    {
       id: 0,
-      name: "home"
-   },
-   {
-      id: 1,
       name: "contact"
    },
    {
-      id: 2,
+      id: 1,
       name: "about"
    },
    {
-      id: 3,
+      id: 2,
       name: "explore"
    },
 ]
