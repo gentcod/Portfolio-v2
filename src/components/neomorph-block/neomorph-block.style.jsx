@@ -11,3 +11,17 @@ export const Block = styled.div`
    right: 5%;
    z-index: 100;
 `
+
+export const BlockBig = styled(Block)`
+   height: 8rem;
+   width: 7.5rem;
+   top: 88%;
+   left: 5%;
+`
+
+export const BlockSmall = styled(Block)`
+   height: 5rem;
+   width: 4.5rem;
+   top: 86%;
+   left: 80%;
+`

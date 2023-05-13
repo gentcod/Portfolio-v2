@@ -7,8 +7,10 @@ export const NavigationItemContainer = styled(Link)`
    font-weight: 700;
 
    &:hover {
-      background-color: red;
+      // background-color: #9a0b13;
+      background-color: #45a25a;
       border-radius: 1rem;
+      color: white;
    }
 `;
 

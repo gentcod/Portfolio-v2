@@ -1,0 +1,103 @@
+export const stackData = [
+   {
+      id: 0,
+      text: "Javascript",
+      bgColor: "#f2f807",
+      textColor: "#222",
+      imgSrc: "javascript.svg",
+   },
+
+   {
+      id: 1,
+      text: "NodeJS",
+      bgColor: "#3c873a",
+      textColor: "#222",
+      imgSrc: "nodeJS.svg",
+   },
+   {
+      id: 2,
+      text: "Sass",
+      bgColor: "fff",
+      textColor: "#cd6799",
+      imgSrc: "sass.svg",
+   },
+   {
+      id: 3,
+      text: "React",
+      bgColor: "#222",
+      textColor: "#fff",
+      imgSrc: "../../../React.svg",
+   },
+
+   {
+      id: 4,
+      text: "C#",
+      bgColor: "#815aa5",
+      textColor: "#fff",
+      imgSrc: "c-sharp.svg",
+   },
+   {
+      id: 5,
+      text: "Python",
+      bgColor: "#4b8bbe",
+      textColor: "#ffd43b",
+      imgSrc: "python-icon.svg",
+   },
+   {
+      id: 6,
+      text: "SQL",
+      bgColor: "#f29111",
+      textColor: "#00758f",
+      imgSrc: "sql-svgrepo-com.svg",
+   },
+   {
+      id: 7,
+      text: "Express",
+      bgColor: "#7b8384",
+      textColor: "#fff",
+      imgSrc: "expressjs-icon.svg",
+   },
+   {
+      id: 8,
+      text: "Git",
+      bgColor: "#fff",
+      textColor: "#3d2d00",
+      imgSrc: "git.svg",
+   },
+   {
+      id: 9,
+      text: ".Net",
+      // bgColor: "#c7c5f8",
+      bgColor: "#512bd4",
+      textColor: "#fff",
+      imgSrc: "dotnet-svgrepo-com.svg",
+   },
+   {
+      id: 10,
+      text: "MongoDB",
+      bgColor: "#589636",
+      textColor: "#fff",
+      imgSrc: "mongodb-svgrepo-com.svg",
+   },
+   {
+      id: 11,
+      text: "Azure DevOps",
+      bgColor: "#008ad7",
+      textColor: "#fff",
+      imgSrc: "azure-devops.svg",
+   },
+   {
+      id: 12,
+      text: "PowerBI",
+      bgColor: "#e9b51c",
+      textColor: "#fff",
+      imgSrc: "powerbi.svg",
+   },
+   {
+      id: 13,
+      text: "Figma",
+      bgColor: "#fff",
+      textColor: "#000",
+      imgSrc: "figma-svgrepo-com.svg",
+   }
+]

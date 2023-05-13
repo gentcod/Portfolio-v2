@@ -9,9 +9,8 @@ export const HomeContainer = styled.div`
 export const HomeContentContainer = styled.div`
    display: flex;
    flex-direction: row;
-   align-items; center;
+   align-content: space-between;
    justify-content: space-between;
-   padding: 2rem;
    height: 80%;
    width: 90%;
    margin: 0 auto;
@@ -60,3 +59,10 @@ export const HomeImage = styled.img`
    width: auto;
    min-height: 100%;
 `;
+
+export const SocialsHeader = styled.h2`
+   font-size: 1.4rem;
+   color: #78877e;
+   text-align: left;
+   margin-top: 3rem;
+`
