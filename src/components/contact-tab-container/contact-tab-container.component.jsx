@@ -7,7 +7,7 @@ import { Container, ContainerHeader } from "./contact-tab-container.style";
 const ContactTabContainer = () => {
    return (
       <Container>
-         {socials.map(data => <ContactTab text={data.name} link={data.link} image={data.imgSrc} />)}
+         {socials.map(data => <ContactTab key={data.id} text={data.name} link={data.link} image={data.imgSrc} />)}
       </Container>
    )
 }
