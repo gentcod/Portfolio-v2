@@ -1,5 +1,4 @@
 import NeomorphBlock, { BLOCK_TYPE } from '../neomorph-block/neomorph-block.component';
-import { Block, BlockBig, BlockSmall } from '../neomorph-block/neomorph-block.style';
 import TechStack from '../tech-stack/tech-stack.component';
 import { stackData } from '../../dev_data_stack';
 
