@@ -2,7 +2,7 @@ import ContactTab from "../contact-tab/contact-tab.component";
 
 import { socials } from "../../dev_data_socials";
 
-import { Container, ContainerHeader } from "./contact-tab-container.style";
+import { Container} from "./contact-tab-container.style";
 
 const ContactTabContainer = () => {
    return (
