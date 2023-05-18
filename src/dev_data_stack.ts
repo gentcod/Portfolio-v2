@@ -1,4 +1,14 @@
-export const stackData = [
+export interface IStack {
+   id: number,
+   text: string,
+   bgColor: string,
+   textColor: string
+   imgSrc: string
+}
+
+export interface EnumStack extends Array<IStack>{}
+
+export const stackData : EnumStack = [
    {
       id: 0,
       text: "Javascript",
@@ -99,5 +109,12 @@ export const stackData = [
       bgColor: "#fff",
       textColor: "#000",
       imgSrc: "icons/figma-svgrepo-com.svg",
-   }
+   },
+   {
+      id: 14,
+      text: "Typescript",
+      bgColor: "#fff",
+      textColor: "#222",
+      imgSrc: "icons/typescript.svg",
+   },
 ]

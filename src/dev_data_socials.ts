@@ -1,8 +1,17 @@
-const mailSubject = 'JOB OFFER';
+const mailSubject: string = 'JOB OFFER';
 // const mailBody = 'Hello Oyefule, I would like to hire you'
-const mailBodySocial = 'Hello Oyefule, I viewed your portfolio and would like to get in touch with you'
+const mailBodySocial: string = 'Hello Oyefule, I viewed your portfolio and would like to get in touch with you'
 
-export const socials = [
+export interface ISocial {
+   id: number,
+   name: string,
+   link: string,
+   imgSrc: string
+}
+
+export interface EnumSocials extends Array<ISocial>{}
+
+export const socials : EnumSocials = [
    {
       id: 0,
       name: "GitHub",
