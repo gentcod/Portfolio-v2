@@ -1,5 +1,9 @@
 import { Block, BlockBig, BlockSmall } from "./neomorph-block.style";
 
+type NeomorphProp = {
+   blockType?: string,
+}
+
 export const BLOCK_TYPE = {
    base: 'base',
    big: 'big',
@@ -14,7 +18,7 @@ const getBlock = (blockType = BLOCK_TYPE.base) => (
    }[blockType]
 )
 
-const NeomorphBlock = ({blockType}) => {
+const NeomorphBlock = ({blockType} : NeomorphProp) => {
    const CustomBlock = getBlock(blockType)
    return (
       <CustomBlock/>

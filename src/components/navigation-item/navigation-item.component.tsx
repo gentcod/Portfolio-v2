@@ -1,6 +1,10 @@
 import { NavigationItemContainer, NavigationItemSpan } from "./navigation-item.styles";
 
-const NavigationItem = ({name}) => {
+type NavProp = {
+   name: string
+}
+
+const NavigationItem = ({name } : NavProp) => {
    return (
       <NavigationItemContainer to={`/${name}`}>
          <NavigationItemSpan>{name}</NavigationItemSpan>

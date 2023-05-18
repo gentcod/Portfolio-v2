@@ -5,7 +5,12 @@ import NavigationItem from '../navigation-item/navigation-item.component';
 
 import { NavigationContainer, NavigationLinks } from './navigation.styles';
 
-const navData = [
+type NavData = {
+   id: number,
+   name: string
+}[]
+
+const navData : NavData = [
    {
       id: 0,
       name: "contact"

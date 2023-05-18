@@ -1,6 +1,15 @@
 import { Box, BoxText, BoxContainer } from './tech-stack.styles';
 
-const TechStack = ({text, color, bgColor, height, width, img}) => {
+type TechStackProp = {
+   text: string,
+   color: string,
+   bgColor: string,
+   height: number,
+   width: number,
+   img: string,
+}
+
+const TechStack = ({text, color, bgColor, height, width, img} : TechStackProp) => {
    return (
       <BoxContainer sizeH={height} sizeW={width}>
          <Box backgroundColor={bgColor} imgSrc={img}>

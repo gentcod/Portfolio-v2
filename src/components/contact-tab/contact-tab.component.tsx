@@ -1,6 +1,12 @@
 import { Tab, TabLogo, TabText } from "./contact-tab.style";
 
-const ContactTab = ({text, link, image}) => {
+interface TabProp {
+   text: string,
+   link: string,
+   image: string
+}
+
+const ContactTab = ({text, link, image} : TabProp) => {
    return (
       <Tab href={link} target="_blank">
          <TabLogo src={image}/>
