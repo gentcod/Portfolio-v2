@@ -8,7 +8,15 @@ export interface IStack {
 
 export interface EnumStack extends Array<IStack>{}
 
-export const stackData : EnumStack = [
+type Stack = {
+   id: number,
+   text: string,
+   bgColor: string,
+   textColor: string
+   imgSrc: string
+}[]
+
+export const stackData : Stack = [
    {
       id: 0,
       text: "Javascript",
