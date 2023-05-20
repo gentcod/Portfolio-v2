@@ -11,7 +11,14 @@ export interface ISocial {
 
 export interface EnumSocials extends Array<ISocial>{}
 
-export const socials : EnumSocials = [
+type Socials = {
+   id: number,
+   name: string,
+   link: string,
+   imgSrc: string
+}[]
+
+export const socials : Socials = [
    {
       id: 0,
       name: "GitHub",
