@@ -1,14 +1,30 @@
 import TechStackContainer from '../../components/tech-stack-container/tech-stack-container.component';
-import { AboutStack, AboutContent } from './about.styles';
+import WorkExperience from '../../components/work-experience/work-experience.component.';
+
+import { Container, AboutStack, AboutContent, AboutHeading, AboutSummary } from './about.styles';
+
+type AboutMe = {
+   heading: string;
+   summary: string;
+}
+
+const about: AboutMe = {
+   heading: 'Hi, I am Oyefule',
+   summary: 'I like to describe myself as a Jack of a lot, definitely not all 😅😅😅. I am skilled in a lot of aspects and this is as a result of my ability to quickly learn and adapt to new situations and challenges. This comes in handy not only in my career or professional field, I use it in all aspect of life. I also like sharing knowledge, as I believe true mastery of a skill cannot be achieved without sharing what you know. Okay enough story, kindly take your time to go through my portfolio. I am open to feedback, so feel free to reach out to me and provide one. Lastly, I love anime and yeah, I have seen One Piece😊😊😊',
+}
 
 const About = () => {
    return (
-      <AboutStack>
-         <AboutContent>
-            <h1>This the about page</h1>
-         </AboutContent>
-         <TechStackContainer />
-      </AboutStack>
+      <Container>
+         <AboutStack>
+            <AboutContent>
+               <AboutHeading>{about.heading}</AboutHeading>
+               <AboutSummary>{about.summary}</AboutSummary>
+            </AboutContent>
+            <TechStackContainer />
+         </AboutStack>
+         <WorkExperience/>
+      </Container>
    )
 }
 

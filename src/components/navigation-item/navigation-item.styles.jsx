@@ -7,7 +7,6 @@ export const NavigationItemContainer = styled(Link)`
    font-weight: 700;
 
    &:hover {
-      // background-color: #9a0b13;
       background-color: #45a25a;
       border-radius: 1rem;
       color: white;
@@ -24,3 +23,8 @@ export const NavigationItemSpan = styled.span`
 export const NavigationItemSpanActive = styled(NavigationItemSpan)`
    font-weight: 700;
 `;
+
+export const NavigationItemContainerActive = styled(NavigationItemContainer)`
+   border-bottom: 3px solid #45a25a;
+   border-radius: 1rem;
+`

@@ -1,8 +1,13 @@
-import {} from './contact.styles';
+import ContactForm from '../../components/contact-form/contact-form.component';
+
+import { ContactPageContainer } from './contact.styles';
 
 const Contact = () => {
    return (
-      <div>Hello this  is the contact page</div>
+      <ContactPageContainer>
+         <h1>Hello this  is the contact page</h1>
+         <ContactForm/>
+      </ContactPageContainer>
    )
 }
 

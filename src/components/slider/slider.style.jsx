@@ -12,7 +12,7 @@ export const SliderContainer = styled.div`
 `
 
 export const SliderImage = styled.img`
-   width: 35rem;
+   width: 40rem;
    height: 35rem;
    margin: auto 0;
    scroll-snap-align: center;

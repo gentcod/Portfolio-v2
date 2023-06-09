@@ -1,14 +1,37 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+   display: flex;
+   flex-direction: column;
+   row-gap: 3rem;
+`
+
 export const AboutStack = styled.div`
    display: flex;
-   flex: 1,1;
-   padding: 3rem;
-   background-color: #f4f2f4;
-   z-index: -1;
-   height: 60rem;
+   padding: 5rem 3rem;
+   background-color: #f7fcf8;
 `
 
 export const AboutContent = styled.div`
    width: 80%;
+   padding: 2rem 5rem;
+`
+
+export const AboutHeading = styled.h1`
+   // text-align: left;
+   font-size: 5rem;
+   font-weight: 1000;
+   letter-spacing: .3rem;
+   margin-bottom: 2rem;
+`
+
+export const AboutSummary = styled.p`
+   color: #666;
+   font-size: 2rem;
+   font-weight: 300;
+   word-spacing: 1rem;
+   line-height: 1.5;
+   padding-bottom: 3rem;
+   border-radius: 1rem;
+   border-bottom: 2px solid #45a25a;
 `
