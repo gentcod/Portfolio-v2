@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
    width: 100%;
-   background-color: #222;
+   background-color: #111;
    padding: 5rem 3rem;
    position: relative;
    text-align: left;

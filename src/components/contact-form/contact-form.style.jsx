@@ -8,7 +8,8 @@ export const FormContainer = styled.form`
    row-gap: 2rem;
    justify-contents: center;
 
-   background-color: rgba(255,255,255, .6);
+   background-color: rgba(34,34,34, .2);
+   backdrop-filter: blur(5px);
    padding: 3rem 5rem;
    border: 1px solid white;
    border-radius: 1rem;
@@ -33,9 +34,19 @@ export const FormLabel = styled.label`
 export const FormInput = styled.input`
    width: 100%;
    height: 4rem;
+   color: white;
+   text-align: center;
    border-radius: 1rem;
    border: none;
    background-color: rgba(225,225,225, .3);
+   outline: none;
+   padding: 1rem;
+   transition: all .8s ease;
+
+   &:focus {
+      border-bottom: 3px solid #45a25a;
+      box-shadow: 0 .5rem 1rem rgba(255, 255, 255, .8)
+   }
 `
 
 export const Heading = styled.p`
@@ -60,7 +71,7 @@ export const Button = styled.button`
    font-size: 1.2rem;
    font-weight: 700;
    transition: all .8s ease;
-
+   margin-top: 2rem;
 
    cursor: pointer;
 
