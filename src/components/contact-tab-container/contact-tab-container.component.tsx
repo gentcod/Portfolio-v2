@@ -1,6 +1,6 @@
 import ContactTab from "../contact-tab/contact-tab.component";
 
-import { socials } from "../../dev_data_socials";
+import { socials } from "../../dev-data/dev_data_socials";
 
 import { Container} from "./contact-tab-container.style";
 

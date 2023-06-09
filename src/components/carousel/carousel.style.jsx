@@ -17,7 +17,7 @@ export const FrameOuter = styled.div`
 export const FramerInner = styled.div`
    display: inline-block;
    width: 100%;
-   height: 50rem;
+   height: 40rem;
    background-color: white;
    margin: 0 auto; 
 
@@ -37,10 +37,10 @@ export const OvalTop = styled.div`
    z-index: 10;
 
    position: absolute;
-   top: -2rem;
+   top: 2rem;
    left: 0;
 `
 
 export const OvalBottom = styled(OvalTop)`
-   top: 50rem;
+   top: 45rem;
 `

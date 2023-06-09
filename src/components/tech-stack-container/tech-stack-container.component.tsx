@@ -1,6 +1,6 @@
 import NeomorphBlock, { BLOCK_TYPE } from '../neomorph-block/neomorph-block.component';
 import TechStack from '../tech-stack/tech-stack.component';
-import { stackData } from '../../dev_data_stack';
+import { stackData } from '../../dev-data/dev_data_stack';
 
 import { BoxesContainer } from './tech-stack-container.styles';
 
