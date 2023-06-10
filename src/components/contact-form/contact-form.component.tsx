@@ -21,7 +21,7 @@ const ContactForm = () => {
       <FormContainer>
          <Heading>Contact me</Heading>
          <>
-         <SubHeading>Feel free to reach out to me</SubHeading>
+         <SubHeading>Let's discuss about your next project</SubHeading>
          {lables.map(data => 
          <InputContainer key={data.id}>
             <FormLabel>{data.label}</FormLabel>

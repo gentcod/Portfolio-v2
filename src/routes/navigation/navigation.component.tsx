@@ -57,5 +57,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-
-//Write logic to determine the present page and decide

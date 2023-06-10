@@ -8,8 +8,8 @@ const Home = () => {
          <HomeContentContainer>
             <HomeIntro>
                <Name>Oyefule Oluwatayo</Name>
-               <Title>Web Developer</Title>
-               <Description>Hey there! I'm a creative and innovative designer and developer</Description>
+               <Title>Software Developer</Title>
+               <Description>Hey there! I build and develop digital solutions that optimizes user experience and efficiency.</Description>
                <SocialsHeader>Contact Me:</SocialsHeader>
                <ContactTabContainer/>
             </HomeIntro>

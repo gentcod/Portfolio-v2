@@ -15,10 +15,10 @@ export const AboutStack = styled.div`
 export const AboutContent = styled.div`
    width: 80%;
    padding: 2rem 5rem;
+   text-align: left;
 `
 
 export const AboutHeading = styled.h1`
-   // text-align: left;
    font-size: 5rem;
    font-weight: 1000;
    letter-spacing: .3rem;
