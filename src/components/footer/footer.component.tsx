@@ -9,7 +9,7 @@ const Footer = () => {
             <FooterImageLineContainer>
                <FooterImageLine/>
                <FooterImageContainer>
-                  <FooterImage src={'./img/dog_art.jpg'}/>
+                  <FooterImage src={'./img/my_image.jpg'}/>
                </FooterImageContainer>
             </FooterImageLineContainer>
             <Button value="Hire Me"/>
