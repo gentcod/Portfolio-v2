@@ -27,7 +27,7 @@ export const AboutHeading = styled.h1`
 
 export const AboutSummary = styled.p`
    color: #666;
-   font-size: 2rem;
+   font-size: 1.8rem;
    font-weight: 300;
    word-spacing: 1rem;
    line-height: 1.5;

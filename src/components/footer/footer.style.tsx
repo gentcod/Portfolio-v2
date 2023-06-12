@@ -58,6 +58,7 @@ export const FooterImage = styled.img`
    width: 80%;
    height: 80%;
    margin: auto 0;
+   margin-top: 1rem;
    border-radius: 50%;
    object-fit: cover;
 `

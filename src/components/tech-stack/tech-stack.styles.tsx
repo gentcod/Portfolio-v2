@@ -1,9 +1,23 @@
 import styled from "styled-components";
 
+type Props = {
+   sizeW?: number;
+   sizeH?: number;
+   backgroundColor?: string;
+   imgSrc?: string;
+   textColor?: string;
+}
+
+const width = (props: Props) => props.sizeW;
+const height = (props: Props) => props.sizeH;
+const bgColor = (props: Props) => props.backgroundColor;
+const image = (props: Props) => props.imgSrc;
+const color = (props: Props) => props.textColor;
+
 export const BoxContainer = styled.div`
    display: inline-block;
-   width: ${props => props.sizeW};
-   height: ${props => props.sizeH}rem;
+   width: ${width};
+   height: ${height}rem;
    text-align: center;
 `
 
@@ -12,8 +26,8 @@ export const Box = styled.div`
    display: inline-block;
    width: 100%;
    height: 100%;
-   background-color: ${props => props.backgroundColor};
-   background-image: url(${props => props.imgSrc});
+   background-color: ${bgColor};
+   background-image: url(${image});
    background-repeat: no-repeat;
    background-position: center;
    border-radius: 1rem;
@@ -35,7 +49,7 @@ export const BoxText = styled.p`
    position: absolute;
    font-size: 1.1rem;
    font-weight: 900;
-   color: ${props => props.textColor};
+   color: ${color};
    text-align: center;
    z-index: 10;
 
