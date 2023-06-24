@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FooterContainer = styled.div`
    width: 100%
    height: 30rem;
-   padding: 5rem;
+   padding: 2rem 5rem;
    background-color: #0d1e11;
    margin-top: 2rem;
 
@@ -66,3 +66,4 @@ export const FooterImage = styled.img`
 export const FooterLower = styled.div`
 
 `
+

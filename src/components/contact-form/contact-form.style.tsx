@@ -35,7 +35,6 @@ export const FormInput = styled.input`
    width: 100%;
    height: 4rem;
    color: white;
-   text-align: center;
    border-radius: 1rem;
    border: none;
    background-color: rgba(225,225,225, .3);
