@@ -1,4 +1,4 @@
-import {Container, SubTopContainer, SubButtonContainer, SubTopLeftContainer, SubTopRightContainer, Heading, SubHeading, Description, Image } from './web-project.style';
+import {Container, SubTopContainer, SubBottomContainer, SubTopLeftContainer, SubTopRightContainer, Heading, SubHeading, Description, Image } from './web-project.style';
 
 type WebProjectProp = {
    heading: string;
@@ -21,9 +21,9 @@ const WebProject = ({heading, subheading, description, imgSrc}: WebProjectProp) 
             </SubTopRightContainer>
          </SubTopContainer>
 
-         <SubButtonContainer>
+         <SubBottomContainer>
             <Image src={imgSrc}/>
-         </SubButtonContainer>
+         </SubBottomContainer>
       </Container>
    )
 }
