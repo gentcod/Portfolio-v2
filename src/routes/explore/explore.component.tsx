@@ -15,7 +15,7 @@ const data: WebProjectData = [
    {
       id: 0,
       heading: 'Mapty Map App',
-      subheading: 'A workout web app using a map api',
+      subheading: 'Workout web app',
       description: 'It uses Leaflet which is a map api, it was built using vanilla JavaScript',
       imgSrc: 'img/mapty.png'
    },
@@ -23,15 +23,15 @@ const data: WebProjectData = [
    {
       id: 1,
       heading: 'Foodie',
-      subheading: 'A food recipe web app using a backend api and 3rd party api',
-      description: 'It was developed using React for the frontend and C# for the backend',
+      subheading: 'Food recipe web app',
+      description: 'A web app built using a backend api and 3rd party api. It was developed using React for the frontend and C# for the backend',
       imgSrc: 'img/foodie.png'
    },
 
    {
       id: 2,
       heading: 'Mapty Map App',
-      subheading: 'A workout web app using a map api',
+      subheading: 'Workout web app',
       description: 'It uses Leaflet which is a map api, it was built using vanilla JavaScript',
       imgSrc: 'img/mapty.png'
    },
