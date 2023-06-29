@@ -1,15 +1,14 @@
 import Slider from '../slider/slider.component';
-import { Container, FrameOuter, FramerInner, OvalTop, OvalBottom } from './carousel.style';
+import { CarourselHeader, Container, FrameOuter, FramerInner } from './carousel.style';
 
 const Carousel = () => {
    return (
       <Container>
          <FrameOuter>
-            <OvalTop/>
+            <CarourselHeader>Graphic Designs and Illustrations</CarourselHeader>
             <FramerInner>
                <Slider/>
             </FramerInner>
-            <OvalBottom/>
          </FrameOuter>
       </Container>
    )

@@ -9,6 +9,7 @@ type WebProjectData = {
    subheading: string;
    description: string;
    imgSrc: string;
+   link: string;
 }[]
 
 const data: WebProjectData = [
@@ -17,7 +18,8 @@ const data: WebProjectData = [
       heading: 'Mapty Map App',
       subheading: 'Workout web app',
       description: 'It uses Leaflet which is a map api, it was built using vanilla JavaScript',
-      imgSrc: 'img/mapty.png'
+      imgSrc: 'img/mapty.png',
+      link: 'https://gentcod-mapty.netlify.app',
    },
 
    {
@@ -25,7 +27,8 @@ const data: WebProjectData = [
       heading: 'Foodie',
       subheading: 'Food recipe web app',
       description: 'A web app built using a backend api and 3rd party api. It was developed using React for the frontend and C# for the backend',
-      imgSrc: 'img/foodie.png'
+      imgSrc: 'img/foodie.png',
+      link: 'https://gentcod-foodie.netlify.app',
    },
 
    {
@@ -33,16 +36,16 @@ const data: WebProjectData = [
       heading: 'Mapty Map App',
       subheading: 'Workout web app',
       description: 'It uses Leaflet which is a map api, it was built using vanilla JavaScript',
-      imgSrc: 'img/mapty.png'
+      imgSrc: 'img/mapty.png',
+      link: '',
    },
 ]
 
 const Explore = () => {
    return (
       <div>
-         <h2>Hello this is the explore page</h2>
          <Carousel/>
-         {data.map(el => <WebProject key={el.id} heading={el.heading} subheading={el.subheading} description={el.description} imgSrc={el.imgSrc}/>)}
+         {data.map(el => <WebProject key={el.id} heading={el.heading} subheading={el.subheading} description={el.description} imgSrc={el.imgSrc} link={el.link}/>)}
       </div>
       
    )
