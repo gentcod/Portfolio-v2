@@ -1,14 +1,15 @@
 import {Container, SubTopContainer, SubBottomContainer, SubTopLeftContainer,
-    SubTopRightContainer, Heading, SubHeading, Description, Image, Button } from './web-project.style';
+    SubTopRightContainer, Heading, SubHeading, Description, Image, ProjectLink, LinkIcon } from './web-project.style';
 
 type WebProjectProp = {
    heading: string;
    subheading: string;
    description: string;
    imgSrc: string;
+   link: string;
 }
 
-const WebProject = ({heading, subheading, description, imgSrc}: WebProjectProp) => {
+const WebProject = ({heading, subheading, description, imgSrc, link}: WebProjectProp) => {
    return (
       <Container>
          <SubTopContainer>
@@ -19,7 +20,7 @@ const WebProject = ({heading, subheading, description, imgSrc}: WebProjectProp) 
 
             <SubTopRightContainer>
                <Description>{description}</Description>
-               <Button to={''}>View Project </Button>
+               <ProjectLink to={link}> <span>View Project</span> {<LinkIcon src='icons/right-arrow.svg'/>} </ProjectLink>
             </SubTopRightContainer>
          </SubTopContainer>
 
