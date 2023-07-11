@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const HomeContainer = styled.div`
    padding: 2rem;
    background-color: #fff;
-   height: 100vh;
 `;
 
 export const HomeContentContainer = styled.div`

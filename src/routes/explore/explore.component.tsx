@@ -44,8 +44,8 @@ const data: WebProjectData = [
 const Explore = () => {
    return (
       <div>
-         <Carousel/>
          {data.map(el => <WebProject key={el.id} heading={el.heading} subheading={el.subheading} description={el.description} imgSrc={el.imgSrc} link={el.link}/>)}
+         <Carousel/>
       </div>
       
    )
