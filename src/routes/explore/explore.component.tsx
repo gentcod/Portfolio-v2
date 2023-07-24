@@ -1,4 +1,5 @@
 import Carousel from '../../components/carousel/carousel.component';
+import Heading from '../../components/heading/heading.component';
 import WebProject from '../../components/web-project/web-project.component';
 
 import {} from './explore.styles'
@@ -44,6 +45,7 @@ const data: WebProjectData = [
 const Explore = () => {
    return (
       <div>
+         <Heading title='Web Projects'/>
          {data.map(el => <WebProject key={el.id} heading={el.heading} subheading={el.subheading} description={el.description} imgSrc={el.imgSrc} link={el.link}/>)}
          <Carousel/>
       </div>
