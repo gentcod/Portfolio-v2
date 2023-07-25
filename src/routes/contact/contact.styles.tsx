@@ -9,4 +9,5 @@ export const ContactPageContainer = styled.div`
    justify-items: center;
    align-items: center;
    padding: 2rem 6rem;
+   position: relative;
 `

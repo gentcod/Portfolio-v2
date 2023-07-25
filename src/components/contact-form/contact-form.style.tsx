@@ -7,6 +7,9 @@ export const FormContainer = styled.form`
    flex-direction: column;
    row-gap: 2rem;
    justify-contents: center;
+   margin-top: 8rem;
+   position: absolute;
+   right: 10rem;
 
    background-color: rgba(34,34,34, .2);
    backdrop-filter: blur(5px);
@@ -63,18 +66,28 @@ export const SubHeading = styled(Heading)`
 `
 
 export const Button = styled.button`
-   border-radius: 3rem;
+   width: 80%;
+   border-radius: 2rem;
    background-color: white;
+   margin: 0 auto;
+   color: #45a25a;
    padding: 1.5rem 3rem;
    border: none;
    font-size: 1.2rem;
    font-weight: 700;
    transition: all .8s ease;
    margin-top: 2rem;
+   backface-visibility: hidden;
 
    cursor: pointer;
 
    &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
+      background-color: #45a25a;
+      color: white;
+   }
+
+   &:active {
+      transform: scale(1) translateY(1rem);
    }
 `

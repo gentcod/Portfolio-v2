@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const FooterContainer = styled.div`
@@ -64,6 +65,26 @@ export const FooterImage = styled.img`
 `
 
 export const FooterLower = styled.div`
-
+   padding: 1rem 5rem;
 `
 
+export const FooterSocials = styled.div`
+   width: 30rem;
+   padding: 1rem;
+
+   display: flex;
+   justify-content: center;
+   column-gap: 2rem;
+`;
+
+export const SocialLinks = styled(Link)`
+
+`;
+
+export const SocialIcon = styled.img`
+   height: 2rem;
+`;
+
+export const FooterCopyright = styled.div`
+
+`;
