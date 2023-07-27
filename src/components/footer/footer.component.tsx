@@ -1,47 +1,7 @@
+import { footerSocials } from "../../dev-data/footer_socials";
 import Button from "../button/button.component";
 
-import { FooterContainer, FooterImage, FooterImageContainer, FooterImageLine, FooterImageLineContainer, FooterLower, FooterSocials, FooterUpper, SocialIcon, SocialLinks } from "./footer.style";
-
-
-type SocialsProps = {
-   id: number;
-   imgSrc: string;
-   link: string;
-}[];
-
-const footerSocials: SocialsProps = [
-   {
-      id: 1,
-      imgSrc: 'icons/facebook-svgrepo-com.svg',
-      link: '',
-   },
-
-   {
-      id: 2,
-      imgSrc: 'icons/instagram.svg',
-      link: '',
-   },
-
-   {
-      id: 3,
-      imgSrc: 'icons/github-svgrepo-com.svg',
-      link: '',
-   },
-
-   {
-      id: 4,
-      imgSrc: 'icons/twitter-svgrepo-com.svg',
-      link: '',
-   },
-
-   {
-      id: 5,
-      imgSrc: 'icons/linkedin-svgrepo-com.svg',
-      link: '',
-   },
-]
-
-
+import { CopyRight, FooterContainer, FooterCopyright, FooterImage, FooterImageContainer, FooterImageLine, FooterImageLineContainer, FooterLower, FooterLowerMid, FooterSocials, FooterSocialsContainer, FooterSocialsHeader, FooterUpper, LegacyHeading, LegacyPortfolio, SocialIcon, SocialLinks } from "./footer.style";
 
 const Footer = () => {
    return (
@@ -57,13 +17,25 @@ const Footer = () => {
          </FooterUpper>
 
          <FooterLower>
-            <FooterSocials>
-               {footerSocials.map(el => (
-                  <SocialLinks key={el.id} to={el.link}>
-                     <SocialIcon src={el.imgSrc}/>
-                  </SocialLinks>
-               ))}
-            </FooterSocials>
+            <FooterSocialsContainer>
+               <FooterSocialsHeader>Social Accounts:</FooterSocialsHeader>
+               <FooterSocials>
+                  {footerSocials.map(el => (
+                     <SocialLinks key={el.id} to={el.link}>
+                        <SocialIcon src={el.imgSrc}/>
+                     </SocialLinks>
+                  ))}
+               </FooterSocials>
+            </FooterSocialsContainer>
+
+            <FooterLowerMid>
+               <LegacyHeading>Old portfolio website:</LegacyHeading>
+               <LegacyPortfolio to={"https://oyefuleoluwatayo.netlify.app"}>Oyefule Oluwatayo Portfolio Old</LegacyPortfolio>
+            </FooterLowerMid>
+            
+            <FooterCopyright>
+               <CopyRight>Copyright by © Oyefule Oluwatayo</CopyRight>
+            </FooterCopyright>
          </FooterLower>
       </FooterContainer>
    )

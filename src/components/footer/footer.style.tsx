@@ -65,8 +65,23 @@ export const FooterImage = styled.img`
 `
 
 export const FooterLower = styled.div`
-   padding: 1rem 5rem;
+   padding: 1rem 15rem;
+   color: white;
+
+   display: flex;
+   justify-content: space-evenly;
 `
+
+export const FooterSocialsContainer = styled.div`
+   display: flex;
+   flex-direction: column;
+`;
+
+export const FooterSocialsHeader = styled.h5`
+   text-align: left;
+   margin-left: 5rem;
+   margin-bottom: 1rem;
+`;
 
 export const FooterSocials = styled.div`
    width: 30rem;
@@ -78,7 +93,33 @@ export const FooterSocials = styled.div`
 `;
 
 export const SocialLinks = styled(Link)`
+   padding: .5rem 1rem;
+   border-radius: 5px;
+   transition: all .6s ease;
 
+   &:hover {
+      background-color: rgba(255, 255, 255, .6);
+      backdrop-filter: blur(3px);
+   }
+`;
+
+export const FooterLowerMid = styled.div`
+   display: flex;
+   flex-direction: column;
+   text-align: left;
+`;
+
+export const LegacyHeading = styled.h5`
+   margin-bottom: 1rem;
+`;
+
+export const LegacyPortfolio = styled(Link)`
+   font-size: 1rem;
+   color: white;
+
+   &:hover {
+      border-bottom: 1px solid white;
+   }
 `;
 
 export const SocialIcon = styled.img`
@@ -86,5 +127,10 @@ export const SocialIcon = styled.img`
 `;
 
 export const FooterCopyright = styled.div`
-
+   font-size: 1.2rem;
+`;
+   
+export const CopyRight = styled.p`
+   padding: 1rem;
+   border-bottom: 1px solid white;
 `;
