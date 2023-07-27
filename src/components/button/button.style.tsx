@@ -26,6 +26,8 @@ export const ButtonBody = styled.button`
 
    &:hover {
       transform: translateY(-1rem) scale(1.05);
+      background-color: ${borderCol};
+      border: 1px solid white;
    }
 
    &:active {
