@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const FormContainer = styled.form`
-   width: 38rem;
-   height: 70vh;
+   width: 60%;
+   height: auto;
    display: flex;
    flex-direction: column;
    row-gap: 2rem;
    justify-contents: center;
+   margin: 0 auto;
    margin-top: 8rem;
-   position: absolute;
-   right: 10rem;
 
    background-color: rgba(34,34,34, .2);
    backdrop-filter: blur(5px);
@@ -35,7 +34,7 @@ export const FormLabel = styled.label`
 `
 
 export const FormInput = styled.input`
-   width: 100%;
+   max-width: 100%;
    height: 4rem;
    color: white;
    border-radius: 1rem;
@@ -51,18 +50,34 @@ export const FormInput = styled.input`
    }
 `
 
+export const FormMessage = styled.textarea`
+   max-width: 100%;
+   max-height: 8rem;
+   color: white;
+   border-radius: 1rem;
+   border: none;
+   background-color: rgba(225,225,225, .3);
+   outline: none;
+   padding: 1rem;
+   transition: all .8s ease;
+
+   &:focus {
+      border-bottom: 3px solid #45a25a;
+      box-shadow: 0 .5rem 1rem rgba(255, 255, 255, .8)
+   }
+`;
+
 export const Heading = styled.p`
    font-size: 4rem;
    color: white;
    font-weight: 1000;
    text-align: left;
-   margin-bottom: 1rem;
    margin-top: 3rem;
 `
 
 export const SubHeading = styled(Heading)`
    font-size: 1.8rem;
-   margin-bottom: 2rem;
+   // margin-bottom: 2rem;
 `
 
 export const Button = styled.button`

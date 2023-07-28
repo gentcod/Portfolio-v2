@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.div`
-   padding: 2rem;
+   padding: 0 2rem;
    background-color: #fff;
 `;
 
 export const HomeContentContainer = styled.div`
+   height: 60rem;
    display: flex;
    flex-direction: row;
    align-content: space-between;

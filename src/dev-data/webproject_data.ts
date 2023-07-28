@@ -27,7 +27,7 @@ export const webprojectData: WebProjectData = [
    },
 
    {
-      id: 1,
+      id: 2,
       heading: 'Forkify',
       subheading: 'Food Recipe Web Application',
       description: 'Built using Vanilla JavaScript, using an API to get recipe data',
@@ -38,9 +38,36 @@ export const webprojectData: WebProjectData = [
    {
       id: 3,
       heading: 'Foodie',
-      subheading: 'Food recipe web app',
-      description: 'A web app built using a backend api and 3rd party api. It was developed using React for the frontend and C# for the backend',
+      subheading: 'Food recipe homepage',
+      description: 'A prototype of Food.com. Built using HTML, CSS and JavaScript. It was my first personal web project which I used to get familar with HTML and CSS. It has a light and dark theme',
       imgSrc: 'img/foodie.png',
       link: 'https://gentcod-foodie.netlify.app',
    },
+
+   {
+      id: 4,
+      heading: 'HoMov',
+      subheading: 'Movie website homepage',
+      description: 'A static website built using HTML, CSS and JavaScript. Has a dark theme and light theme',
+      imgSrc: 'img/movie_site.png',
+      link: 'https://gentcod-foodie.netlify.app',
+   },
+
+   {
+      id: 5,
+      heading: 'Natours',
+      subheading: 'Tourism booking homepage',
+      description: 'A static website built using only HTML and CSS. It focusing on creating a good UI with a good number of interactions',
+      imgSrc: 'img/natours.png',
+      link: 'https://gentcod-natours.netlify.app',
+   },
 ]
+
+// {
+//       id: 5,      
+//       heading: 'Foodie',
+//       subheading: 'Food recipe web app',
+//       description: 'A web app built using a backend api and 3rd party api. It was developed using React for the frontend and C# for the backend',
+//       imgSrc: 'img/foodie.png',
+//       link: 'https://gentcod-foodie.netlify.app',
+//    },
