@@ -5,9 +5,9 @@ export const ContactPageContainer = styled.div`
    diaplay: flex;
    flex-direction: row;
    background-image: url("img/nature_green_blue.jpg");
-   // opacity: .7;
    justify-items: center;
    align-items: center;
    padding: 2rem 6rem;
+   margin-bottom: 2rem;
    position: relative;
 `

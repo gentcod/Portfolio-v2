@@ -4,6 +4,7 @@ export const Container = styled.div`
    width: 100%;
    overflow: hidden;
    margin: 0 auto;
+   margin-bottom: 2rem;
 `
 
 export const FrameOuter = styled.div`
@@ -32,9 +33,8 @@ export const FramerInner = styled.div`
    display: inline-block;
    width: 100%;
    height: 45rem;
-   background-color: white;
+   padding: 2rem;
    margin: 0 auto; 
-
 
    position: absolute;
    transform: translate(-50%, -50%);

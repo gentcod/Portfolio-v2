@@ -6,7 +6,6 @@ export const FooterContainer = styled.div`
    height: 30rem;
    padding: 2rem 5rem;
    background-color: #0d1e11;
-   margin-top: 2rem;
 
    display: flex;
    flex-direction: column;

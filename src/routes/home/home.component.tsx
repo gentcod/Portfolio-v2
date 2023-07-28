@@ -1,6 +1,7 @@
 
 import ContactTabContainer from "../../components/contact-tab-container/contact-tab-container.component";
 import Featured from "../../components/featured/featured.component";
+import Services from "../../components/servicecomp/services.component";
 import { HomeContainer, HomeContentContainer, HomeIntro, Name, Title, Description ,HomeImageContainer, HomeImage, SocialsHeader } from "./home.styles";
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
             </HomeImageContainer>
          </HomeContentContainer>
          <Featured/>
+         <Services/>
       </HomeContainer>
    )
 }
