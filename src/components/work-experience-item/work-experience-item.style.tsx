@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../../dev-data/media-queries';
 
 export const Container = styled.div`
    width: 35rem;
@@ -12,6 +13,10 @@ export const Container = styled.div`
    flex-direction: column;
    row-gap: 1rem;
    color: white;
+
+   @media only screen and ${devices.phone} {
+      height: auto;
+   }
 `
 
 export const ExperienceNum = styled.h2`

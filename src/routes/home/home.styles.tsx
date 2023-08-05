@@ -1,12 +1,15 @@
 import styled from "styled-components";
+import { devices } from "../../dev-data/media-queries";
 
 export const HomeContainer = styled.div`
+   width: 100%;
    padding: 0 2rem;
    background-color: #fff;
 `;
 
 export const HomeContentContainer = styled.div`
-   height: 60rem;
+   width: 100%;
+   height: auto;
    display: flex;
    flex-direction: row;
    align-content: space-between;
@@ -15,10 +18,13 @@ export const HomeContentContainer = styled.div`
    width: 90%;
    margin: 0 auto;
    cursor: pointer;
+
+   @media only screen and ${devices.tabLand} {
+      flex-direction: column-reverse;
+   }
 `;
 
 export const HomeIntro = styled.div`
-   width: 100%;
    height: 100%;
    padding: 1rem;
    display: flex;
@@ -33,6 +39,9 @@ export const Name = styled.h1`
    margin-top: 10rem;
    margin-bottom: 1rem;
 
+   @media only screen and ${devices.phone} {
+      margin-top: 2rem;
+   }
 `
 
 export const Title = styled.h2`
@@ -50,7 +59,6 @@ export const Description = styled.p`
 `
 
 export const HomeImageContainer = styled.div`
-   width: 100%;
    height: 100%;
    padding: 1rem;
 `;
@@ -58,6 +66,10 @@ export const HomeImageContainer = styled.div`
 export const HomeImage = styled.img`
    width: auto;
    min-height: 100%;
+
+   @media only screen and ${devices.phone} {
+      width: 100%;
+   }
 `;
 
 export const SocialsHeader = styled.h2`

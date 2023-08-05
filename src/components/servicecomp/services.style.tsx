@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../dev-data/media-queries";
 
 export const Container = styled.div`
    padding: 3rem 5rem;
@@ -13,6 +14,11 @@ export const ServicesContainer = styled.div`
    align-items: center;
 
    column-gap: 3rem;
+
+   @media only screen and ${devices.phone} {
+      flex-direction: column;
+      row-gap: 1rem;
+   }
 `;
 
 export const Service = styled.div`
@@ -32,6 +38,10 @@ export const Service = styled.div`
 
    &:hover {
       transform: scale(1.08) translateY(-1rem);
+   }
+
+   @media only screen and ${devices.phone} {
+      height: 15rem;
    }
 `;
 

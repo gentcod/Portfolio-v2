@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../dev-data/media-queries";
 
 export const BoxesContainer = styled.div`
    display: grid;
@@ -11,4 +12,10 @@ export const BoxesContainer = styled.div`
    align-content: center;
    position: relative;
    width: 100%;
+
+   @media only screen and ${devices.phone} {
+      grid-row-gap: 1.5rem;
+      justify-content: space-evenly;
+      padding: 5rem 0;
+   }
 `

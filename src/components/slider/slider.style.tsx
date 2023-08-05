@@ -1,4 +1,5 @@
 import styled, {keyframes} from "styled-components";
+import { devices } from "../../dev-data/media-queries";
 
 export const CarouselRotate = keyframes`
    0% {
@@ -50,7 +51,15 @@ export const SliderContainer = styled.div`
   align-items: center;
   overflow: hidden;
   width: 100%;
-//   animation: ${CarouselRotate} 30s infinite linear;
+
+  @media only screen and ${devices.phone} {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-items: center;
+    row-gap: 3rem;
+    column-gap: 3rem;
+  }
 `
 
 export const SliderImage = styled.img`
@@ -64,5 +73,15 @@ export const SliderImage = styled.img`
 
   &:hover {
    animation: ${Shake} 1.5s ease
+  }
+
+  @media only screen and ${devices.tabLand} {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  @media only screen and ${devices.phone} {
+    width: 10rem;
+    height: 10rem;
   }
 `;

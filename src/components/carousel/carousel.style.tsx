@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../dev-data/media-queries";
 
 export const Container = styled.div`
    width: 100%;
@@ -8,13 +9,17 @@ export const Container = styled.div`
 `
 
 export const FrameOuter = styled.div`
-   width: 100vw;
+   width: 100%;
    height: 55rem;
    background-color: #0d1e11;
    margin-top: 2rem;;
    margin: auto;
    overflow: hidden;
    position: relative;
+
+   @media only screen and ${devices.phone} {
+      height: 60rem;
+   }
 
 `
 
@@ -40,4 +45,8 @@ export const FramerInner = styled.div`
    transform: translate(-50%, -50%);
    top: 50%;
    left: 50%;
+
+   @media only screen and ${devices.phone} {
+      height: auto;
+   }
 `

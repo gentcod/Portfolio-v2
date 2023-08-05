@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../../dev-data/media-queries';
 
 type Props = {
    bgColor?: string;
@@ -32,5 +33,9 @@ export const ButtonBody = styled.a`
 
    &:active {
       transform: translateY(1rem);
+   }
+
+   @media only screen and ${devices.phone} {
+      font-size: 1rem;
    }
 `

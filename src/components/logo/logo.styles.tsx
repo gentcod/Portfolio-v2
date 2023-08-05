@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom'
+import { devices } from '../../dev-data/media-queries';
 
 export const LogoContainer = styled(Link)`
    flex: 2;
@@ -11,6 +12,11 @@ export const LogoContainer = styled(Link)`
    font-size: 1rem;
    max-width: 25rem;
    height: 8rem;
+
+   @media only screen and ${devices.phone} {
+      height: 6rem;
+      max-width: 10rem;
+   }
 `
 
 export const LogoName = styled.div`
