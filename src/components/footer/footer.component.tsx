@@ -31,7 +31,7 @@ const Footer = () => {
 
             <FooterLowerMid>
                <LegacyHeading>Old portfolio website:</LegacyHeading>
-               <LegacyPortfolio to={"https://oyefuleoluwatayo.netlify.app"}>Oyefule Oluwatayo Portfolio Old</LegacyPortfolio>
+               <LegacyPortfolio to={"https://oyefuleold.netlify.app"}>Oyefule Oluwatayo Portfolio Old</LegacyPortfolio>
             </FooterLowerMid>
             
             <FooterCopyright>
