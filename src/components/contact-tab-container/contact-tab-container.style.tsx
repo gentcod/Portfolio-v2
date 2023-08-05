@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../dev-data/media-queries";
 
 export const Container = styled.div`
    width: 100%;
@@ -7,4 +8,8 @@ export const Container = styled.div`
    flex-direction: row;
    column-gap: 2rem;
    backface-visibility: hidden;
+
+   @media only screen and ${devices.phone} {
+      flex-wrap: wrap;
+   }
 `

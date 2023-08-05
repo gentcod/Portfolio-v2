@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../../dev-data/media-queries';
 
 export const FormContainer = styled.form`
    width: 60%;
@@ -17,6 +18,15 @@ export const FormContainer = styled.form`
    border-radius: 1rem;
 
    transition: all .8s ease;
+
+   @media only screen and ${devices.tabLand} {
+      margin-top: 1rem;
+    }
+
+   @media only screen and ${devices.phone} {
+     width: 95%;
+     margin-top: 1rem;
+   }
 `
 
 export const InputContainer = styled.div`

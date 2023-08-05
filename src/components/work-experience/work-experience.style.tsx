@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../../dev-data/media-queries';
 
 export const Container = styled.div`
    width: 100%;
@@ -6,6 +7,11 @@ export const Container = styled.div`
    padding: 5rem 3rem;
    position: relative;
    text-align: left;
+
+   @media only screen and ${devices.phone} {
+      text-align: center;
+      padding: 2rem;
+   }
 `
 
 export const Heading = styled.h3`
@@ -15,6 +21,10 @@ export const Heading = styled.h3`
    font-size: 1.2rem;
    letter-spacing: .3rem;
    margin-bottom: 5rem;
+
+   @media only screen and ${devices.phone} {
+      text-align: left;
+   }
 `
 
 export const SubHeading = styled.p`
@@ -22,6 +32,10 @@ export const SubHeading = styled.p`
    font-wegiht: 1000;
    font-size: 3rem;
    width: 50rem;
+
+   @media only screen and ${devices.phone} {
+      width: auto;
+   }
 `
 
 export const ExperienceContainer = styled.div`
@@ -34,6 +48,12 @@ export const ExperienceContainer = styled.div`
    align-items: start;
    align-content: center;
    padding: 3rem;
+
+   @media only screen and ${devices.phone} {
+      flex-direction: column;
+      row-gap: 1.5rem;
+      align-items: center;
+   }
 `
 
 export const ResumeButton = styled.a`
@@ -54,5 +74,12 @@ export const ResumeButton = styled.a`
 
    &:active {
       transform: translateY(1rem);
+   }
+
+   @media only screen and ${devices.phone} {
+      margin-left: 0;
+      margin-bottom: 1rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
    }
 `

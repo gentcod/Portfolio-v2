@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../dev-data/media-queries";
 
 type Props = {
    sizeW?: number;
@@ -10,15 +11,26 @@ type Props = {
 
 const width = (props: Props) => props.sizeW;
 const height = (props: Props) => props.sizeH;
+const widthSmall = (props: Props) => {
+   if (props.sizeW !== undefined) return props.sizeW / 1.3
+};
+const heightSmall = (props: Props) => {
+   if (props.sizeH !== undefined) return props.sizeH / 1.3
+};
 const bgColor = (props: Props) => props.backgroundColor;
 const image = (props: Props) => props.imgSrc;
 const color = (props: Props) => props.textColor;
 
 export const BoxContainer = styled.div`
    display: inline-block;
-   width: ${width};
+   width: ${width}rem;
    height: ${height}rem;
    text-align: center;
+
+   @media only screen and ${devices.phone} {
+     width: ${widthSmall}rem;
+     height: ${heightSmall}rem;
+   }
 `
 
 export const Box = styled.div`

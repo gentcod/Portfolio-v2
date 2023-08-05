@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { devices } from '../../dev-data/media-queries';
 
 export const FooterContainer = styled.div`
    width: 100%;
@@ -9,6 +10,10 @@ export const FooterContainer = styled.div`
    display: flex;
    flex-direction: column;
    row-gap: 2rem;
+
+   @media only screen and ${devices.tabLand} {
+      padding: 2rem;
+   }
 `
 
 export const FooterUpper = styled.div`
@@ -34,7 +39,11 @@ export const FooterImageLine = styled.hr`
    left: 50%;
    top: 50%;
 
-   transform: translate(-50%, -50%)
+   transform: translate(-50%, -50%);
+
+   @media only screen and ${devices.phone} {
+      width: 95%;
+   }
 `
 
 export const FooterImageContainer = styled.div`
@@ -60,6 +69,11 @@ export const FooterImage = styled.img`
    margin-top: 1rem;
    border-radius: 50%;
    object-fit: cover;
+
+   @media only screen and ${devices.phone} {
+      width: 60%;
+      height: 60%
+   }
 `
 
 export const FooterLower = styled.div`
@@ -68,6 +82,13 @@ export const FooterLower = styled.div`
 
    display: flex;
    justify-content: space-evenly;
+
+   @media only screen and ${devices.tabLand} {
+      flex-direction: column;
+      padding: 1rem;
+      align-items: center;
+      row-gap: 1rem;
+   }
 `
 
 export const FooterSocialsContainer = styled.div`
@@ -79,6 +100,11 @@ export const FooterSocialsHeader = styled.h5`
    text-align: left;
    margin-left: 5rem;
    margin-bottom: 1rem;
+
+   @media only screen and ${devices.tabLand} {
+      text-align: center;
+      margin-left: 0;
+   }
 `;
 
 export const FooterSocials = styled.div`
@@ -105,6 +131,10 @@ export const FooterLowerMid = styled.div`
    display: flex;
    flex-direction: column;
    text-align: left;
+
+   @media only screen and ${devices.tabLand} {
+      text-align: center;
+   }
 `;
 
 export const LegacyHeading = styled.h5`

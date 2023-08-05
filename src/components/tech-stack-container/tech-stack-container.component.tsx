@@ -18,7 +18,7 @@ const TechStackContainer = () => {
             return <TechStack key={data.id} text={data.text} bgColor={data.bgColor} color={data.textColor} height={height} width={width} img={data.imgSrc}/>
          }
          )}
-            </BoxesContainer>
+      </BoxesContainer>
    )
 }
 

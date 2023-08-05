@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { devices } from '../../dev-data/media-queries';
 
 export const Container = styled.div`
    padding: 3rem 5rem;
@@ -26,6 +27,11 @@ export const FeaturedImageOverLay = styled.div`
    display: flex;
    justify-content: center;
    align-items: center;
+
+   @media only screen and ${devices.phone} {
+      height: 5rem;
+      bottom: 0;
+   }
 `;
 
 export const FeaturedTitle = styled.p`
@@ -36,6 +42,10 @@ export const FeaturedTitle = styled.p`
    border-bottom: 2px solid #45a25a;
    font-weight: 1000;
    z-index: 5;
+
+   @media only screen and ${devices.phone} {
+      font-size: 1.2rem;
+   }
 `;
    
 export const ImageSkewContainer = styled(Link)`

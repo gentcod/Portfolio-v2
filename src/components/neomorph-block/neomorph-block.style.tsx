@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../dev-data/media-queries";
 
 export const Block = styled.div`
    height: 6.5rem;
@@ -17,6 +18,12 @@ export const BlockBig = styled(Block)`
    width: 7.5rem;
    top: 88%;
    left: 5%;
+
+   @media only screen and ${devices.phone} {
+      top: 0;
+      height: 3rem;
+   }
+
 `
 
 export const BlockSmall = styled(Block)`
