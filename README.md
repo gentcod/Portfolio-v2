@@ -2,4 +2,4 @@
 
 # Built using React 
 
-This project is an iteration to a prior [Portfolio website](https://oyefuleoluwatayo.netlify.app).
+This project is an iteration to a prior [Portfolio website](https://oyefuleold.netlify.app).
