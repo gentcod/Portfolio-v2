@@ -11,22 +11,21 @@ type FeaturedImagesProp = {
 const data: FeaturedImagesProp = [
    {
       id: 0,
-      // link: 'https://gentcod-mapty.netlify.app',
-      link: '',
+      link: 'https://gentcod-foodie.netlify.app',
       title: 'Foodie: Food.com prototype',
-      imgSrc: 'img/foodie.png',
+      imgSrc: 'https://i.ibb.co/KWB0n4G/foodie.png',
    },
    {
       id: 1,
-      link: '',
+      link: 'https://gentcod-mapty.netlify.app',
       title: 'Mapty: A workout map app',
-      imgSrc: 'img/mapty.png',
+      imgSrc: 'https://i.ibb.co/9qsJVjj/mapty.png',
    },
    {
       id: 2,
-      link: '',
+      link: 'https://gentcod-natours.netlify.app',
       title: 'Natours: A tourism booking homepage',
-      imgSrc: 'img/natours.png',
+      imgSrc: 'https://i.ibb.co/LNX980G/natours.png',
    },  
 ];
 

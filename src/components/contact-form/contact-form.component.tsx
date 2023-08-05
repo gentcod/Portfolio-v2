@@ -17,45 +17,40 @@ const lables : Labels = [
    }
 ]
 
-type FormFields = {
+type FormData = {
    name: string;
    heading: string;
    message: string;
 }
 
-// const defaultFormFields: FormFields = {
-//    name: '',
-//    heading: '',
-//    message: '',
-// }
+const defaultFormFields: FormData = {
+   name: '',
+   heading: '',
+   message: '',
+}
 
 const ContactForm = () => {
-   // const [formFields, setFormFields] = useState(defaultFormFields);
+   const [formData, setFormData] = useState(defaultFormFields);
 
-   // const handleSubmit = (e: React.FormEvent<HTMLInputElement>): void => {
-   //    e.preventDefault();
-   //    const target = e.target as typeof e.target & {
-   //       name: {value: string};
-   //       heading: {value: string};
-   //       message: {value: string};
-   //    };
-      
-   //    const name = target.name.value;
-   //    const heading = target.heading.value;
-   //    const message = target.message.value;
+   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const {name, value} = e.target;
+      setFormData({...formData, [name]: value});
+   }
 
-      
-   // }
+   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      window.open(`mailto:drelanorgent@gmail.com?subject=${formData.heading}&body=Hello Oyefule, I'm ${formData.name}, ${formData.message}`)
+   }
 
    return (
-      <FormContainer>
+      <FormContainer onSubmit={handleSubmit}>
          <Heading>Contact me</Heading>
          <>
          <SubHeading>Let's discuss about your next project</SubHeading>
          {lables.map(data => 
          <InputContainer key={data.id}>
             <FormLabel>{data.label}</FormLabel>
-            <FormInput name={data.label}/>
+            <FormInput name={data.label} onChange={handleInputChange}/>
          </InputContainer>
          )}
          <InputContainer>

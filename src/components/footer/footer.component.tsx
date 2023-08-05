@@ -1,5 +1,6 @@
 import { footerSocials } from "../../dev-data/footer_socials";
 import Button from "../button/button.component";
+import { mailSubject, mailBodySocial } from "../../dev-data/dev_data_socials";
 
 import { CopyRight, FooterContainer, FooterCopyright, FooterImage, FooterImageContainer, FooterImageLine, FooterImageLineContainer, FooterLower, FooterLowerMid, FooterSocials, FooterSocialsContainer, FooterSocialsHeader, FooterUpper, LegacyHeading, LegacyPortfolio, SocialIcon, SocialLinks } from "./footer.style";
 
@@ -13,7 +14,7 @@ const Footer = () => {
                   <FooterImage src={'./img/my_image.jpg'}/>
                </FooterImageContainer>
             </FooterImageLineContainer>
-            <Button value="Hire Me"/>
+            <Button link={`mailto:drelanorgent@gmail.com?subject=${mailSubject}&body=${mailBodySocial}`} value="Hire Me"/>
          </FooterUpper>
 
          <FooterLower>

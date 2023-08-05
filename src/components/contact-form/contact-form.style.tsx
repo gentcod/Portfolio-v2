@@ -28,6 +28,7 @@ export const InputContainer = styled.div`
 
 export const FormLabel = styled.label`
    text-align: left;
+   text-transform: capitalize;
    margin: 1rem;
    color: white;
    font-size: 1rem;
