@@ -10,8 +10,8 @@ type ServiceProp = {
 const serviceData: ServiceProp = [
    {
       id: 1,
-      header: 'Web Development',
-      content: 'Responsive websites'
+      header: 'Software Development',
+      content: 'Backend and Frontend Technologies'
    },
 
    {
@@ -22,8 +22,8 @@ const serviceData: ServiceProp = [
 
    {
       id: 3,
-      header: 'Web Development',
-      content: 'Responsive websites'
+      header: 'Soft Skills',
+      content: 'Good communication and people relation'
    }
 ]
 

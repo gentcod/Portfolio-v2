@@ -14,7 +14,7 @@ export const ButtonContainer = styled.div`
    display: inline-block;
 `
 
-export const ButtonBody = styled.button`
+export const ButtonBody = styled.a`
    padding: 1rem 2.5rem;
    background-color: ${bgCol};
    color: ${color};

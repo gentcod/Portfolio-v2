@@ -4,6 +4,7 @@ import { experienceData } from '../../dev-data/experience-data';
 import {Container, ExperienceContainer, Heading, ResumeButton, SubHeading} from './work-experience.style';
 
 const WorkExperience = () => {
+
    return (
       <Container>
          <Heading>Work Experience</Heading>
@@ -13,7 +14,7 @@ const WorkExperience = () => {
                <WorkExperienceItem key={data.id} id={data.id} companyName={data.companyName} role={data.role} desc={data.desc} color={data.color}/>
             ))}
          </ExperienceContainer>
-         <ResumeButton>Download My Resume</ResumeButton>
+         <ResumeButton href={'/doc/resume.pdf'}>Download My Resume</ResumeButton>
       </Container>
    )
 }

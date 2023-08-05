@@ -1,6 +1,6 @@
-const mailSubject: string = 'JOB OFFER';
+export const mailSubject: string = 'JOB OFFER';
 // const mailBody = 'Hello Oyefule, I would like to hire you'
-const mailBodySocial: string = 'Hello Oyefule, I viewed your portfolio and would like to get in touch with you'
+export const mailBodySocial: string = 'Hello Oyefule, I viewed your portfolio and would like to get in touch with you'
 
 export interface ISocial {
    id: number,

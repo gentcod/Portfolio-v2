@@ -13,7 +13,7 @@ export const webprojectData: WebProjectData = [
       heading: 'Capstone Clothing',
       subheading: 'E-commerce website',
       description: 'Built using React, Redux for state management, Firebase for Data storage, authenticationa and authorization. Stripe for payment ',
-      imgSrc: 'img/capstone.png',
+      imgSrc: 'https://i.ibb.co/9GS3QKD/capstone.png',
       link: 'https://gentcod-mapty.netlify.app',
    },
 
@@ -22,8 +22,8 @@ export const webprojectData: WebProjectData = [
       heading: 'Mapty Map App',
       subheading: 'Workout web app',
       description: 'It uses Leaflet which is a map api, it was built using vanilla JavaScript',
-      imgSrc: 'img/mapty.png',
-      link: '',
+      imgSrc: 'https://i.ibb.co/9qsJVjj/mapty.png',
+      link: 'https://gentcod-mapty.netlify.app',
    },
 
    {
@@ -31,7 +31,7 @@ export const webprojectData: WebProjectData = [
       heading: 'Forkify',
       subheading: 'Food Recipe Web Application',
       description: 'Built using Vanilla JavaScript, using an API to get recipe data',
-      imgSrc: 'img/forkify_project.png',
+      imgSrc: 'https://i.ibb.co/5813zfs/forkify-project.png',
       link: '',
    },
 
@@ -40,7 +40,7 @@ export const webprojectData: WebProjectData = [
       heading: 'Foodie',
       subheading: 'Food recipe homepage',
       description: 'A prototype of Food.com. Built using HTML, CSS and JavaScript. It was my first personal web project which I used to get familar with HTML and CSS. It has a light and dark theme',
-      imgSrc: 'img/foodie.png',
+      imgSrc: 'https://i.ibb.co/KWB0n4G/foodie.png',
       link: 'https://gentcod-foodie.netlify.app',
    },
 
@@ -49,7 +49,7 @@ export const webprojectData: WebProjectData = [
       heading: 'HoMov',
       subheading: 'Movie website homepage',
       description: 'A static website built using HTML, CSS and JavaScript. Has a dark theme and light theme',
-      imgSrc: 'img/movie_site.png',
+      imgSrc: 'https://i.ibb.co/mGQtJj4/movie-site.png',
       link: 'https://gentcod-foodie.netlify.app',
    },
 
@@ -58,7 +58,7 @@ export const webprojectData: WebProjectData = [
       heading: 'Natours',
       subheading: 'Tourism booking homepage',
       description: 'A static website built using only HTML and CSS. It focusing on creating a good UI with a good number of interactions',
-      imgSrc: 'img/natours.png',
+      imgSrc: 'https://i.ibb.co/LNX980G/natours.png',
       link: 'https://gentcod-natours.netlify.app',
    },
 ]

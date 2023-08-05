@@ -36,7 +36,7 @@ export const ExperienceContainer = styled.div`
    padding: 3rem;
 `
 
-export const ResumeButton = styled.button`
+export const ResumeButton = styled.a`
    padding: 1.5rem 3rem;
    background-color: transparent;
    color: white;
