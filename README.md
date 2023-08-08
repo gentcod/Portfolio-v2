@@ -1,5 +1,7 @@
 ### Portfolio website for Oyefule Oluwatayo
 
-# Built using React 
+# Built using React
 
-This project is an iteration to a prior [Portfolio website](https://oyefuleold.netlify.app).
+This is the project site - [Portfolio website](https://oyefuleoluwatayo.netlify.app).
+
+This project is an iteration to a prior [Old portfolio website](https://oyefuleold.netlify.app).
