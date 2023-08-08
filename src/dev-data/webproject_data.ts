@@ -12,7 +12,7 @@ export const webprojectData: WebProjectData = [
       id: 0,
       heading: 'Capstone Clothing',
       subheading: 'E-commerce website',
-      description: 'Built using React, Redux for state management, Firebase for Data storage, authenticationa and authorization. Stripe for payment ',
+      description: 'Built using React, Redux for state management, Firebase for Data storage, authentication and authorization. Stripe for payment ',
       imgSrc: 'https://i.ibb.co/9GS3QKD/capstone.png',
       link: 'https://gentcod-mapty.netlify.app',
    },

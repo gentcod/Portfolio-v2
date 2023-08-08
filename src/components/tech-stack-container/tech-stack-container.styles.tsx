@@ -15,7 +15,7 @@ export const BoxesContainer = styled.div`
 
    @media only screen and ${devices.phone} {
       grid-row-gap: 1.5rem;
-      justify-content: space-evenly;
+      grip-column-gap: 3rem;
       padding: 5rem 0;
    }
 `
