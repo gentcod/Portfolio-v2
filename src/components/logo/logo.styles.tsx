@@ -14,7 +14,6 @@ export const LogoContainer = styled(Link)`
    height: 8rem;
 
    @media only screen and ${devices.phone} {
-      height: 6rem;
       max-width: 10rem;
    }
 `
