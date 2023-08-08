@@ -14,7 +14,7 @@ export const webprojectData: WebProjectData = [
       subheading: 'E-commerce website',
       description: 'Built using React, Redux for state management, Firebase for Data storage, authentication and authorization. Stripe for payment ',
       imgSrc: 'https://i.ibb.co/9GS3QKD/capstone.png',
-      link: 'https://gentcod-mapty.netlify.app',
+      link: 'https://gentcod-capstone.netlify.app',
    },
 
    {
@@ -32,7 +32,7 @@ export const webprojectData: WebProjectData = [
       subheading: 'Food Recipe Web Application',
       description: 'Built using Vanilla JavaScript, using an API to get recipe data',
       imgSrc: 'https://i.ibb.co/5813zfs/forkify-project.png',
-      link: '',
+      link: 'https://gentcod-forkify.netlify.app',
    },
 
    {
@@ -61,13 +61,13 @@ export const webprojectData: WebProjectData = [
       imgSrc: 'https://i.ibb.co/LNX980G/natours.png',
       link: 'https://gentcod-natours.netlify.app',
    },
-]
 
-// {
-//       id: 5,      
-//       heading: 'Foodie',
-//       subheading: 'Food recipe web app',
-//       description: 'A web app built using a backend api and 3rd party api. It was developed using React for the frontend and C# for the backend',
-//       imgSrc: 'img/foodie.png',
-//       link: 'https://gentcod-foodie.netlify.app',
-//    },
+   // {
+   //    id: 6,
+   //    heading: 'Paystack Proto',
+   //    subheading: 'Prototype of Paystack Homepage',
+   //    description: 'A static website build using React to recreate the homepage of PayStack',
+   //    imgSrc: '',
+   //    link: 'https://gentcod-paystack-proto.netlify.app',
+   // },
+]
