@@ -72,9 +72,14 @@ export const ImageSkewContainer = styled(Link)`
 
 export const FeaturedImage = styled.img`
    object-fit: cover;
-   height: 100%;
-   width: 100%;
+   height: 30rem;
+   width: 100rem;
    backface-visibility: hidden;
+
+   @media only screen and ${devices.tabPort} {
+      height: 15rem;
+      width: 30rem;
+   }
 `;
 
 export const ExploreOverlay = styled.div`

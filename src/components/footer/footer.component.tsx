@@ -22,7 +22,7 @@ const Footer = () => {
                <FooterSocialsHeader>Social Accounts:</FooterSocialsHeader>
                <FooterSocials>
                   {footerSocials.map(el => (
-                     <SocialLinks key={el.id} to={el.link}>
+                     <SocialLinks key={el.id} to={el.link} aria-label={el.linkLabel}>
                         <SocialIcon src={el.imgSrc}/>
                      </SocialLinks>
                   ))}

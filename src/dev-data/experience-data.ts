@@ -12,7 +12,7 @@ export const experienceData: ExperienceData = [
       companyName: 'Chevron Nigeria Limited',
       role: 'Undergraduate Intern',
       desc: 'Software Developer - IT (Business Services) Division: Cross Platforms: Application support, website support, Service Now (SNOW) Information Risk Management (Compliance) support. Using C#, .Net frameworks, T-SQL and other technologies. Divisional website update: modifying outdated information and contents. Query migration: worked on data query refactoring from on-premise Oracle databases to the Cloud to modify business intelligence reporting on oil production. Data visualization: using Microsoft PowerBI.',
-      color: '#0054a4'
+      color: '#0054a4',
    },
 
    {

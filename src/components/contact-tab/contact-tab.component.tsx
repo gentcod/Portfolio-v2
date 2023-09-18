@@ -4,11 +4,12 @@ interface TabProp {
    text: string,
    link: string,
    image: string
+   linkLabel: string;
 }
 
-const ContactTab = ({text, link, image} : TabProp) => {
+const ContactTab = ({text, link, image, linkLabel} : TabProp) => {
    return (
-      <Tab href={link} target="_blank">
+      <Tab href={link} target="_blank" aria-label={linkLabel}>
          <TabLogo src={image}/>
          <TabText>{text}</TabText>
       </Tab>
