@@ -70,6 +70,8 @@ export const ResumeButton = styled.a`
 
    &:hover {
       transform: translateY(-1rem) scale(1.05);
+      background-color: #45a25a;
+      border: 1px solid white;
    }
 
    &:active {

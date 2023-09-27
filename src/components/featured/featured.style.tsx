@@ -28,7 +28,7 @@ export const FeaturedImageOverLay = styled.div`
    justify-content: center;
    align-items: center;
 
-   @media only screen and ${devices.phone} {
+   @media only screen and ${devices.tabPort} {
       height: 5rem;
       bottom: 0;
    }
@@ -67,6 +67,15 @@ export const ImageSkewContainer = styled(Link)`
 
    &:hover ${FeaturedImageOverLay} {
       bottom: 0;
+   }
+
+   @media only screen and ${devices.tabPort} {
+      transform: skewX(0);
+
+      &:hover {
+         height: 15rem;
+         border: 2px solid #45a25a;
+      }
    }
 `;
 

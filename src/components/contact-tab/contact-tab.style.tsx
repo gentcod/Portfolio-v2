@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import { devices } from "../../dev-data/media-queries";
 
 export const Tab = styled.a`
+   width: 12rem;
    display: flex;
    padding: 1rem 1.8rem;
    background-color: transparent;
@@ -16,6 +18,11 @@ export const Tab = styled.a`
 
    &:active {
       transform: translateY(1rem);
+   }
+
+   @media only screen and ${devices.tabPort} {
+      flex: 0 0 25%;
+      margin: 0 auto;
    }
 `
 
