@@ -9,7 +9,9 @@ export const Container = styled.div`
    column-gap: 2rem;
    backface-visibility: hidden;
 
-   @media only screen and ${devices.phone} {
+   @media only screen and ${devices.tabPort} {
+      flex: 1 1 1;
+      row-gap: 2rem;
       flex-wrap: wrap;
    }
 `
