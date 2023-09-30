@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { devices } from "../../dev-data/media-queries";
 
 export const Tab = styled.a`
-   width: 12rem;
+   width: 10rem;
    display: flex;
-   padding: 1rem 1.8rem;
+   padding: 1rem 1rem;
    background-color: transparent;
    border-radius: 1rem;
    border-bottom: 3px solid #45a25a;
