@@ -23,13 +23,14 @@ export const FeaturedImageOverLay = styled.div`
    position: absolute;
    bottom: -12rem;
    transition: all 1s ease;
+   z-index: 10;
 
    display: flex;
    justify-content: center;
    align-items: center;
 
    @media only screen and ${devices.tabPort} {
-      height: 5rem;
+      height: 6rem;
       bottom: 0;
    }
 `;
@@ -43,7 +44,7 @@ export const FeaturedTitle = styled.p`
    font-weight: 1000;
    z-index: 5;
 
-   @media only screen and ${devices.phone} {
+   @media only screen and ${devices.tabPort} {
       font-size: 1.2rem;
    }
 `;
@@ -75,6 +76,9 @@ export const ImageSkewContainer = styled(Link)`
       &:hover {
          height: 15rem;
          border: 2px solid #45a25a;
+      }
+      
+      &:hover ${FeaturedImageOverLay} {
       }
    }
 `;
