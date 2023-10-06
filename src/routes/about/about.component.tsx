@@ -10,7 +10,12 @@ type AboutMe = {
 
 const about: AboutMe = {
    heading: 'Hi, I am Oyefule',
-   summary: 'I am a creative and innovative Developer and Designer. I like to describe myself as a Jack of a lot, definitely not all 😅😅😅. I am skilled in a lot of aspects and this is as a result of my ability to quickly learn and adapt to new situations and challenges. This comes in handy not only in my career or professional field, I use it in all aspect of life. I also like sharing knowledge, as I believe true mastery of a skill cannot be achieved without sharing what you know, okay enough story. Kindly take your time to go through my portfolio. I am open to feedback, so feel free to reach out to me and provide one. Lastly, I love anime and yeah, I have seen One Piece😊😊😊',
+   summary: `I am a creative and innovative Developer and Designer who likes to properly undestand how things work.
+   I like to describe myself as a Jack of a lot, definitely not all 😅😅😅. 
+   I am skilled in a lot of aspects and this is as a result of my ability to quickly learn and adapt to new situations and challenges. 
+   This comes in handy not only in my career or professional field, I use it in all aspect of life. 
+   I also like sharing knowledge, as I believe true mastery of a skill cannot be achieved without sharing what you know. Kindly take your time to go through my portfolio. 
+   I am open to feedback, so feel free to reach out to me and provide one. Lastly, I love anime and yes, I have seen One Piece😊😊😊`,
 }
 
 const About = () => {
