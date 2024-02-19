@@ -1,7 +1,5 @@
 import CarouselWebProject from '../../components/carousel webproject/carousel-webproject.component';
 import Carousel from '../../components/carousel/carousel.component';
-import WebProject from '../../components/web-project/web-project.component';
-import { webprojectData } from '../../dev-data/webproject_data';
 
 import {} from './explore.styles'
 
