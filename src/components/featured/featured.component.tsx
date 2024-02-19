@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Heading from '../heading/heading.component';
 import { Container, EXploreButtonLabel, ExploreButton, ExploreOverlay, FeaturedImage, FeaturedImageOverLay, FeaturedTitle, ImageSkewContainer } from './featured.style';
 
@@ -7,6 +8,8 @@ type FeaturedImagesProp = {
    title: string;
    imgSrc: string;
 }[]
+
+// TODO: Handle scroll into view event
 
 const data: FeaturedImagesProp = [
    {
@@ -30,8 +33,14 @@ const data: FeaturedImagesProp = [
 ];
 
 const Featured = () => {
+   const [inview, setInView] = useState(false);
+
+   const handlerInView = () => {
+      setInView(true)
+   }
+
    return (
-      <Container>
+      <Container onScroll={() => handlerInView()} inview={inview}>
          <Heading title='Featured work samples'/>
          {data.map(el =>
          <ImageSkewContainer key={el.id} to={el.link}>

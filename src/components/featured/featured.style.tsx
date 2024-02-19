@@ -1,8 +1,25 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { devices } from '../../dev-data/media-queries';
 
-export const Container = styled.div`
+type FeatureProps = {
+   inview: boolean;
+}
+
+export const Reveal = keyframes`
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+`
+
+export const reveal = css`
+   animation: ${Reveal} 1.5s ease;
+`
+
+export const Container = styled.div<FeatureProps>`
    padding: 3rem 5rem;
    background-color: #f7fcf8;
    margin-top: 2rem;
@@ -13,6 +30,7 @@ export const Container = styled.div`
    flex-direction: column;
    row-gap: 3rem;
    justify-content: center;
+   ${({inview}) => inview && reveal}
 `;
 
 export const FeaturedImageOverLay = styled.div`

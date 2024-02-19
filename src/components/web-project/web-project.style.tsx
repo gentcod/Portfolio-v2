@@ -5,19 +5,19 @@ import { devices } from "../../dev-data/media-queries";
 export const Container = styled.div`
    width: 80%;
    margin: 0 auto;
-   padding: 5rem;
-   margin-top: 2rem;
+   padding: 2rem;
    border-bottom: 1px solid #45a25a;
    display: flex;
    flex-direction: column;
-   row-gap: 3rem;
+   row-gap: 1rem;
 
-   @media only screen and ${devices.phone} {
-      padding: 1rem;
+   @media only screen and ${devices.tabLand} {
+      padding: 0;
    }
 `
 
 export const SubTopContainer = styled.div`
+   height: 12rem;
    display: flex;
    justify-content: center;
    column-gap: 15rem;
@@ -40,7 +40,7 @@ export const SubTopLeftContainer = styled.div`
 `
 
 export const SubTopRightContainer = styled.div`
-   width: 35rem;
+   width: 45rem;
    display: flex;
    flex-direction: column;
    margin: auto 0;
@@ -48,7 +48,7 @@ export const SubTopRightContainer = styled.div`
 `
 
 export const Heading = styled.h3`
-   font-size: 5rem;
+   font-size: 4rem;
    font-weight: 1000;
    text-align: left;
    line-height: 1;
@@ -61,7 +61,7 @@ export const Heading = styled.h3`
 export const SubHeading = styled.h5`
    text-transform: uppercase;
    color: #acacac;
-   padding: 2rem 0;
+   padding: 1rem 0;
 
    @media only screen and ${devices.phone} {
       font-size: 1.4rem;
@@ -69,7 +69,7 @@ export const SubHeading = styled.h5`
 `
 
 export const Description = styled.p`
-   font-size: 1.6rem;
+   font-size: 1.4rem;
 
    @media only screen and ${devices.phone} {
       font-size: 1.2rem;
@@ -112,8 +112,13 @@ export const Image = styled.img`
    border-radius: 2rem;
    border: 5px solid #0d1e11;
 
+   @media only screen and ${devices.tabLand} {
+      width: 100%;
+      height: 25rem;
+   }
+
    @media only screen and ${devices.phone} {
       width: 100%;
-      height: 20rem;
+      height: 25rem;
    }
 `

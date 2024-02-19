@@ -24,7 +24,6 @@ export const stackData : Stack = [
       textColor: "#222",
       imgSrc: "icons/javascript.svg",
    },
-
    {
       id: 1,
       text: "NodeJS",
@@ -34,10 +33,10 @@ export const stackData : Stack = [
    },
    {
       id: 2,
-      text: "Sass",
+      text: "Docker",
       bgColor: "fff",
-      textColor: "#cd6799",
-      imgSrc: "icons/sass.svg",
+      textColor: "#008AD7",
+      imgSrc: "icons/docker.svg",
    },
    {
       id: 3,
@@ -46,7 +45,6 @@ export const stackData : Stack = [
       textColor: "#fff",
       imgSrc: "icons/React.svg",
    },
-
    {
       id: 4,
       text: "C#",
@@ -99,24 +97,24 @@ export const stackData : Stack = [
    },
    {
       id: 11,
-      text: "Azure DevOps",
-      bgColor: "#008ad7",
-      textColor: "#fff",
-      imgSrc: "icons/azure-devops.svg",
+      text: "Azure",
+      bgColor: "#fff",
+      textColor: "#008AD7",
+      imgSrc: "icons/azure.svg",
    },
    {
       id: 12,
-      text: "PowerBI",
-      bgColor: "#e9b51c",
-      textColor: "#fff",
-      imgSrc: "icons/powerbi.svg",
+      text: "AWS",
+      bgColor: "#fff",
+      textColor: "#e9b51c",
+      imgSrc: "icons/aws.svg",
    },
    {
       id: 13,
-      text: "Figma",
+      text: "Google Cloud",
       bgColor: "#fff",
       textColor: "#000",
-      imgSrc: "icons/figma-svgrepo-com.svg",
+      imgSrc: "icons/google-cloud.svg",
    },
    {
       id: 14,
@@ -124,5 +122,12 @@ export const stackData : Stack = [
       bgColor: "#fff",
       textColor: "#222",
       imgSrc: "icons/typescript.svg",
+   },
+   {
+      id: 15,
+      text: "Go",
+      bgColor: "fff",
+      textColor: "#1ecbe1",
+      imgSrc: "icons/golang.svg",
    },
 ]

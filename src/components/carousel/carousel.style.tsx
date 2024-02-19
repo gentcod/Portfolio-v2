@@ -2,10 +2,15 @@ import styled from "styled-components";
 import { devices } from "../../dev-data/media-queries";
 
 export const Container = styled.div`
+   height: 70vh;
    width: 100%;
    overflow: hidden;
    margin: 0 auto;
    margin-bottom: 2rem;
+
+   @media only screen and ${devices.tabLand} {
+      height: fit-content;
+   }
 `
 
 export const FrameOuter = styled.div`
@@ -20,7 +25,6 @@ export const FrameOuter = styled.div`
    @media only screen and ${devices.phone} {
       height: 60rem;
    }
-
 `
 
 export const CarourselHeader = styled.h3`
@@ -46,7 +50,7 @@ export const FramerInner = styled.div`
    top: 50%;
    left: 50%;
 
-   @media only screen and ${devices.phone} {
+   @media only screen and ${devices.tabLand} {
       height: auto;
    }
 `

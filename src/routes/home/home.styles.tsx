@@ -1,5 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { devices } from "../../dev-data/media-queries";
+
+export const ScrollUp = keyframes`
+   0% {
+      transform: translateY(50%);
+      opacity: 0;
+   }
+   100% {
+      transform: translateY(0);
+      opacity: 1;
+   }
+`
 
 export const HomeContainer = styled.div`
    width: 100%;
@@ -18,6 +29,7 @@ export const HomeContentContainer = styled.div`
    width: 90%;
    margin: 0 auto;
    cursor: pointer;
+   animation: ${ScrollUp} 1.5s ease;
 
    @media only screen and ${devices.tabLand} {
       flex-direction: column-reverse;

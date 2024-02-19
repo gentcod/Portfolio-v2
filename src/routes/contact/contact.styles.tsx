@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { devices } from "../../dev-data/media-queries";
+import { ScrollUp } from "../home/home.styles";
+
 
 export const ContactPageContainer = styled.div`
    height: 100vh;
@@ -11,6 +13,7 @@ export const ContactPageContainer = styled.div`
    padding: 2rem 6rem;
    margin-bottom: 2rem;
    position: relative;
+   animation: ${ScrollUp} 1.5s ease;
 
   @media only screen and ${devices.tabLand} {
     height: auto;

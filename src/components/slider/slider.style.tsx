@@ -1,5 +1,6 @@
 import styled, {keyframes} from "styled-components";
 import { devices } from "../../dev-data/media-queries";
+import { moveLeft, moveRight, CarouselProp} from "../carousel webproject/carousel-webproject.style";
 
 export const CarouselRotate = keyframes`
    0% {
@@ -44,44 +45,80 @@ export const Shake = keyframes`
    }
 `
 
+export const Container = styled.div`
+  position: relative;
+  height: 100%;
+
+  @media only screen and ${devices.tabLand} {
+    height: fit-content;
+  }
+`;
+
+export const InnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rem;
+
+  @media only screen and ${devices.tabLand} {
+    padding: 0;
+ }
+`;
+
 export const SliderContainer = styled.div`
   height: 100%;
-  display: flex;
-  column-gap: 5rem;
-  align-items: center;
-  overflow: hidden;
   width: 100%;
-
-  @media only screen and ${devices.phone} {
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    justify-items: center;
-    row-gap: 3rem;
-    column-gap: 3rem;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5rem;
 `
 
 export const SliderImage = styled.img`
+  display: none;
+  object-fit: contain;
   width: 35rem;
-  height: 35rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  scroll-snap-align: center;
+  height: 42rem;
   cursor: pointer;
+  margin-bottom: 1rem;
 
   &:hover {
    animation: ${Shake} 1.5s ease
   }
 
   @media only screen and ${devices.tabLand} {
-    width: 15rem;
-    height: 15rem;
+    width: 25rem;
+    height: 25rem;
   }
+`;
 
-  @media only screen and ${devices.phone} {
-    width: 10rem;
-    height: 10rem;
-  }
+export const CurrentSliderImage = styled(SliderImage)<CarouselProp>`
+  display: flex;
+  ${({start}) => start ? moveRight : moveLeft};
+`;
+
+export const DotContainer = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .6rem;
+  bottom: -3rem;
+
+  @media only screen and ${devices.tabLand} {
+    padding: 0;
+ }
+`
+
+export const Dot = styled.span`
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #000;
+  cursor: pointer;
+  `
+  // order: ${orderPos};
+  
+export const CurrentDot = styled(Dot)`
+  background-color: white;
 `;

@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { devices } from "../../dev-data/media-queries";
+import { ScrollUp } from "../home/home.styles";
 
 export const Container = styled.div`
    width: 100%;
    display: flex;
    flex-direction: column;
    row-gap: 3rem;
+   animation: ${ScrollUp} 1.5s ease;
 `
 
 export const AboutStack = styled.div`

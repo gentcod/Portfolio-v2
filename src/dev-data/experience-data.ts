@@ -26,7 +26,7 @@ export const experienceData: ExperienceData = [
    {
       id: 3,
       companyName: 'Grox',
-      role: 'Virtual Assiatant',
+      role: 'Virtual Assiatant - Software Developer',
       desc: 'I worked with an agency focused on E-Commerce Conversion Rate Optimization. I helped review websites based on user interfaces and user experience. Evaluating the quality of the websites and how they are able to convey business purposes to their customers. Automating emailing and response to potential customers.',
       color: '#f1c50e'
    }
