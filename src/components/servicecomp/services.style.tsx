@@ -40,9 +40,9 @@ export const Service = styled.div`
       transform: scale(1.08) translateY(-1rem);
    }
 
-   @media only screen and ${devices.phone} {
-      height: 15rem;
-   }
+   // @media only screen and ${devices.phone} {
+   //    height: 15rem;
+   // }
 `;
 
 export const ServiceHeader = styled.h3`
