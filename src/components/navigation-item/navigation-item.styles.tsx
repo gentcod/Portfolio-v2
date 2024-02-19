@@ -5,6 +5,7 @@ export const NavigationItemContainer = styled(Link)`
    padding: 1rem;
    width: 100%;
    font-weight: 700;
+   transition: all 1.2s ease;
 
    &:hover {
       background-color: #45a25a;

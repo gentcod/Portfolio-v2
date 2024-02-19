@@ -1,63 +1,75 @@
-import { SliderContainer, SliderImage } from "./slider.style";
+import { useState } from "react";
+import {
+  Container,
+  CurrentDot,
+  CurrentSliderImage,
+  Dot,
+  DotContainer,
+  InnerContainer,
+  SliderContainer,
+  SliderImage,
+} from "./slider.style";
+import { ReactComponent as ArrowLeft } from '../../assets/arrow-left.svg';
+import { ReactComponent as ArrowRight } from '../../assets/arrow-right.svg';
 
 type SliderImageProp = {
    id: number;
    imgSrc: string;
-}[]
+ }[];
 
-const sliderData: SliderImageProp = [
-   {
-      id: 0,
-      imgSrc: 'https://i.ibb.co/6g72ZMR/asset-1.png'
-   },
-   {
-      id: 1,
-      imgSrc: 'https://i.ibb.co/Jqnx760/asset-2.png'
-   },
-   {
-      id: 2,
-      imgSrc: 'https://i.ibb.co/xsDsX1G/asset-3.png'
-   },
-   {
-      id: 3,
-      imgSrc: 'https://i.ibb.co/8sJ54G1/asset-4.png'
-   },
-   {
-      id: 4,
-      imgSrc: 'https://i.ibb.co/0YfhD1G/asset-5.png'
-   },
-   {
-      id: 5,
-      imgSrc: 'https://i.ibb.co/pLBJwNk/irewolede-asooke.png'
-   },
-   {
-      id: 6,
-      imgSrc: 'https://i.ibb.co/Qr6W87m/flyer.png'
-   },
-   {
-      id: 7,
-      imgSrc: 'https://i.ibb.co/7y3cfpC/dog-art.jpg'
-   },
-   {
-      id: 8,
-      imgSrc: 'https://i.ibb.co/x5yYhnP/shoe-illustration.jpg'
-   },
-   {
-      id: 9,
-      imgSrc: 'https://i.ibb.co/7XD84Fx/penguin.jpg'
-   },
-]
+type SliderProp = {
+   sliderData: SliderImageProp
+}
 
-const Slider = () => {
-   return (
-      <SliderContainer>
-         {
-            sliderData.map(el => (
-               <SliderImage key={el.id} src={el.imgSrc}/>
-            ))
-         }
-      </SliderContainer>
-   )
+const Slider = ({sliderData}: SliderProp) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [slideStartPos, setSlideStartPos] = useState(true);
+
+  const handlePrevious = () => {
+    setCurrentSlide(
+      currentSlide === 0 ? sliderData.length - 1 : currentSlide - 1
+    );
+    setSlideStartPos(false);
+  };
+
+  const handleNext = () => {
+    setCurrentSlide(
+      currentSlide === sliderData.length - 1 ? 0 : currentSlide + 1
+    );
+    setSlideStartPos(true);
+  };
+
+  const handleSelect = (index: number) => {
+    setCurrentSlide(index);
+    index < currentSlide ? setSlideStartPos(false) : setSlideStartPos(true)
+  };
+
+  return (
+    <Container>
+      <InnerContainer>
+        <ArrowLeft onClick={() => handlePrevious()} style={{fill: "white", border: "none", outline: "none"}} />
+        <SliderContainer>
+          {sliderData.map((el) =>
+            currentSlide === el.id ? (
+              <CurrentSliderImage key={el.id} src={el.imgSrc} start={slideStartPos} />
+            ) : (
+              <SliderImage key={el.id} src={el.imgSrc} />
+            )
+          )}
+          <DotContainer>
+              {sliderData.map((el) =>
+              currentSlide === el.id ? (
+                <CurrentDot key={el.id}/>
+              ) : (
+                <Dot onClick={() => handleSelect(el.id)} key={el.id}/>
+              )
+              )}
+          </DotContainer>
+        </SliderContainer>
+        <ArrowRight onClick={() => handleNext()} style={{fill: "white", border: "none", outline: "none"}} />
+      </InnerContainer>
+    </Container>
+  );
 };
 
 export default Slider;
