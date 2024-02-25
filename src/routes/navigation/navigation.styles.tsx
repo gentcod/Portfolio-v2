@@ -10,6 +10,7 @@ export const NavigationContainer = styled.div`
 
    @media only screen and ${devices.phone} {
       margin-bottom: 1rem;
+      padding: 1rem;
    }
 `;
 

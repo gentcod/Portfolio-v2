@@ -45,6 +45,10 @@ export const SubTopRightContainer = styled.div`
    flex-direction: column;
    margin: auto 0;
    row-gap: 2rem;
+
+   @media only screen and ${devices.tabPort} {
+      width: auto;
+   }
 `
 
 export const Heading = styled.h3`
