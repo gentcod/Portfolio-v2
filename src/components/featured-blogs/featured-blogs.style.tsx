@@ -33,60 +33,27 @@ export const Container = styled.div<FeatureProps>`
    ${({inview}) => inview && reveal}
 `;
 
-export const FeaturedImageOverLay = styled.div`
-   background-color: rgba(0,0,0, .6);
-   backdrop-filter: blur(3px);
-   width: 100%;
-   height: 12rem;
-   position: absolute;
-   bottom: -12rem;
-   transition: all 1s ease;
-   z-index: 10;
-
+export const BlogsContainer = styled.div`
    display: flex;
+   flex-wrap: wrap;
    justify-content: center;
-   align-items: center;
-
-   @media only screen and ${devices.tabPort} {
-      height: 6rem;
-      bottom: 0;
-   }
-`;
-
-export const FeaturedTitle = styled.p`
-   display: inline-block;
-   font-size: 1.4rem;
-   color: #fff;
-   padding: 1rem;
-   border-bottom: 2px solid #45a25a;
-   font-weight: 1000;
-   z-index: 5;
-
-   @media only screen and ${devices.tabPort} {
-      font-size: 1.2rem;
-   }
+   row-gap: 2rem;
+   column-gap: 2rem;
 `;
    
-export const ImageSkewContainer = styled(Link)`
-   height: 15rem;
-   width: 70%;
+export const Blog = styled.div`
+   height: 28rem;
    margin: 0 auto;
    border-radius: 1rem;
    backface-visibility: hidden;
    overflow: hidden;
    position: relative;
-   transform: skewX(-15deg);
    transition: .8s all ease;
+   flex: 0 0 30%;
+   box-shadow: 0 .5rem 1rem rgba(2, 2, 2, .2);
 
    &:hover {
-      transform: scale(1.05);
-      height: 35rem;
-      width: 100%;
-      border-bottom: 2px solid #45a25a;
-   }
 
-   &:hover ${FeaturedImageOverLay} {
-      bottom: 0;
    }
 
    @media only screen and ${devices.tabPort} {
@@ -96,23 +63,77 @@ export const ImageSkewContainer = styled(Link)`
          height: 15rem;
          border: 2px solid #45a25a;
       }
-      
-      &:hover ${FeaturedImageOverLay} {
-      }
    }
 `;
 
-export const FeaturedImage = styled.img`
+export const BlogContentCon = styled.div`
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding-bottom: 1rem;
+`;
+
+export const BlogThumnail = styled.img`
    object-fit: cover;
-   height: 30rem;
-   width: 100rem;
+   height: 50%;
+   weight: 100%;
    backface-visibility: hidden;
 
    @media only screen and ${devices.tabPort} {
       height: 15rem;
-      width: 30rem;
    }
 `;
+
+export const BlogTitle = styled.p`
+   display: inline-block;
+   font-size: 1.4rem;
+   text-align: left;
+   color: #000;
+   padding: .5rem;
+   border-bottom: 1px solid rgba(69, 162, 91, 0.2);;
+   font-weight: 1000;
+   z-index: 5;
+
+   @media only screen and ${devices.tabPort} {
+      font-size: 1.2rem;
+   }
+`;
+
+export const BlogSummary = styled.p`
+   height: 6rem;
+   display: inline-block;
+   font-size: 1.2rem;
+   text-align: left;
+   color: #8f8f8f;
+   padding: .5rem;
+   font-weight: 300;
+   z-index: 5;
+   overflow: hidden;
+
+   @media only screen and ${devices.tabPort} {
+      font-size: 1rem;
+   }
+`;
+
+export const ReadButton = styled(Link)`
+   color: #45a25a;
+   height: 2rem;
+   font-size: 1.2rem;
+   width: 8rem;
+   border: none;
+   border-radius: .8rem;
+   background-color: transparent;
+   margin-top: 1rem;
+   margin-left: .5rem;
+   border-bottom: 1px solid transparent;
+   transition: .8s all ease;
+
+   &:hover {
+      border-bottom: 1px solid #45a25a;
+   }
+`;
+
 
 export const ExploreOverlay = styled.div`
    background-color: white;
@@ -157,6 +178,4 @@ export const ExploreButton = styled(Link)`
       background-color: #45a25a;
    }
 `;
-
-
 

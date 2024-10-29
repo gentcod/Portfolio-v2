@@ -35,11 +35,11 @@ const ContactForm = () => {
    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const {name, value} = e.target;
       setFormData({...formData, [name]: value});
-   }
+   };
 
    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      window.open(`mailto:drelanorgent@gmail.com?subject=${formData.heading}&body=Hello Oyefule, I'm ${formData.name}, ${formData.message}`)
+      window.open(`mailto:oyefuleoluwatayo@gmail.com?subject=${formData.heading}&body=Hello Oyefule, I'm ${formData.name}, ${formData.message}`)
    }
 
    return (

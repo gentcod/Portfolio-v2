@@ -4,7 +4,7 @@ const Logo = () => {
    return (
       <LogoContainer to={'/'}>
             <LogoName>Oyefule Oluwatayo</LogoName>
-            <LogoDescription>Web Developer, Graphics Designer</LogoDescription>
+            <LogoDescription>Product-Minded Software Engineer</LogoDescription>
       </LogoContainer>
    )
 }

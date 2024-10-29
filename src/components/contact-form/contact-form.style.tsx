@@ -6,14 +6,14 @@ export const FormContainer = styled.form`
    height: auto;
    display: flex;
    flex-direction: column;
-   row-gap: 2rem;
+   row-gap: 1rem;
    justify-contents: center;
    margin: 0 auto;
-   margin-top: 8rem;
+   margin-top: 2rem;
 
    background-color: rgba(34,34,34, .2);
    backdrop-filter: blur(5px);
-   padding: 3rem 5rem;
+   padding: 2rem 5rem;
    border: 1px solid white;
    border-radius: 1rem;
 
@@ -46,7 +46,7 @@ export const FormLabel = styled.label`
 
 export const FormInput = styled.input`
    max-width: 100%;
-   height: 4rem;
+   height: 3rem;
    color: white;
    border-radius: 1rem;
    border: none;
@@ -63,7 +63,7 @@ export const FormInput = styled.input`
 
 export const FormMessage = styled.textarea`
    max-width: 100%;
-   max-height: 8rem;
+   max-height: 6rem;
    color: white;
    border-radius: 1rem;
    border: none;
@@ -83,7 +83,7 @@ export const Heading = styled.p`
    color: white;
    font-weight: 1000;
    text-align: left;
-   margin-top: 3rem;
+   margin-top: 1rem;
 `
 
 export const SubHeading = styled(Heading)`
