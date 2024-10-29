@@ -40,8 +40,9 @@ export const SubHeading = styled.p`
 
 export const ExperienceContainer = styled.div`
    display: flex;
-   flex-direction: row;
+   flex-wrap: wrap;
    column-gap: 3rem;
+   row-gap: 2rem;
    justify-content: center;
    justify-items: center;
    justify-content: center;

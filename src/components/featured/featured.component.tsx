@@ -14,18 +14,24 @@ type FeaturedImagesProp = {
 const data: FeaturedImagesProp = [
    {
       id: 0,
+      link: 'https://gentcod-foodie-v2.netlify.app',
+      title: 'Foodie: Food Recipe and Few Restarant',
+      imgSrc: 'https://res.cloudinary.com/douvgvdla/image/upload/v1730220702/foodie-other-recipes-main_cae84l.png',
+   },
+   {
+      id: 1,
       link: 'https://gentcod-foodie.netlify.app',
       title: 'Foodie: Food.com prototype',
       imgSrc: 'https://i.ibb.co/KWB0n4G/foodie.png',
    },
    {
-      id: 1,
+      id: 2,
       link: 'https://gentcod-mapty.netlify.app',
       title: 'Mapty: A workout map app',
       imgSrc: 'https://i.ibb.co/9qsJVjj/mapty.png',
    },
    {
-      id: 2,
+      id: 3,
       link: 'https://gentcod-natours.netlify.app',
       title: 'Natours: A tourism booking homepage',
       imgSrc: 'https://i.ibb.co/LNX980G/natours.png',

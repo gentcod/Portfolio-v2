@@ -14,7 +14,7 @@ const Footer = () => {
                   <FooterImage src={'https://i.ibb.co/Wk68wmD/my-image.jpg'}/>
                </FooterImageContainer>
             </FooterImageLineContainer>
-            <Button link={`mailto:drelanorgent@gmail.com?subject=${mailSubject}&body=${mailBodySocial}`} value="Hire Me"/>
+            <Button link={`mailto:oyefuleoluwatayo@gmail.com?subject=${mailSubject}&body=${mailBodySocial}`} value="Hire Me"/>
          </FooterUpper>
 
          <FooterLower>

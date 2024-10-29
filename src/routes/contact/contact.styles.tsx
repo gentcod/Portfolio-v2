@@ -4,7 +4,7 @@ import { ScrollUp } from "../home/home.styles";
 
 
 export const ContactPageContainer = styled.div`
-   height: 100vh;
+   height: fit-content;
    diaplay: flex;
    flex-direction: row;
    background-image: url("https://i.ibb.co/vV6rhNs/nature-green-blue.jpg");

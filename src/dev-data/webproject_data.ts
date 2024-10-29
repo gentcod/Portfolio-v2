@@ -10,6 +10,15 @@ type WebProjectData = {
 export const webprojectData: WebProjectData = [
    {
       id: 0,
+      heading: 'Foodie',
+      subheading: 'Curated Food Recipe website',
+      description: 'A Full-stack Web Application with a containerized Backend Service for a food recipe service, utilizing C#, .Net Frameworks, React (TypeScript), Redux, and SQLite.',
+      imgSrc: 'https://res.cloudinary.com/douvgvdla/image/upload/v1730220702/foodie-other-recipes-main_cae84l.png',
+      link: 'https://gentcod-foodie-v2.netlify.app',
+   },
+
+   {
+      id: 1,
       heading: 'Capstone Clothing',
       subheading: 'E-commerce website',
       description: 'Built using React, Redux for state management, Firebase for Data storage, authentication and authorization. Stripe for payment ',
@@ -18,7 +27,7 @@ export const webprojectData: WebProjectData = [
    },
 
    {
-      id: 1,
+      id: 2,
       heading: 'Mapty Map App',
       subheading: 'Workout web app',
       description: 'It uses Leaflet which is a map api, it was built using vanilla JavaScript',
@@ -27,7 +36,7 @@ export const webprojectData: WebProjectData = [
    },
 
    {
-      id: 2,
+      id: 3,
       heading: 'Forkify',
       subheading: 'Food Recipe Web Application',
       description: 'Built using Vanilla JavaScript, using an API to get recipe data',
@@ -36,7 +45,7 @@ export const webprojectData: WebProjectData = [
    },
 
    {
-      id: 3,
+      id: 4,
       heading: 'Foodie',
       subheading: 'Food recipe homepage',
       description: 'A prototype of Food.com. Built using HTML, CSS and JavaScript. It was my first personal web project which I used to get familar with HTML and CSS. It has a light and dark theme',
@@ -45,7 +54,7 @@ export const webprojectData: WebProjectData = [
    },
 
    {
-      id: 4,
+      id: 5,
       heading: 'HoMov',
       subheading: 'Movie website homepage',
       description: 'A static website built using HTML, CSS and JavaScript. Has a dark theme and light theme',
@@ -54,7 +63,7 @@ export const webprojectData: WebProjectData = [
    },
 
    {
-      id: 5,
+      id: 6,
       heading: 'Natours',
       subheading: 'Tourism booking homepage',
       description: 'A static website built using only HTML and CSS. It focusing on creating a good UI with a good number of interactions',

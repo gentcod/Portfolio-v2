@@ -8,7 +8,7 @@ import About from "./routes/about/about.component";
 // import Pdf from "./routes/resume/resume.component";
 
 import "./App.css";
-import "./sass/main.scss";
+// import "./sass/main.scss";
 
 function App() {
   return (

@@ -25,8 +25,7 @@ export const HomeContentContainer = styled.div`
    flex-direction: row;
    align-content: space-between;
    justify-content: space-between;
-   height: 80%;
-   width: 90%;
+   // height: 80%;
    margin: 0 auto;
    cursor: pointer;
    animation: ${ScrollUp} 1.5s ease;

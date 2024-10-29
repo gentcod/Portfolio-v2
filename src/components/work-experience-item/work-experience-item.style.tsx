@@ -13,6 +13,7 @@ export const Container = styled.div`
    flex-direction: column;
    row-gap: 1rem;
    color: white;
+   flex: 0 35%;
 
    @media only screen and ${devices.phone} {
       height: auto;
