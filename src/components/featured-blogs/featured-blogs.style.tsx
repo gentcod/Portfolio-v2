@@ -57,12 +57,8 @@ export const Blog = styled.div`
    }
 
    @media only screen and ${devices.tabPort} {
-      transform: skewX(0);
-
-      &:hover {
-         height: 15rem;
-         border: 2px solid #45a25a;
-      }
+      flex: 0 80%;
+      height: 20rem;
    }
 `;
 
@@ -80,9 +76,9 @@ export const BlogThumnail = styled.img`
    weight: 100%;
    backface-visibility: hidden;
 
-   @media only screen and ${devices.tabPort} {
-      height: 15rem;
-   }
+   // @media only screen and ${devices.tabPort} {
+   //    height: 20%;
+   // }
 `;
 
 export const BlogTitle = styled.p`

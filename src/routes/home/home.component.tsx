@@ -11,7 +11,7 @@ const Home = () => {
          <HomeContentContainer>
             <HomeIntro>
                <Name>Oyefule Oluwatayo</Name>
-               <Title>Software Developer</Title>
+               <Title>Software Engineer</Title>
                <Description>Hey there! I have firm interest in building cloud native applications. Providing software solutions that impact the positive outlook for businesses and their customers. I build and develop digital solutions that optimizes user experience and efficiency.</Description>
                <SocialsHeader>Contact Me:</SocialsHeader>
                <ContactTabContainer/>

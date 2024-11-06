@@ -110,7 +110,7 @@ export const FeaturedImage = styled.img`
 
    @media only screen and ${devices.tabPort} {
       height: 15rem;
-      width: 30rem;
+      width: 95%;
    }
 `;
 

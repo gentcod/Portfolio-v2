@@ -43,7 +43,7 @@ export const HomeIntro = styled.div`
 `;
 
 export const Name = styled.h1`
-   font-size: 2rem;
+   font-size: 3rem;
    text-align: left;
    font-weight: 500;
    letter-spacing: .5rem;
@@ -56,14 +56,14 @@ export const Name = styled.h1`
 `
 
 export const Title = styled.h2`
-   font-size: 1.2rem;
+   font-size: 2.8rem;
    text-align: left;
    font-weight: 300;
    margin-bottom: 1rem;
 `
 
 export const Description = styled.p`
-   font-size: 3.6rem;
+   font-size: 2rem;
    text-align: left;
    font-weight: 300;
    line-height: 1.5;

@@ -15,7 +15,7 @@ export const ServicesContainer = styled.div`
 
    column-gap: 3rem;
 
-   @media only screen and ${devices.phone} {
+   @media only screen and ${devices.tabPort} {
       flex-direction: column;
       row-gap: 1rem;
    }
@@ -38,6 +38,7 @@ export const Service = styled.div`
 
    &:hover {
       transform: scale(1.08) translateY(-1rem);
+      z-index: 100;
    }
 
    // @media only screen and ${devices.phone} {
