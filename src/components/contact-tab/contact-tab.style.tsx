@@ -5,7 +5,7 @@ export const Tab = styled.a`
    width: 10rem;
    display: flex;
    padding: 1rem 1rem;
-   background-color: transparent;
+   background-color: rgba(247, 252, 248, 0.2);;
    border-radius: 1rem;
    border-bottom: 3px solid #45a25a;
    transition: all .8s ease;
@@ -34,6 +34,6 @@ export const TabLogo = styled.img`
 export const TabText = styled.p`
    font-size: 1.2rem;
    font-weight: 700;
-   color: #222;
+   color: #fff;
    margin-top: .3rem;
 `

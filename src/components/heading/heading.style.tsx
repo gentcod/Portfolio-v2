@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { devices } from "../../dev-data/media-queries";
 
 export const FeaturedHeader = styled.h2`
-   color: #222;
+   color: #e8e8e8;
    text-transform: uppercase;
    text-align: left;
    font-weight: 100;

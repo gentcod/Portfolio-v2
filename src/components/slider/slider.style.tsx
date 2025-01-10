@@ -1,6 +1,10 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { devices } from "../../dev-data/media-queries";
-import { moveLeft, moveRight, CarouselProp} from "../carousel webproject/carousel-webproject.style";
+import {
+  moveLeft,
+  moveRight,
+  CarouselProp,
+} from "../carousel-webproject/carousel-webproject.style";
 
 export const CarouselRotate = keyframes`
    0% {
@@ -21,7 +25,7 @@ export const CarouselRotate = keyframes`
    100% {
      transform: translateX(-500%);
    }
-`
+`;
 
 export const Shake = keyframes`
    0% {
@@ -43,7 +47,7 @@ export const Shake = keyframes`
    100% {
       transform: rotate(0) scale(1);
    }
-`
+`;
 
 export const Container = styled.div`
   position: relative;
@@ -62,7 +66,7 @@ export const InnerContainer = styled.div`
 
   @media only screen and ${devices.tabLand} {
     padding: 0;
- }
+  }
 `;
 
 export const SliderContainer = styled.div`
@@ -72,7 +76,7 @@ export const SliderContainer = styled.div`
   justify-content: center;
   align-items: center;
   column-gap: 5rem;
-`
+`;
 
 export const SliderImage = styled.img`
   display: none;
@@ -83,7 +87,7 @@ export const SliderImage = styled.img`
   margin-bottom: 1rem;
 
   &:hover {
-   animation: ${Shake} 1.5s ease
+    animation: ${Shake} 1.5s ease;
   }
 
   @media only screen and ${devices.tabLand} {
@@ -94,7 +98,7 @@ export const SliderImage = styled.img`
 
 export const CurrentSliderImage = styled(SliderImage)<CarouselProp>`
   display: flex;
-  ${({start}) => start ? moveRight : moveLeft};
+  ${({ start }) => (start ? moveRight : moveLeft)};
 `;
 
 export const DotContainer = styled.div`
@@ -102,23 +106,23 @@ export const DotContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: .6rem;
+  column-gap: 0.6rem;
   bottom: -3rem;
 
   @media only screen and ${devices.tabLand} {
     padding: 0;
- }
-`
+  }
+`;
 
 export const Dot = styled.span`
-  width: 1rem;
-  height: 1rem;
+  width: .6rem;
+  height: .6rem;
   border-radius: 50%;
   background-color: #000;
   cursor: pointer;
-  `
-  // order: ${orderPos};
-  
+`;
+// order: ${orderPos};
+
 export const CurrentDot = styled(Dot)`
   background-color: white;
 `;

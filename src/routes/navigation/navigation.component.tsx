@@ -24,6 +24,10 @@ const navData: NavData = [
   },
   {
     id: 2,
+    name: "blogs",
+  },
+  {
+    id: 3,
     name: "explore",
   },
 ];

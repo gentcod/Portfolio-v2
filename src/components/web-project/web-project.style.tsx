@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { devices } from "../../dev-data/media-queries";
 
 export const Container = styled.div`
-   width: 80%;
    margin: 0 auto;
    padding: 2rem;
    border-bottom: 1px solid #45a25a;
@@ -73,7 +72,7 @@ export const SubHeading = styled.h5`
 `
 
 export const Description = styled.p`
-   font-size: 1.4rem;
+   font-size: 1.3rem;
 
    @media only screen and ${devices.phone} {
       font-size: 1.2rem;
@@ -111,7 +110,6 @@ export const ProjectLink = styled(Link)`
 
 export const Image = styled.img`
    height: 40rem;
-   width: 65rem;
    object-fit: cover;
    border-radius: 2rem;
    border: 5px solid #0d1e11;

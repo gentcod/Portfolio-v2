@@ -21,7 +21,7 @@ export const reveal = css`
 
 export const Container = styled.div<FeatureProps>`
    padding: 3rem 5rem;
-   background-color: #f7fcf8;
+   background-color:rgba(247, 252, 248, 0.1);
    margin-top: 2rem;
    border-top: 1px solid #45a25a;
    border-bottom: 1px solid #45a25a;
@@ -51,6 +51,7 @@ export const Blog = styled.div`
    transition: .8s all ease;
    flex: 0 0 30%;
    box-shadow: 0 .5rem 1rem rgba(2, 2, 2, .2);
+   border-bottom: 2px solid #45a25a;
 
    &:hover {
 
@@ -68,6 +69,7 @@ export const BlogContentCon = styled.div`
    flex-direction: column;
    justify-content: space-between;
    padding-bottom: 1rem;
+   background-color:rgb(211, 209, 209);
 `;
 
 export const BlogThumnail = styled.img`
@@ -87,7 +89,7 @@ export const BlogTitle = styled.p`
    text-align: left;
    color: #000;
    padding: .5rem;
-   border-bottom: 1px solid rgba(69, 162, 91, 0.2);;
+   border-bottom: 1px solid rgba(69, 162, 91, 0.5);;
    font-weight: 1000;
    z-index: 5;
 
@@ -101,7 +103,7 @@ export const BlogSummary = styled.p`
    display: inline-block;
    font-size: 1.2rem;
    text-align: left;
-   color: #8f8f8f;
+   color: #333;
    padding: .5rem;
    font-weight: 300;
    z-index: 5;
@@ -158,6 +160,7 @@ export const ExploreButton = styled(Link)`
    overflow: hidden;
    position: relative;
    transition: .8s all ease;
+   color: #45a25a;
 
    &:hover ${ExploreOverlay}{
       left: 0;

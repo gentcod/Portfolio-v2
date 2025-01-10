@@ -8,6 +8,7 @@ import About from "./routes/about/about.component";
 // import Pdf from "./routes/resume/resume.component";
 
 import "./App.css";
+import Blogs from "./routes/blog/blog.component";
 // import "./sass/main.scss";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="explore" element={<Explore />} />
           <Route path="about" element={<About />} />
+          <Route path="blogs" element={<Blogs />} />
           {/* <Route path="resume" element={<Pdf />}/> */}
         </Route>
       </Routes>

@@ -13,7 +13,8 @@ export const Container = styled.div`
 export const AboutStack = styled.div`
    display: flex;
    padding: 5rem 3rem;
-   background-color: #f7fcf8;
+   background-color:rgba(247, 252, 248, 0.1);
+
 
    @media only screen and ${devices.phone} {
      flex-direction: column;
@@ -43,7 +44,6 @@ export const AboutHeading = styled.h1`
 `
 
 export const AboutSummary = styled.p`
-   color: #666;
    font-size: 1.8rem;
    font-weight: 300;
    word-spacing: 1rem;

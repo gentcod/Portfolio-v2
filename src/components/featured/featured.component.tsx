@@ -30,12 +30,6 @@ const data: FeaturedImagesProp = [
       title: 'Mapty: A workout map app',
       imgSrc: 'https://i.ibb.co/9qsJVjj/mapty.png',
    },
-   {
-      id: 3,
-      link: 'https://gentcod-natours.netlify.app',
-      title: 'Natours: A tourism booking homepage',
-      imgSrc: 'https://i.ibb.co/LNX980G/natours.png',
-   },  
 ];
 
 const Featured = () => {
@@ -47,7 +41,7 @@ const Featured = () => {
 
    return (
       <Container onScroll={() => handlerInView()} inview={inview}>
-         <Heading title='Featured work samples'/>
+         <Heading title='Featured Web Projects'/>
          {data.map(el =>
          <ImageSkewContainer key={el.id} to={el.link}>
             <FeaturedImageOverLay>

@@ -15,7 +15,7 @@ export const ScrollUp = keyframes`
 export const HomeContainer = styled.div`
    width: 100%;
    padding: 0 2rem;
-   background-color: #fff;
+   background-color: #111;
 `;
 
 export const HomeContentContainer = styled.div`
