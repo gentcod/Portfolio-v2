@@ -21,7 +21,7 @@ export const reveal = css`
 
 export const Container = styled.div<FeatureProps>`
    padding: 3rem 5rem;
-   background-color: #f7fcf8;
+   background-color:hsla(132, 45.50%, 97.80%, 0.5);
    margin-top: 2rem;
    border-top: 1px solid #45a25a;
    border-bottom: 1px solid #45a25a;

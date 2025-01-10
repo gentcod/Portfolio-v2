@@ -39,9 +39,9 @@ export const Container = styled.div`
   position: relative;
   width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
   margin-bottom: 2rem;
-  background-color: #e8e8e8;
+  background-color:rgba(247, 252, 248, 0.15);
 `
    
 export const InnerContainer = styled.div`
@@ -98,8 +98,8 @@ export const DotContainer = styled.div`
 `
 
 export const Dot = styled.span`
-  width: 1rem;
-  height: 1rem;
+  width: .6rem;
+  height: .6rem;
   border-radius: 50%;
   background-color: rgb(69, 162, 90);
   cursor: pointer;

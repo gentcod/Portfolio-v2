@@ -10,7 +10,7 @@ interface TabProp {
 const ContactTab = ({text, link, image, linkLabel} : TabProp) => {
    return (
       <Tab href={link} target="_blank" aria-label={linkLabel}>
-         <TabLogo src={image}/>
+         <TabLogo src={image} alt={text}/>
          <TabText>{text}</TabText>
       </Tab>
    )

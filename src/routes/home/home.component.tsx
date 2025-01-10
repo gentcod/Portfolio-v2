@@ -1,4 +1,5 @@
 
+import Projects from "../../components/backend-projects/backend.component";
 import ContactTabContainer from "../../components/contact-tab-container/contact-tab-container.component";
 import FeaturedBlogs from "../../components/featured-blogs/featured-blogs.component";
 import Featured from "../../components/featured/featured.component";
@@ -20,6 +21,7 @@ const Home = () => {
                <HomeImage src={'https://i.ibb.co/0CTV9JQ/flat-art.png'}/>
             </HomeImageContainer>
          </HomeContentContainer>
+         <Projects/>
          <Featured/>
          <Services/>
          <FeaturedBlogs/>

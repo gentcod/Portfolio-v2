@@ -6,10 +6,10 @@ export const NavigationItemContainer = styled(Link)`
    width: 100%;
    font-weight: 700;
    transition: all 1.2s ease;
+   border-radius: 1rem;
 
    &:hover {
       background-color: #45a25a;
-      border-radius: 1rem;
       color: white;
    }
 `;
@@ -19,6 +19,7 @@ export const NavigationItemSpan = styled.span`
    letter-spacing: .2rem;
    text-transform: uppercase;
    margin: auto 0;
+   color: #fff;
 `;
 
 export const NavigationItemSpanActive = styled(NavigationItemSpan)`
