@@ -71,8 +71,9 @@ export const SliderContainer = styled.div`
 export const Slide = styled.div`
   display: none;
   padding: 2rem;
-
+  
   @media only screen and ${devices.phone} {
+    width: 100%;
     display: flex;
   }
 `;

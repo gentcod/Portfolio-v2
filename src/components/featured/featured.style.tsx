@@ -91,6 +91,8 @@ export const ImageSkewContainer = styled(Link)`
 
    @media only screen and ${devices.tabPort} {
       transform: skewX(0);
+      width: 100%;
+      height: 20rem;
 
       &:hover {
          height: 15rem;

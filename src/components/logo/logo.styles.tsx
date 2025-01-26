@@ -20,8 +20,9 @@ export const LogoContainer = styled(Link)`
       transform: scale(1.02);
    }
 
-   @media only screen and ${devices.phone} {
+   @media only screen and ${devices.tabPort} {
       max-width: 10rem;
+      height: fit-content;
    }
 `
 
@@ -36,6 +37,13 @@ export const LogoName = styled.div`
    margin-bottom: 1rem;
    padding-bottom: 2rem;
    border-bottom: 1px solid #fff;
+
+   @media only screen and ${devices.tabPort} {
+      height: fit-content;
+      padding-bottom: 1rem;
+      margin-bottom: 0;
+
+   }
 `
 
 export const LogoDescription = styled.div`
@@ -47,4 +55,9 @@ export const LogoDescription = styled.div`
    font-family: 'Lato', sans-serif;
    font-size: .8rem;
    font-weight: 300;
+
+   @media only screen and ${devices.tabPort} {
+      height: fit-content;
+      border-radius: 1rem;
+   }
 `

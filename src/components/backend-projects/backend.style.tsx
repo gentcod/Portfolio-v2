@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Container} from '../featured-blogs/featured-blogs.style'
 import { Link } from "react-router-dom";
+import { devices } from "../../dev-data/media-queries";
 
 export const ProjectsContainer = styled(Container)`
    background-color:rgba(247, 252, 248, 0.1);
@@ -35,17 +36,28 @@ export const ContentsBlock = styled(Link)`
       background-color:rgba(2, 2, 2, 0.3);
       transform: scale(1.1);
    }
+
+   @media only screen and ${devices.tabPort} {
+      height: fit-content;
+      width: 100%;
+      padding: 1rem;
+   }
 `;
 
 export const TagsContainer = styled.div`
    display: flex;
    align-items: center;
    justify-content: start;
-   column-gap: 1rem;
+   gap: 1rem;
    padding: .5rem 1rem;
+   flex-wrap: wrap;
+
+   @media only screen and ${devices.tabPort} {
+   }
 `;
 
 export const TagsHeading = styled.p`
+   padding: 1px .5rem;
    color: #111;
    text-transform: uppercase;
    text-align: left;
@@ -67,6 +79,10 @@ export const Tag = styled.p`
    font-size: 1rem;
    padding: 1px .5rem;
    border-radius: .8rem;
+
+   @media only screen and ${devices.tabPort} {
+      font-size: .9rem;
+   }
 `;
 
 export const StackTag = styled(Tag)`
