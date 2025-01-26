@@ -4,6 +4,7 @@ import {
    BlogTitle,
    ReadButton,
 } from "../../components/featured-blogs/featured-blogs.style";
+import { devices } from "../../dev-data/media-queries";
 
 type Props = {
    imageUrl: string;
@@ -32,6 +33,12 @@ export const BlogsHeading = styled.h2`
    letter-spacing: 1px;
    word-spacing: 1rem;
    font-family: "Rubik Vinyl", serif;
+
+   @media only screen and ${devices.tabPort} {
+      font-size: 2.4rem;
+      word-spacing: .2rem;
+
+   }
 `;
 
 export const SubHeading = styled.p`
@@ -39,6 +46,10 @@ export const SubHeading = styled.p`
    font-size: 1.2rem;
    font-weight: 100;
    font-family: "Playwrite AU SA", serif;
+   
+   @media only screen and ${devices.tabPort} {
+      width: 100%;
+   }
 `;
 
 export const SubTitile = styled(SubHeading)`
@@ -73,6 +84,11 @@ export const Featured = styled.div`
    justify-content: end;
    padding: 2rem;
    border-bottom: 3px solid #45a25a;
+
+   @media only screen and ${devices.tabPort} {
+      height: 20rem;
+      width: 100%;
+   }
 `;
 
 export const FeaturedContents = styled(Contents)`

@@ -64,11 +64,11 @@ const Projects = () => {
                <Description>{el.description}</Description>
                <StackContainer>
                   <StackHeading>STACK:</StackHeading>
-                  {el.stack.map(t => (<StackTag>{t}</StackTag>))}
+                  {el.stack.map((t,i) => (<StackTag key={i}>{t}</StackTag>))}
                </StackContainer>
                <TagsContainer>
                   <TagsHeading>TAGS:</TagsHeading>
-                  {el.tags.map(t => (<Tag>{t}</Tag>))}
+                  {el.tags.map((t,i) => (<Tag key={i}>{t}</Tag>))}
                </TagsContainer>
             </ContentsBlock>
          ))}
