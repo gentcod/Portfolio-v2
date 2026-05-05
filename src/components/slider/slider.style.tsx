@@ -126,3 +126,29 @@ export const Dot = styled.span`
 export const CurrentDot = styled(Dot)`
   background-color: white;
 `;
+
+export const GlassNavBtn = styled.button`
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: ${({ theme }) => theme.colors.textPrimary};
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.secondaryAccent};
+    color: #0d1e11;
+    transform: scale(1.1);
+    border-color: ${({ theme }) => theme.colors.secondaryAccent};
+  }
+
+  @media only screen and ${devices.phone} {
+    display: none;
+  }
+`;

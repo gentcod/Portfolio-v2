@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const FrameOuter = styled.div`
    width: 100%;
    height: 55rem;
-   background-color: #0d1e11;
+   background-color: ${({ theme }) => theme.colors.surface};
    margin-top: 2rem;;
    margin: auto;
    overflow: hidden;
@@ -28,7 +28,7 @@ export const FrameOuter = styled.div`
 `
 
 export const CarourselHeader = styled.h3`
-   color: #d1d1d1;
+   color: ${({ theme }) => theme.colors.textSecondary};
    text-transform: uppercase;
    text-align: left;
    font-weight: 100;

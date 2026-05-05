@@ -2,20 +2,18 @@ import styled from 'styled-components';
 import { devices } from '../../dev-data/media-queries';
 
 export const FormContainer = styled.form`
-   width: 60%;
+   width: 100%;
    height: auto;
    display: flex;
    flex-direction: column;
-   row-gap: 1rem;
-   justify-contents: center;
-   margin: 0 auto;
-   margin-top: 2rem;
+   row-gap: 1.5rem;
+   margin-top: 1rem;
 
-   background-color: rgba(34,34,34, .2);
-   backdrop-filter: blur(5px);
-   padding: 2rem 5rem;
-   border: 1px solid white;
-   border-radius: 1rem;
+   background-color: rgba(128, 128, 128, 0.05);
+   backdrop-filter: blur(10px);
+   padding: 3rem;
+   border: 1px solid ${({ theme }) => theme.colors.border};
+   border-radius: 1.5rem;
 
    transition: all .8s ease;
 
@@ -24,8 +22,8 @@ export const FormContainer = styled.form`
     }
 
    @media only screen and ${devices.phone} {
-     width: 95%;
-     margin-top: 1rem;
+     width: 100%;
+     padding: 2rem;
    }
 `
 
@@ -33,87 +31,86 @@ export const InputContainer = styled.div`
    display: flex;
    flex-direction: column;
    width: 100%;
-   margin: 0 auto;
 `
 
 export const FormLabel = styled.label`
    text-align: left;
    text-transform: capitalize;
-   margin: 1rem;
-   color: white;
+   margin-bottom: 0.5rem;
+   color: ${({ theme }) => theme.colors.textPrimary};
    font-size: 1rem;
+   font-weight: 500;
 `
 
 export const FormInput = styled.input`
-   max-width: 100%;
-   height: 3rem;
-   color: white;
-   border-radius: 1rem;
-   border: none;
-   background-color: rgba(225,225,225, .3);
+   width: 100%;
+   height: 3.5rem;
+   color: ${({ theme }) => theme.colors.textPrimary};
+   border-radius: 0.8rem;
+   border: 1px solid ${({ theme }) => theme.colors.border};
+   background-color: ${({ theme }) => theme.colors.background};
    outline: none;
    padding: 1rem;
-   transition: all .8s ease;
+   transition: all .3s ease;
 
    &:focus {
-      border-bottom: 3px solid #45a25a;
-      box-shadow: 0 .5rem 1rem rgba(255, 255, 255, .8)
+      border-color: ${({ theme }) => theme.colors.accent};
+      box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.accent}40;
    }
 `
 
 export const FormMessage = styled.textarea`
-   max-width: 100%;
-   max-height: 6rem;
-   color: white;
-   border-radius: 1rem;
-   border: none;
-   background-color: rgba(225,225,225, .3);
+   width: 100%;
+   min-height: 8rem;
+   color: ${({ theme }) => theme.colors.textPrimary};
+   border-radius: 0.8rem;
+   border: 1px solid ${({ theme }) => theme.colors.border};
+   background-color: ${({ theme }) => theme.colors.background};
    outline: none;
    padding: 1rem;
-   transition: all .8s ease;
+   transition: all .3s ease;
+   resize: vertical;
 
    &:focus {
-      border-bottom: 3px solid #45a25a;
-      box-shadow: 0 .5rem 1rem rgba(255, 255, 255, .8)
+      border-color: ${({ theme }) => theme.colors.accent};
+      box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.accent}40;
    }
 `;
 
 export const Heading = styled.p`
-   font-size: 4rem;
-   color: white;
-   font-weight: 1000;
+   font-size: 2.5rem;
+   color: ${({ theme }) => theme.colors.textPrimary};
+   font-weight: 800;
    text-align: left;
-   margin-top: 1rem;
 `
 
 export const SubHeading = styled(Heading)`
-   font-size: 1.8rem;
-   // margin-bottom: 2rem;
+   font-size: 1.2rem;
+   font-weight: 400;
+   color: ${({ theme }) => theme.colors.textSecondary};
+   margin-bottom: 1rem;
 `
 
 export const Button = styled.button`
-   width: 80%;
+   width: 100%;
    border-radius: 2rem;
-   background-color: white;
-   margin: 0 auto;
-   color: #45a25a;
-   padding: 1.5rem 3rem;
+   background-color: ${({ theme }) => theme.colors.accent};
+   color: ${({ theme }) => theme.colors.background};
+   padding: 1.2rem;
    border: none;
-   font-size: 1.2rem;
+   font-size: 1.1rem;
    font-weight: 700;
-   transition: all .8s ease;
-   margin-top: 2rem;
-   backface-visibility: hidden;
-
+   transition: all .3s ease;
+   margin-top: 1rem;
    cursor: pointer;
 
    &:hover {
-      transform: scale(1.05);
-      background-color: #45a25a;
-      color: white;
+      transform: translateY(-2px);
+      background-color: ${({ theme }) => theme.colors.secondaryAccent};
+      color: #0d1e11;
    }
 
    &:active {
-      transform: scale(1) translateY(1rem);
+      transform: translateY(0);
    }
 `

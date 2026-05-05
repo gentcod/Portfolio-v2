@@ -1,15 +1,28 @@
+import {
+  ExploreContainer,
+  ExploreHeading,
+  ExploreSubheading
+} from "./explore.styles";
+
+import Projects from "../../components/backend-projects/backend.component";
 import CarouselWebProject from "../../components/carousel-webproject/carousel-webproject.component";
 import Carousel from "../../components/carousel/carousel.component";
 
-import {} from "./explore.styles";
-
 const Explore = () => {
   return (
-    <div>
+    <ExploreContainer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <ExploreHeading>Selected Works.</ExploreHeading>
+      <ExploreSubheading>A collection of my recent projects and experiments.</ExploreSubheading>
+      
+      <Projects />
       <CarouselWebProject />
-      {/* {webprojectData.map(el => <WebProject key={el.id} heading={el.heading} subheading={el.subheading} description={el.description} imgSrc={el.imgSrc} link={el.link}/>)} */}
       <Carousel />
-    </div>
+
+    </ExploreContainer>
   );
 };
 

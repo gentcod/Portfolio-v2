@@ -15,10 +15,10 @@ export const ButtonContainer = styled.div`
    display: inline-block;
 `
 
-export const ButtonBody = styled.a`
+export const ButtonBody = styled.a<Props>`
    padding: 1rem 2.5rem;
    background-color: ${bgCol};
-   color: ${color};
+   color: ${({ theme }) => theme.colors.background === '#F8F9FA' ? theme.colors.textPrimary : color};
    font-weight: 700;
    border: 1px solid ${borderCol};
    border-radius: .5rem;
@@ -27,8 +27,9 @@ export const ButtonBody = styled.a`
 
    &:hover {
       transform: translateY(-1rem) scale(1.05);
-      background-color: ${borderCol};
-      border: 1px solid white;
+      background-color: ${({ theme }) => theme.colors.secondaryAccent};
+      border: 1px solid ${({ theme }) => theme.colors.secondaryAccent};
+      color: #0d1e11;
    }
 
    &:active {

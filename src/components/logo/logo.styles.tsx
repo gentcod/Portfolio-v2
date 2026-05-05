@@ -1,63 +1,25 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom'
-import { devices } from '../../dev-data/media-queries';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-export const LogoContainer = styled(Link)`
-   flex: 2;
-   align-self: flex-start;
-   letter-spacing: 10%;
-   text-transform: uppercase;
+export const LogoContainer = styled(motion(Link))`
+   display: flex;
+   align-items: center;
    text-decoration: none;
-   color: #fff;
-   font-size: 1rem;
-   max-width: 25rem;
-   height: 8rem;
-   border: 1px solid rgba(225,225,225,.5);
-   border-radius: 1rem;
-   transition: .5s ease;
-
-   &:hover {
-      transform: scale(1.02);
-   }
-
-   @media only screen and ${devices.tabPort} {
-      max-width: 10rem;
-      height: fit-content;
-   }
-`
+   gap: 0.5rem;
+`;
 
 export const LogoName = styled.div`
-   padding: 1rem;
-   font-family: 'Tapestry', cursive;
-   font-weight: 700;
-   max-width: 20rem;
-   height: 3rem;
-   text-align: center;
-   margin: auto;
-   margin-bottom: 1rem;
-   padding-bottom: 2rem;
-   border-bottom: 1px solid #fff;
-
-   @media only screen and ${devices.tabPort} {
-      height: fit-content;
-      padding-bottom: 1rem;
-      margin-bottom: 0;
-
+   font-size: 1.5rem;
+   font-weight: 800;
+   color: ${({ theme }) => theme.colors.textPrimary};
+   letter-spacing: -0.5px;
+   
+   span {
+      color: ${({ theme }) => theme.colors.accent};
    }
-`
+`;
 
 export const LogoDescription = styled.div`
-   display: inline-block;
-   padding: 1rem;
-   background-color: #1f252f;
-   color: #fff;
-   border-radius: 3px;
-   font-family: 'Lato', sans-serif;
-   font-size: .8rem;
-   font-weight: 300;
-
-   @media only screen and ${devices.tabPort} {
-      height: fit-content;
-      border-radius: 1rem;
-   }
-`
+   display: none; /* Hide the description in the top nav to match the reference */
+`;

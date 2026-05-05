@@ -1,71 +1,34 @@
 import styled from "styled-components";
-import { devices } from "../../dev-data/media-queries";
+import { motion } from "framer-motion";
 
-type Props = {
-   sizeW?: number;
-   sizeH?: number;
-   backgroundColor?: string;
-   imgSrc?: string;
-   textColor?: string;
-}
-
-const width = (props: Props) => props.sizeW;
-const height = (props: Props) => props.sizeH;
-const widthSmall = (props: Props) => {
-   if (props.sizeW !== undefined) return props.sizeW / 1.3
-};
-const heightSmall = (props: Props) => {
-   if (props.sizeH !== undefined) return props.sizeH / 1.3
-};
-const bgColor = (props: Props) => props.backgroundColor;
-const image = (props: Props) => props.imgSrc;
-const color = (props: Props) => props.textColor;
-
-export const BoxContainer = styled.div`
-   display: inline-block;
-   width: ${width}rem;
-   height: ${height}rem;
-   text-align: center;
-
-   @media only screen and ${devices.phone} {
-     width: ${widthSmall}rem;
-     height: ${heightSmall}rem;
-   }
-`
-
-export const Box = styled.div`
-   position: relative;
-   display: inline-block;
-   width: 100%;
-   height: 100%;
-   background-color: ${bgColor};
-   background-image: url(${image});
-   background-repeat: no-repeat;
-   background-position: center;
-   border-radius: 1rem;
-   border: 1px solid #eee;
-   padding: 4rem;
-   margin: 0 auto;
-   cursor: pointer;
-
-   box-shadow: .5rem .5rem 1rem rgba(0,0,0, .5), -.2rem -.3rem 1rem rgba(255,255,255, .7);
-   transition: all 1s ease;
-   backface-visibility: hidden;
+export const BoxContainer = styled(motion.div)`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: ${({ theme }) => theme.colors.surface};
+   padding: 1.5rem;
+   border-radius: 12px;
+   min-width: 120px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+   transition: transform 0.3s ease;
 
    &:hover {
-      transform: scale(1.2);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
    }
-`
+`;
+
+export const TechIcon = styled.img`
+   width: 40px;
+   height: 40px;
+   object-fit: contain;
+   margin-bottom: 0.5rem;
+`;
 
 export const BoxText = styled.p`
-   position: absolute;
-   font-size: 1.1rem;
-   font-weight: 900;
-   color: ${color};
+   font-size: 0.9rem;
+   font-weight: 600;
+   color: ${({ theme }) => theme.colors.textPrimary};
    text-align: center;
-   z-index: 10;
-
-   transform: translate(-50%, -50%);
-   top: 85%;
-   left: 50%;
-`
+`;

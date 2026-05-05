@@ -11,9 +11,12 @@ import "./App.css";
 import Blogs from "./routes/blog/blog.component";
 // import "./sass/main.scss";
 
+import { GlobalStyles } from "./theme/GlobalStyles";
+
 function App() {
   return (
     <div className="App">
+      <GlobalStyles />
       <Routes>
         <Route element={<Navigation />}>
           <Route index element={<Home />} />

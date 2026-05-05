@@ -1,21 +1,14 @@
 import styled from "styled-components";
-import { devices } from "../../dev-data/media-queries";
+import { motion } from "framer-motion";
 
-export const BoxesContainer = styled.div`
-   display: grid;
-   grid-template-columns: repeat(4, auto);
-   grid-column-gap: 1.5rem;
-   grid-row-gap: 1rem;
-   justify-items: center;
-   justify-content: center;
-   align-items: center;
-   align-content: center;
-   position: relative;
+export const BoxesContainer = styled(motion.div)`
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   justify-content: flex-start;
    width: 100%;
 
-   @media only screen and ${devices.phone} {
-      grid-row-gap: 1.5rem;
-      grip-column-gap: 3rem;
-      padding: 5rem 0;
+   @media only screen and (max-width: 768px) {
+      justify-content: center;
    }
-`
+`;

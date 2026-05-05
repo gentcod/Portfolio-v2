@@ -8,9 +8,9 @@ import {
   InnerContainer,
   SliderContainer,
   SliderImage,
+  GlassNavBtn
 } from "./slider.style";
-import { ReactComponent as ArrowLeft } from '../../assets/arrow-left.svg';
-import { ReactComponent as ArrowRight } from '../../assets/arrow-right.svg';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 type SliderImageProp = {
    id: number;
@@ -47,7 +47,9 @@ const Slider = ({sliderData}: SliderProp) => {
   return (
     <Container>
       <InnerContainer>
-        <ArrowLeft onClick={() => handlePrevious()} style={{fill: "white", border: "none", outline: "none"}} />
+        <GlassNavBtn onClick={() => handlePrevious()}>
+          <FiChevronLeft size={24} />
+        </GlassNavBtn>
         <SliderContainer>
           {sliderData.map((el) =>
             currentSlide === el.id ? (
@@ -66,7 +68,9 @@ const Slider = ({sliderData}: SliderProp) => {
               )}
           </DotContainer>
         </SliderContainer>
-        <ArrowRight onClick={() => handleNext()} style={{fill: "white", border: "none", outline: "none"}} />
+        <GlassNavBtn onClick={() => handleNext()}>
+          <FiChevronRight size={24} />
+        </GlassNavBtn>
       </InnerContainer>
     </Container>
   );

@@ -1,6 +1,14 @@
-import { useState } from 'react';
 import Heading from '../heading/heading.component';
-import { Container, EXploreButtonLabel, ExploreButton, ExploreOverlay, FeaturedImage, FeaturedImageOverLay, FeaturedTitle, ImageSkewContainer } from './featured.style';
+import { 
+   Container, 
+   ExploreButton, 
+   FeaturedImage, 
+   FeaturedImageOverLay, 
+   FeaturedTitle, 
+   ImageSkewContainer,
+   ProjectsGrid,
+   ExploreButtonContainer
+} from './featured.style';
 
 type FeaturedImagesProp = {
    id: number;
@@ -9,13 +17,11 @@ type FeaturedImagesProp = {
    imgSrc: string;
 }[]
 
-// TODO: Handle scroll into view event
-
 const data: FeaturedImagesProp = [
    {
       id: 0,
       link: 'https://gentcod-foodie-v2.netlify.app',
-      title: 'Foodie: Food Recipe and Few Restarant',
+      title: 'Foodie: Food Recipe and Few Restaurant',
       imgSrc: 'https://res.cloudinary.com/douvgvdla/image/upload/v1730220702/foodie-other-recipes-main_cae84l.png',
    },
    {
@@ -33,30 +39,39 @@ const data: FeaturedImagesProp = [
 ];
 
 const Featured = () => {
-   const [inview, setInView] = useState(false);
-
-   const handlerInView = () => {
-      setInView(true)
-   }
-
    return (
-      <Container onScroll={() => handlerInView()} inview={inview}>
+      <Container
+         initial={{ opacity: 0 }}
+         whileInView={{ opacity: 1 }}
+         viewport={{ once: true }}
+         transition={{ duration: 0.8 }}
+      >
          <Heading title='Featured Web Projects'/>
-         {data.map(el =>
-         <ImageSkewContainer key={el.id} to={el.link}>
-            <FeaturedImageOverLay>
-               <FeaturedTitle>{el.title}</FeaturedTitle>
-            </FeaturedImageOverLay>
-            <FeaturedImage src={el.imgSrc}/>
-         </ImageSkewContainer>
-         )}
-         <ExploreButton to={'explore'}>
-            <ExploreOverlay/>
-            <EXploreButtonLabel>Explore</EXploreButtonLabel>
-         </ExploreButton>
+         <ProjectsGrid>
+            {data.map((el, index) =>
+               <ImageSkewContainer 
+                  key={el.id} 
+                  href={el.link}
+                  target="_blank"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+               >
+                  <FeaturedImage src={el.imgSrc} alt={el.title} />
+                  <FeaturedImageOverLay>
+                     <FeaturedTitle>{el.title}</FeaturedTitle>
+                  </FeaturedImageOverLay>
+               </ImageSkewContainer>
+            )}
+         </ProjectsGrid>
+         <ExploreButtonContainer>
+            <ExploreButton to='/explore'>
+               Explore All Projects
+            </ExploreButton>
+         </ExploreButtonContainer>
       </Container>
    )
 };
-
 
 export default Featured;

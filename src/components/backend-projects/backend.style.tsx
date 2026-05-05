@@ -1,101 +1,95 @@
 import styled from "styled-components";
-import {Container} from '../featured-blogs/featured-blogs.style'
-import { Link } from "react-router-dom";
-import { devices } from "../../dev-data/media-queries";
+import { motion } from "framer-motion";
 
-export const ProjectsContainer = styled(Container)`
-   background-color:rgba(247, 252, 248, 0.1);
+export const ProjectsContainer = styled(motion.div)`
+   padding: 5rem;
+   width: 100%;
+   background-color: ${({ theme }) => theme.colors.background};
+
+   @media only screen and (max-width: 768px) {
+      padding: 3rem 1.5rem;
+   }
 `;
 
 export const ContentsContainer = styled.div`
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-wrap: wrap;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
    gap: 3rem;
+   margin-top: 3rem;
 `;
 
-export const ContentsBlock = styled(Link)`
-   height: 18rem;
-   width: 40%;
-   color: #fff;
-   background-color: #222;
-   border: 1px solid #333;
-   border-radius: 1rem;
+export const ContentsBlock = styled(motion.a)`
+   background-color: ${({ theme }) => theme.colors.surface};
+   padding: 2.5rem;
+   border-radius: 16px;
    display: flex;
    flex-direction: column;
-   align-items: start;
-   justify-content: end;
-   padding: 1rem 3rem;
-   row-gap: 1rem;
-   cursor: pointer;
-   transition: .8s ease;
-   box-shadow: 0 .5rem 1rem rgba(2, 2, 2, .4);
+   text-decoration: none;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+   border: 1px solid ${({ theme }) => theme.colors.border};
+   transition: transform 0.3s ease;
 
    &:hover {
-      background-color:rgba(2, 2, 2, 0.3);
-      transform: scale(1.1);
-   }
-
-   @media only screen and ${devices.tabPort} {
-      height: fit-content;
-      width: 100%;
-      padding: 1rem;
+      transform: translateY(-10px);
    }
 `;
 
-export const TagsContainer = styled.div`
-   display: flex;
-   align-items: center;
-   justify-content: start;
-   gap: 1rem;
-   padding: .5rem 1rem;
-   flex-wrap: wrap;
-
-   @media only screen and ${devices.tabPort} {
-   }
-`;
-
-export const TagsHeading = styled.p`
-   padding: 1px .5rem;
-   color: #111;
-   text-transform: uppercase;
-   text-align: left;
-   font-weight: 1000;
-   font-size: 1.2rem;
-   letter-spacing: .3rem;
-`;
-
-export const StackContainer = styled(TagsContainer)`
-
-`;
-
-export const StackHeading = styled(TagsHeading)`
-
-`;
-
-export const Tag = styled.p`
-   border: 1px solid #fff;
-   font-size: 1rem;
-   padding: 1px .5rem;
-   border-radius: .8rem;
-
-   @media only screen and ${devices.tabPort} {
-      font-size: .9rem;
-   }
-`;
-
-export const StackTag = styled(Tag)`
-
-`;
-
-export const ProjectName = styled(TagsHeading)`
-   text-transform: none;
-   font-size: 2rem;
-   color: #fff;
+export const ProjectName = styled.h3`
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: ${({ theme }) => theme.colors.textPrimary};
+   margin-bottom: 1rem;
 `;
 
 export const Description = styled.p`
-   font-size: 1.2rem;
-   text-align: left;
+   font-size: 1rem;
+   color: ${({ theme }) => theme.colors.textSecondary};
+   line-height: 1.6;
+   margin-bottom: 2rem;
+   flex: 1;
+`;
+
+export const StackContainer = styled.div`
+   margin-bottom: 1.5rem;
+`;
+
+export const StackHeading = styled.p`
+   font-size: 0.85rem;
+   font-weight: 700;
+   color: ${({ theme }) => theme.colors.textPrimary};
+   margin-bottom: 0.5rem;
+   letter-spacing: 1px;
+`;
+
+export const TagsContainer = styled.div`
+   margin-bottom: 0;
+`;
+
+export const TagsHeading = styled.p`
+   font-size: 0.85rem;
+   font-weight: 700;
+   color: ${({ theme }) => theme.colors.textPrimary};
+   margin-bottom: 0.5rem;
+   letter-spacing: 1px;
+`;
+
+export const StackTag = styled.span`
+   display: inline-block;
+   padding: 0.3rem 0.8rem;
+   margin: 0.2rem;
+   background-color: ${({ theme }) => theme.colors.surfaceHighlight};
+   color: ${({ theme }) => theme.colors.textSecondary};
+   font-size: 0.8rem;
+   border-radius: 20px;
+`;
+
+export const Tag = styled.span`
+   display: inline-block;
+   padding: 0.3rem 0.8rem;
+   margin: 0.2rem;
+   background-color: ${({ theme }) => theme.colors.background};
+   color: ${({ theme }) => theme.colors.accent};
+   font-size: 0.8rem;
+   border-radius: 20px;
+   font-weight: 600;
 `;

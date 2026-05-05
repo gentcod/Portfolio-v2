@@ -1,11 +1,9 @@
-
 import { useState } from 'react';
 import { webprojectData } from '../../dev-data/webproject_data';
 import WebProject from '../web-project/web-project.component';
-import { Container, CurrentDot, CurrentSlide, Dot, DotContainer, InnerContainer, LogoContainer, Slide, SliderContainer } from './carousel-webproject.style';
+import { Container, CurrentDot, CurrentSlide, Dot, DotContainer, InnerContainer, GlassNavBtn, Slide, SliderContainer } from './carousel-webproject.style';
 import Heading from '../heading/heading.component';
-import { ReactComponent as ArrowLeft } from '../../assets/arrow-left.svg';
-import { ReactComponent as ArrowRight } from '../../assets/arrow-right.svg';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const CarouselWebProject = () => {
    const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,9 +32,9 @@ const CarouselWebProject = () => {
       <Container>
          <Heading title='Web Projects'/>
          <InnerContainer>
-            <LogoContainer>
-               <ArrowLeft onClick={() => handlePrevious()}/>
-            </LogoContainer>
+            <GlassNavBtn onClick={() => handlePrevious()}>
+               <FiChevronLeft size={24} />
+            </GlassNavBtn>
             <SliderContainer>
                {webprojectData.map(el => 
                   currentSlide === el.id ?
@@ -58,9 +56,9 @@ const CarouselWebProject = () => {
                   )}
                </DotContainer>
             </SliderContainer>
-            <LogoContainer>
-               <ArrowRight onClick={() => handleNext()}/>
-            </LogoContainer>
+            <GlassNavBtn onClick={() => handleNext()}>
+               <FiChevronRight size={24} />
+            </GlassNavBtn>
          </InnerContainer>
       </Container>
    )

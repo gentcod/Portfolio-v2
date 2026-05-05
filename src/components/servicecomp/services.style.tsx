@@ -1,64 +1,50 @@
 import styled from "styled-components";
-import { devices } from "../../dev-data/media-queries";
+import { motion } from "framer-motion";
 
-export const Container = styled.div`
-   padding: 3rem 5rem;
-   display: flex;
-   flex-direction: column;
+export const Container = styled(motion.div)`
+   padding: 5rem;
+   width: 100%;
+   background-color: ${({ theme }) => theme.colors.background};
+
+   @media only screen and (max-width: 768px) {
+      padding: 3rem 1.5rem;
+   }
 `;
 
 export const ServicesContainer = styled.div`
-   padding: 3rem 5rem;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-   column-gap: 3rem;
-
-   @media only screen and ${devices.tabPort} {
-      flex-direction: column;
-      row-gap: 1rem;
-   }
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 2rem;
+   margin-top: 3rem;
 `;
 
-export const Service = styled.div`
-   height: 25rem;
-   width: 35rem;
-   margin: auto 0;
-   padding: 1.5rem 3rem;
-   border: 2px solid #0d1e11;
-   border-radius: 1rem;
-   box-shadow: .6rem .6rem 1rem rgba(0,0,0, .4);
-   cursor: pointer;
-   transition: all .8s ease;
-
+export const ServiceCard = styled(motion.div)<{ isHighlighted?: boolean }>`
+   background-color: ${({ theme, isHighlighted }) => 
+      isHighlighted ? theme.colors.accent : theme.colors.surface};
+   padding: 3rem 2rem;
+   border-radius: 16px;
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+   transition: transform 0.3s ease;
 
    &:hover {
-      transform: scale(1.08) translateY(-1rem);
-      z-index: 100;
+      transform: translateY(-10px);
    }
-
-   // @media only screen and ${devices.phone} {
-   //    height: 15rem;
-   // }
 `;
 
-export const ServiceHeader = styled.h3`
-   padding: 1rem;
-   text-transform: uppercase;
+export const ServiceHeader = styled.h3<{ isHighlighted?: boolean }>`
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: ${({ theme, isHighlighted }) => 
+      isHighlighted ? theme.colors.background : theme.colors.textPrimary};
    margin-bottom: 1.5rem;
-   font-size: 1.6rem;
 `;
 
-export const ServiceContent = styled.p`
-   font-size: 1.3rem;
-`;
-
-export const ServiceGreen = styled(Service)`
-   background-color: #0d1e11;
-
-   color: white;
+export const ServiceContent = styled.p<{ isHighlighted?: boolean }>`
+   font-size: 1.05rem;
+   color: ${({ theme, isHighlighted }) => 
+      isHighlighted ? theme.colors.background : theme.colors.textSecondary};
+   line-height: 1.8;
+   opacity: ${({ isHighlighted }) => isHighlighted ? 0.9 : 1};
 `;
