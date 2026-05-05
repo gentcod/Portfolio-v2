@@ -1,5 +1,5 @@
 import TechStackContainer from '../../components/tech-stack-container/tech-stack-container.component';
-import WorkExperience from '../../components/work-experience/work-experience.component.';
+import WorkExperience from '../../components/work-experience/work-experience.component';
 
 import { Container, AboutStack, AboutContent, AboutHeading, AboutSummary } from './about.styles';
 
@@ -10,16 +10,22 @@ type AboutMe = {
 
 const about: AboutMe = {
    heading: 'Hi, I am Oyefule',
-   summary: `I'm a curious and versatile developer driven by understanding the 'why' behind things. While I embrace a diverse skillset ("Jack of a lot, not all!" ), my superpower is adaptability. I quickly learn and thrive in new challenges, applying this not just in my career but to all aspects of life.
-
-   I believe true mastery comes from sharing knowledge, so I enjoy collaborating and helping others grow. Take your time exploring my portfolio, and feel free to offer feedback – I'm always open to learning!`,
+   summary: `Backend-focused Software Engineer with 5+ years of experience designing and optimizing cloud-native applications, distributed systems, and real-time data processing pipelines. Experience in leading engineering teams, architecting scalable microservices, and implementing DevOps practices that enhance system reliability and operational efficiency.`,
 }
 
 const About = () => {
    return (
-      <Container>
+      <Container
+         initial={{ opacity: 0 }}
+         animate={{ opacity: 1 }}
+         transition={{ duration: 0.5 }}
+      >
          <AboutStack>
-            <AboutContent>
+            <AboutContent
+               initial={{ x: -50, opacity: 0 }}
+               animate={{ x: 0, opacity: 1 }}
+               transition={{ duration: 0.6, delay: 0.2 }}
+            >
                <AboutHeading>{about.heading}</AboutHeading>
                <AboutSummary>{about.summary}</AboutSummary>
             </AboutContent>
@@ -31,11 +37,3 @@ const About = () => {
 }
 
 export default About;
-
-/**I am a creative and innovative Developer and Designer who likes to properly undestand how things work.
-I like to describe myself as a Jack of a lot, definitely not all 😅😅😅. 
-I am skilled in a lot of aspects and this is as a result of my ability to quickly learn and adapt to new situations and challenges. 
-This comes in handy not only in my career or professional field, I use it in all aspect of life. 
-I also like sharing knowledge, as I believe true mastery of a skill cannot be achieved without sharing what you know. Kindly take your time to go through my portfolio. 
-I am open to feedback, so feel free to reach out to me and provide one. Lastly, I love anime and yes, I have seen One Piece😊😊😊
-**/

@@ -1,20 +1,24 @@
-import { Box, BoxText, BoxContainer } from './tech-stack.styles';
+import { BoxContainer, BoxText, TechIcon } from './tech-stack.styles';
 
 type TechStackProp = {
    text: string,
-   color: string,
-   bgColor: string,
-   height: number,
-   width: number,
+   color?: string,
+   bgColor?: string,
+   height?: number,
+   width?: number,
    img: string,
 }
 
-const TechStack = ({text, color, bgColor, height, width, img} : TechStackProp) => {
+const TechStack = ({text, img} : TechStackProp) => {
    return (
-      <BoxContainer sizeH={height} sizeW={width}>
-         <Box backgroundColor={bgColor} imgSrc={img}>
-            <BoxText textColor={color}>{text}</BoxText>
-         </Box>
+      <BoxContainer
+         initial={{ scale: 0.8, opacity: 0 }}
+         whileInView={{ scale: 1, opacity: 1 }}
+         viewport={{ once: true }}
+         transition={{ duration: 0.4 }}
+      >
+         <TechIcon src={img} alt={text} />
+         <BoxText>{text}</BoxText>
       </BoxContainer>
    )
 };

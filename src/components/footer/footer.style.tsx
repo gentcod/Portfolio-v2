@@ -1,164 +1,146 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { devices } from '../../dev-data/media-queries';
+import { motion } from 'framer-motion';
 
-export const FooterContainer = styled.div`
+export const FooterContainer = styled(motion.footer)`
    width: 100%;
-   padding: 2rem 5rem;
-   background-color: #0d1e11;
-
+   padding: 4rem 5rem 2rem 5rem;
+   background-color: ${({ theme }) => theme.colors.surface};
+   border-top: 1px solid ${({ theme }) => theme.colors.border};
    display: flex;
    flex-direction: column;
-   row-gap: 2rem;
+   align-items: center;
 
-   @media only screen and ${devices.tabLand} {
-      padding: 2rem;
+   @media only screen and (max-width: 768px) {
+      padding: 3rem 1.5rem 1.5rem 1.5rem;
    }
-`
+`;
 
-export const FooterUpper = styled.div`
-   padding: 1rem 3rem;
-   align: center;
+export const FooterTop = styled.div`
    display: flex;
    flex-direction: column;
-   row-gap: 2rem;
-   align-contents: center;
-`
-
-export const FooterImageLineContainer = styled.div`
-   height: 12rem;
-   position: relative;
-`
-
-export const FooterImageLine = styled.hr`
-   color: #45a25a;
-   width: 80%;
-   z-index: 1;
-
-   position: absolute;
-   left: 50%;
-   top: 50%;
-
-   transform: translate(-50%, -50%);
-
-   @media only screen and ${devices.phone} {
-      width: 95%;
-   }
-`
+   align-items: center;
+   margin-bottom: 4rem;
+   width: 100%;
+   max-width: 800px;
+`;
 
 export const FooterImageContainer = styled.div`
-   height: 12rem;
-   width: 12rem;
+   position: relative;
+   width: 120px;
+   height: 120px;
    border-radius: 50%;
-   background-color: #0d1e11;
-   margin: 0 auto;
-   z-index: 5;
+   padding: 5px;
+   background: ${({ theme }) => `linear-gradient(45deg, ${theme.colors.accent}, ${theme.colors.secondaryAccent})`};
+   margin-bottom: 2rem;
 
-   position: absolute;
-   left: 50%;
-   top: 50%;
+   &::before, &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 150px;
+      height: 1px;
+      background-color: ${({ theme }) => theme.colors.border};
+      z-index: 0;
+   }
 
-   transform: translate(-50%, -50%)
-`
+   &::before { right: 100%; }
+   &::after { left: 100%; }
+
+   @media only screen and (max-width: 768px) {
+      &::before, &::after {
+         width: 50px;
+      }
+   }
+`;
 
 export const FooterImage = styled.img`
-   display: inline-block;
-   width: 80%;
-   height: 80%;
-   margin: auto 0;
-   margin-top: 1rem;
+   width: 100%;
+   height: 100%;
    border-radius: 50%;
    object-fit: cover;
+   border: 4px solid ${({ theme }) => theme.colors.surface};
+   position: relative;
+   z-index: 1;
+`;
 
-   @media only screen and ${devices.phone} {
-      width: 60%;
-      height: 60%
+export const FooterBottom = styled.div`
+   width: 100%;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 2rem;
+   align-items: center;
+   padding-top: 2rem;
+   border-top: 1px solid ${({ theme }) => theme.colors.border};
+
+   @media only screen and (max-width: 900px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 1.5rem;
    }
-`
+`;
 
-export const FooterLower = styled.div`
-   padding: 1rem 15rem;
-   color: white;
-
+export const FooterColumn = styled.div`
    display: flex;
-   justify-content: space-evenly;
+   flex-direction: column;
+   gap: 0.5rem;
 
-   @media only screen and ${devices.tabLand} {
-      flex-direction: column;
-      padding: 1rem;
+   &:nth-child(2) {
       align-items: center;
-      row-gap: 1rem;
    }
-`
 
-export const FooterSocialsContainer = styled.div`
-   display: flex;
-   flex-direction: column;
-`;
+   &:nth-child(3) {
+      align-items: flex-end;
+   }
 
-export const FooterSocialsHeader = styled.h5`
-   text-align: left;
-   margin-left: 5rem;
-   margin-bottom: 1rem;
-
-   @media only screen and ${devices.tabLand} {
-      text-align: center;
-      margin-left: 0;
+   @media only screen and (max-width: 900px) {
+      align-items: center !important;
    }
 `;
 
-export const FooterSocials = styled.div`
-   width: 30rem;
-   padding: 1rem;
-
-   display: flex;
-   justify-content: center;
-   column-gap: 2rem;
-`;
-
-export const SocialLinks = styled(Link)`
-   padding: .5rem 1rem;
-   border-radius: 5px;
-   transition: all .6s ease;
-
-   &:hover {
-      background-color: rgba(255, 255, 255, .6);
-      backdrop-filter: blur(3px);
-   }
-`;
-
-export const FooterLowerMid = styled.div`
-   display: flex;
-   flex-direction: column;
-   text-align: left;
-
-   @media only screen and ${devices.tabLand} {
-      text-align: center;
-   }
-`;
-
-export const LegacyHeading = styled.h5`
-   margin-bottom: 1rem;
-`;
-
-export const LegacyPortfolio = styled(Link)`
+export const ColumnHeading = styled.h4`
    font-size: 1rem;
-   color: white;
+   color: ${({ theme }) => theme.colors.textPrimary};
+   margin-bottom: 0.5rem;
+   font-weight: 600;
+`;
+
+export const SocialsRow = styled.div`
+   display: flex;
+   gap: 1rem;
+`;
+
+export const SocialLink = styled.a`
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   background-color: ${({ theme }) => theme.colors.background};
+   color: ${({ theme }) => theme.colors.textSecondary};
+   transition: all 0.3s ease;
+   font-size: 1.2rem;
 
    &:hover {
-      border-bottom: 1px solid white;
+      background-color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.colors.background};
+      transform: translateY(-3px);
    }
 `;
 
-export const SocialIcon = styled.img`
-   height: 2rem;
+export const FooterLink = styled(Link)`
+   color: ${({ theme }) => theme.colors.textSecondary};
+   text-decoration: none;
+   font-size: 0.95rem;
+   transition: color 0.3s ease;
+
+   &:hover {
+      color: ${({ theme }) => theme.colors.accent};
+   }
 `;
 
-export const FooterCopyright = styled.div`
-   font-size: 1.2rem;
-`;
-   
-export const CopyRight = styled.p`
-   padding: 1rem;
-   border-bottom: 1px solid white;
+export const Copyright = styled.p`
+   color: ${({ theme }) => theme.colors.textSecondary};
+   font-size: 0.9rem;
 `;

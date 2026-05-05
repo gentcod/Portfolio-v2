@@ -1,58 +1,48 @@
 import styled from "styled-components";
-import { devices } from "../../dev-data/media-queries";
-import { ScrollUp } from "../home/home.styles";
+import { motion } from "framer-motion";
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
    width: 100%;
+   padding: 2rem 5rem;
    display: flex;
    flex-direction: column;
-   row-gap: 3rem;
-   animation: ${ScrollUp} 1.5s ease;
-`
+   row-gap: 4rem;
+
+   @media only screen and (max-width: 768px) {
+      padding: 2rem 1.5rem;
+   }
+`;
 
 export const AboutStack = styled.div`
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 4rem;
+   align-items: center;
+
+   @media only screen and (max-width: 900px) {
+      grid-template-columns: 1fr;
+   }
+`;
+
+export const AboutContent = styled(motion.div)`
    display: flex;
-   padding: 5rem 3rem;
-   background-color:rgba(247, 252, 248, 0.1);
-
-
-   @media only screen and ${devices.phone} {
-     flex-direction: column;
-     padding: 1rem;
-   }
-`
-
-export const AboutContent = styled.div`
-   width: 80%;
-   padding: 2rem 5rem;
-   text-align: left;
-
-   @media only screen and ${devices.phone} {
-     width: 100%;
-   }
-`
+   flex-direction: column;
+   gap: 1.5rem;
+`;
 
 export const AboutHeading = styled.h1`
-   font-size: 5rem;
-   font-weight: 1000;
-   letter-spacing: .3rem;
-   margin-bottom: 2rem;
+   font-size: 3.5rem;
+   font-weight: 800;
+   color: ${({ theme }) => theme.colors.textPrimary};
+   line-height: 1.2;
 
-   @media only screen and ${devices.phone} {
-     font-size: 3rem;
+   @media only screen and (max-width: 768px) {
+      font-size: 2.5rem;
    }
-`
+`;
 
 export const AboutSummary = styled.p`
-   font-size: 1.8rem;
-   font-weight: 300;
-   word-spacing: 1rem;
-   line-height: 1.5;
-   padding-bottom: 3rem;
-   border-radius: 1rem;
-   border-bottom: 2px solid #45a25a;
-
-   @media only screen and ${devices.phone} {
-     font-size: 1.2rem;
-   }
-`
+   font-size: 1.1rem;
+   color: ${({ theme }) => theme.colors.textSecondary};
+   line-height: 1.8;
+`;

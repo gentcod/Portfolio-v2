@@ -1,88 +1,60 @@
 import styled from 'styled-components';
-import { devices } from '../../dev-data/media-queries';
+import { motion } from 'framer-motion';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
    width: 100%;
-   background-color: #111;
-   padding: 5rem 3rem;
+   padding: 5rem 0;
    position: relative;
    text-align: left;
-
-   @media only screen and ${devices.phone} {
-      text-align: center;
-      padding: 2rem;
-   }
-`
+`;
 
 export const Heading = styled.h3`
-   color: #d1d1d1;
+   color: ${({ theme }) => theme.colors.textSecondary};
    text-transform: uppercase;
-   font-weight: 100;
-   font-size: 1.2rem;
-   letter-spacing: .3rem;
-   margin-bottom: 5rem;
-
-   @media only screen and ${devices.phone} {
-      text-align: left;
-   }
-`
+   font-weight: 600;
+   font-size: 1rem;
+   letter-spacing: 0.2rem;
+   margin-bottom: 1rem;
+`;
 
 export const SubHeading = styled.p`
-   color: white;
-   font-wegiht: 1000;
-   font-size: 3rem;
-   width: 50rem;
+   color: ${({ theme }) => theme.colors.textPrimary};
+   font-weight: 800;
+   font-size: 2.5rem;
+   max-width: 800px;
+   margin-bottom: 3rem;
+   line-height: 1.3;
 
-   @media only screen and ${devices.phone} {
-      width: auto;
+   @media only screen and (max-width: 768px) {
+      font-size: 2rem;
    }
-`
+`;
 
 export const ExperienceContainer = styled.div`
-   display: flex;
-   flex-wrap: wrap;
-   column-gap: 3rem;
-   row-gap: 2rem;
-   justify-content: center;
-   justify-items: center;
-   justify-content: center;
-   align-items: start;
-   align-content: center;
-   padding: 3rem;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   gap: 2rem;
+   width: 100%;
 
-   @media only screen and ${devices.phone} {
-      flex-direction: column;
-      row-gap: 1.5rem;
-      align-items: center;
+   @media only screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
    }
-`
+`;
 
-export const ResumeButton = styled.a`
-   padding: 1.5rem 3rem;
+export const ResumeButton = styled(motion.a)`
+   display: inline-block;
+   padding: 1rem 2.5rem;
    background-color: transparent;
-   color: white;
-   font-weight: 700;
-   border: 1px solid #45a25a;
-   border-radius: .5rem;
+   color: ${({ theme }) => theme.colors.accent};
+   font-weight: 600;
+   border: 2px solid ${({ theme }) => theme.colors.accent};
+   border-radius: 8px;
    margin-top: 3rem;
-   margin-left: 2rem;
-   cursor: pointer;
-   transition: all .8s ease;
+   text-decoration: none;
+   transition: all 0.3s ease;
 
    &:hover {
-      transform: translateY(-1rem) scale(1.05);
-      background-color: #45a25a;
-      border: 1px solid white;
+      background-color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.colors.background};
    }
-
-   &:active {
-      transform: translateY(1rem);
-   }
-
-   @media only screen and ${devices.phone} {
-      margin-left: 0;
-      margin-bottom: 1rem;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-   }
-`
+`;

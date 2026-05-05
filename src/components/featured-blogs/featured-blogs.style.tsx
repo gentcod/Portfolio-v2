@@ -1,180 +1,105 @@
-import styled, { css, keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
-import { devices } from '../../dev-data/media-queries';
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-type FeatureProps = {
-   inview: boolean;
-}
+export const Container = styled(motion.div)`
+   padding: 5rem;
+   width: 100%;
+   background-color: ${({ theme }) => theme.colors.surface};
 
-export const Reveal = keyframes`
-   0% {
-      opacity: 0;
+   @media only screen and (max-width: 768px) {
+      padding: 3rem 1.5rem;
    }
-   100% {
-      opacity: 1;
-   }
-`
-
-export const reveal = css`
-   animation: ${Reveal} 1.5s ease;
-`
-
-export const Container = styled.div<FeatureProps>`
-   padding: 3rem 5rem;
-   background-color:rgba(247, 252, 248, 0.1);
-   margin-top: 2rem;
-   border-top: 1px solid #45a25a;
-   border-bottom: 1px solid #45a25a;
-   
-   display: flex;
-   flex-direction: column;
-   row-gap: 3rem;
-   justify-content: center;
-   ${({inview}) => inview && reveal}
 `;
 
 export const BlogsContainer = styled.div`
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   row-gap: 2rem;
-   column-gap: 2rem;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 3rem;
+   margin-top: 3rem;
 `;
-   
-export const Blog = styled.div`
-   height: 28rem;
-   margin: 0 auto;
-   border-radius: 1rem;
-   backface-visibility: hidden;
+
+export const Blog = styled(motion.div)`
+   background-color: ${({ theme }) => theme.colors.background};
+   border-radius: 16px;
    overflow: hidden;
-   position: relative;
-   transition: .8s all ease;
-   flex: 0 0 30%;
-   box-shadow: 0 .5rem 1rem rgba(2, 2, 2, .2);
-   border-bottom: 2px solid #45a25a;
-
-   &:hover {
-
-   }
-
-   @media only screen and ${devices.tabPort} {
-      flex: 0 80%;
-      height: 20rem;
-   }
-`;
-
-export const BlogContentCon = styled.div`
-   height: 100%;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+   border: 1px solid ${({ theme }) => theme.colors.border};
+   transition: transform 0.3s ease;
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
-   padding-bottom: 1rem;
-   background-color:rgb(211, 209, 209);
+
+   &:hover {
+      transform: translateY(-10px);
+   }
 `;
 
 export const BlogThumnail = styled.img`
+   width: 100%;
+   height: 200px;
    object-fit: cover;
-   height: 50%;
-   weight: 100%;
-   backface-visibility: hidden;
-
-   // @media only screen and ${devices.tabPort} {
-   //    height: 20%;
-   // }
 `;
 
-export const BlogTitle = styled.p`
-   display: inline-block;
-   font-size: 1.4rem;
-   text-align: left;
-   color: #000;
-   padding: .5rem;
-   border-bottom: 1px solid rgba(69, 162, 91, 0.5);;
-   font-weight: 1000;
-   z-index: 5;
+export const BlogContentCon = styled.div`
+   padding: 2rem;
+   display: flex;
+   flex-direction: column;
+   flex: 1;
+`;
 
-   @media only screen and ${devices.tabPort} {
-      font-size: 1.2rem;
-   }
+export const BlogTitle = styled.h3`
+   font-size: 1.4rem;
+   font-weight: 700;
+   color: ${({ theme }) => theme.colors.textPrimary};
+   margin-bottom: 1rem;
+   line-height: 1.4;
 `;
 
 export const BlogSummary = styled.p`
-   height: 6rem;
-   display: inline-block;
-   font-size: 1.2rem;
-   text-align: left;
-   color: #333;
-   padding: .5rem;
-   font-weight: 300;
-   z-index: 5;
-   overflow: hidden;
-
-   @media only screen and ${devices.tabPort} {
-      font-size: 1rem;
-   }
+   font-size: 1rem;
+   color: ${({ theme }) => theme.colors.textSecondary};
+   line-height: 1.6;
+   margin-bottom: 2rem;
+   flex: 1;
 `;
 
-export const ReadButton = styled(Link)`
-   color: #45a25a;
-   height: 2rem;
-   font-size: 1.2rem;
-   width: 8rem;
-   border: none;
-   border-radius: .8rem;
-   background-color: transparent;
-   margin-top: 1rem;
-   margin-left: .5rem;
-   border-bottom: 1px solid transparent;
-   transition: .8s all ease;
+export const ReadButton = styled.a`
+   color: ${({ theme }) => theme.colors.accent};
+   font-weight: 700;
+   font-size: 1rem;
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   transition: opacity 0.3s ease;
 
    &:hover {
-      border-bottom: 1px solid #45a25a;
+      opacity: 0.8;
    }
 `;
 
-
-export const ExploreOverlay = styled.div`
-   background-color: white;
-   height: 3px;
-   width: 15rem;
-   position: absolute;
-   bottom: 0;
-   left: -15rem;
-   transition: .8s all ease;
-`;
-
-export const EXploreButtonLabel = styled.span`
-   font-size: 1.2rem;
-   font-weight: 500;
-   text-transform: uppercase;
-   transition: 1.2s all ease;
+export const ExploreButtonContainer = styled.div`
+   display: flex;
+   justify-content: center;
+   margin-top: 4rem;
 `;
 
 export const ExploreButton = styled(Link)`
-   height: 4rem;
-   width: 15rem;
-   margin: 0 auto;
-   padding: 1rem;
-   border-radius: 5px;
-   border-bottom: 3px solid #45a25a;
-   overflow: hidden;
-   position: relative;
-   transition: .8s all ease;
-   color: #45a25a;
-
-   &:hover ${ExploreOverlay}{
-      left: 0;
-   }
-
-   &:hover ${EXploreButtonLabel}{
-      transform: skewX(45deg);
-      color: white;
-      font-size: 1.4rem;
-   }
+   display: inline-block;
+   padding: 1rem 3rem;
+   background-color: transparent;
+   color: ${({ theme }) => theme.colors.accent};
+   font-weight: 700;
+   font-size: 1.1rem;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   border: 2px solid ${({ theme }) => theme.colors.accent};
+   border-radius: 8px;
+   text-decoration: none;
+   transition: all 0.3s ease;
 
    &:hover {
-      border-bottom: 3px solid transparent;
-      background-color: #45a25a;
+      background-color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.colors.background};
    }
 `;
-

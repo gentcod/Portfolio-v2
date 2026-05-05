@@ -41,7 +41,7 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 2rem;
   margin-bottom: 2rem;
-  background-color:rgba(247, 252, 248, 0.15);
+  background-color: ${({ theme }) => theme.colors.background};
 `
    
 export const InnerContainer = styled.div`
@@ -102,16 +102,36 @@ export const Dot = styled.span`
   width: .6rem;
   height: .6rem;
   border-radius: 50%;
-  background-color: rgb(69, 162, 90);
+  background-color: ${({ theme }) => theme.colors.accent};
   cursor: pointer;
 `
   
 export const CurrentDot = styled(Dot)`
-  background-color: #0d1e11;
+  background-color: ${({ theme }) => theme.colors.textPrimary};
 `;
 
-export const LogoContainer = styled.div`
+export const GlassNavBtn = styled.button`
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: ${({ theme }) => theme.colors.textPrimary};
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.secondaryAccent};
+    color: #0d1e11;
+    transform: scale(1.1);
+    border-color: ${({ theme }) => theme.colors.secondaryAccent};
+  }
+
   @media only screen and ${devices.phone} {
     display: none;
   }
-`
+`;

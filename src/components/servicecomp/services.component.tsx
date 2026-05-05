@@ -1,5 +1,5 @@
 import Heading from "../heading/heading.component";
-import { Container, Service, ServiceContent, ServiceGreen, ServiceHeader, ServicesContainer } from "./services.style";
+import { Container, ServiceCard, ServiceContent, ServiceHeader, ServicesContainer } from "./services.style";
 
 type ServiceProp = {
    id: number;
@@ -32,20 +32,30 @@ const serviceData: ServiceProp = [
 
 const Services = () => {
    return (
-      <Container>
-         <Heading title={'What do I offer'}></Heading>
-
+      <Container
+         initial={{ opacity: 0 }}
+         whileInView={{ opacity: 1 }}
+         viewport={{ once: true }}
+         transition={{ duration: 0.8 }}
+      >
+         <Heading title="What do I offer" />
          <ServicesContainer>
-            {serviceData.map(el => ( el.id % 2 === 0 ?
-               (<ServiceGreen key={el.id}>
-                  <ServiceHeader>{el.header}</ServiceHeader>
-                  <ServiceContent>{el.content}</ServiceContent>
-               </ServiceGreen>) :
-               (<Service key={el.id}>
-                  <ServiceHeader>{el.header}</ServiceHeader>
-                  <ServiceContent>{el.content}</ServiceContent>
-               </Service>)
-            ))}
+            {serviceData.map((el, index) => {
+               const isHighlighted = el.id % 2 === 0;
+               return (
+                  <ServiceCard 
+                     key={el.id} 
+                     isHighlighted={isHighlighted}
+                     initial={{ y: 30, opacity: 0 }}
+                     whileInView={{ y: 0, opacity: 1 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                     <ServiceHeader isHighlighted={isHighlighted}>{el.header}</ServiceHeader>
+                     <ServiceContent isHighlighted={isHighlighted}>{el.content}</ServiceContent>
+                  </ServiceCard>
+               );
+            })}
          </ServicesContainer>
       </Container>
    )

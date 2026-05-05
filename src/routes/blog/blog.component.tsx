@@ -45,7 +45,7 @@ const Blogs = () => {
           <FeaturedContents>
             <FeaturedTitle>{data[randomId].title}</FeaturedTitle>
             <FeaturedSummary>{data[randomId].summary}</FeaturedSummary>
-            <FeaturedReadButton to={data[randomId].link}>Read More</FeaturedReadButton>
+            <FeaturedReadButton href={data[randomId].link} target="_blank" rel="noreferrer">Read More</FeaturedReadButton>
           </FeaturedContents>
         </Featured>
         <BlogsContainer>
@@ -55,7 +55,7 @@ const Blogs = () => {
                    <BlogThumnail src={el.imgSrc} />
                    <BlogTitle>{el.title}</BlogTitle>
                    <BlogSummary>{el.summary}</BlogSummary>
-                   <ReadButton to={el.link}>Read More</ReadButton>
+                   <ReadButton href={el.link} target="_blank" rel="noreferrer">Read More</ReadButton>
                  </BlogContentCon>
                </Blog>
              )
