@@ -1,111 +1,284 @@
 import styled from "styled-components";
-import {
-   BlogSummary,
-   BlogTitle,
-   ReadButton,
-} from "../../components/featured-blogs/featured-blogs.style";
-import { devices } from "../../dev-data/media-queries";
-
-type Props = {
-   imageUrl: string;
-}
-
-const imageUrl = (prop: Props) => prop.imageUrl
+import { motion } from "framer-motion";
 
 export const Container = styled.div`
-   min-height: 90vh;
-   padding: 2rem 5rem;
-   background-color: rgba(240, 239, 239, 0.2);
+  min-height: 80vh;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem;
+  background-color: transparent;
+
+  @media only screen and (max-width: 768px) {
+    padding: 2.5rem 1.25rem;
+  }
 `;
 
 export const HeadingContainer = styled.div`
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   row-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.5rem;
 `;
 
-export const BlogsHeading = styled.h2`
-   font-size: 3.6rem;
-   font-style: bold;
-   font-weight: 1000;
-   letter-spacing: 1px;
-   word-spacing: 1rem;
-   font-family: "Rubik Vinyl", serif;
+export const Eyebrow = styled.p`
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.secondary};
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
 
-   @media only screen and ${devices.tabPort} {
-      font-size: 2.4rem;
-      word-spacing: .2rem;
+  &::before {
+    content: '// ';
+    color: ${({ theme }) => theme.colors.textTertiary};
+  }
+`;
 
-   }
+export const BlogsHeading = styled.h1`
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: -0.02em;
+  color: ${({ theme }) => theme.colors.textPrimary};
+  margin-bottom: 1rem;
+
+  span.accent {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 32px;
+    line-height: 40px;
+  }
 `;
 
 export const SubHeading = styled.p`
-   width: 80%;
-   font-size: 1.2rem;
-   font-weight: 100;
-   font-family: "Playwrite AU SA", serif;
-   
-   @media only screen and ${devices.tabPort} {
-      width: 100%;
-   }
+  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  line-height: 26px;
+  max-width: 750px;
 `;
 
-export const SubTitile = styled(SubHeading)`
-   margin-top: 2rem;
-   font-size: 1.6rem;
-   font-weight: 500;
-   font-family: "Rubik Iso", serif;
+export const FeaturedArticleCard = styled(motion.div)`
+  background-color: ${({ theme }) => theme.colors.surfaceSubtle};
+  border: 1px solid ${({ theme }) => theme.colors.borderHairline};
+  border-radius: 4px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  margin-bottom: 4rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.borderActive};
+    box-shadow: 0 0 30px ${({ theme }) => theme.colors.accentGlow};
+  }
+
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
-export const Contents = styled.div`
-   display: flex;
-   flex-direction: column;
-   row-gap: 1rem;
-   align-items: center;
+export const FeaturedImagePane = styled.div`
+  min-height: 280px;
+  background-color: ${({ theme }) => theme.colors.surfaceBase};
+  border-right: 1px solid ${({ theme }) => theme.colors.borderHairline};
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  ${FeaturedArticleCard}:hover img {
+    transform: scale(1.03);
+  }
+
+  @media only screen and (max-width: 900px) {
+    border-right: none;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.borderHairline};
+  }
 `;
 
-export const Featured = styled.div`
-   margin-top: 2rem;
-   margin-bottom: 2rem;
-   background-image: linear-gradient(rgba(225, 225, 225, 0.65),rgb(9, 20, 12)), 
-      url(${imageUrl});
-   background-position: center;
-   background-size: cover;
-   border-radius: 1rem;
-   z-index: 20;
-   width: 60%;
-   height: 40rem;
-   display: flex;
-   flex-direction: column;
-   row-gap: 2rem;
-   align-items: center;
-   justify-content: end;
-   padding: 2rem;
-   border-bottom: 3px solid #45a25a;
+export const FeaturedContentPane = styled.div`
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-   @media only screen and ${devices.tabPort} {
-      height: 20rem;
-      width: 100%;
-   }
+  @media only screen and (max-width: 768px) {
+    padding: 1.75rem;
+  }
 `;
 
-export const FeaturedContents = styled(Contents)`
-   align-items: start;
-   width: 100%
+export const TagRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
 `;
 
-export const FeaturedTitle = styled(BlogTitle)`
-   color: #fff;
+export const Tag = styled.span`
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: ${({ theme }) => theme.colors.primary};
+  background-color: rgba(0, 220, 130, 0.08);
+  border: 1px solid rgba(0, 220, 130, 0.25);
+  padding: 2px 8px;
+  border-radius: 4px;
 `;
 
-export const FeaturedSummary = styled(BlogSummary)`
-   color: #fff;
+export const DateSpan = styled.span`
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: ${({ theme }) => theme.colors.textTertiary};
 `;
 
+export const FeaturedTitle = styled.h2`
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+  color: ${({ theme }) => theme.colors.textPrimary};
+  margin-bottom: 1rem;
+`;
 
-export const FeaturedReadButton = styled(ReadButton)`
-   background-color: #333;
-   margin-top: 0;
+export const FeaturedSummary = styled.p`
+  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  line-height: 24px;
+  margin-bottom: 1.75rem;
+`;
+
+export const ActionButton = styled.a`
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #0C0D0E;
+  background-color: ${({ theme }) => theme.colors.primary};
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  transition: all 0.2s ease;
+
+  svg {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    box-shadow: 0 0 15px rgba(0, 220, 130, 0.4);
+    filter: brightness(1.05);
+
+    svg {
+      transform: translateX(3px);
+    }
+  }
+`;
+
+export const ArticlesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const ArticleCard = styled(motion.a)`
+  background-color: ${({ theme }) => theme.colors.surfaceSubtle};
+  border: 1px solid ${({ theme }) => theme.colors.borderHairline};
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.borderActive};
+    box-shadow: 0 0 20px ${({ theme }) => theme.colors.accentGlow};
+  }
+`;
+
+export const ArticleImage = styled.img`
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.borderHairline};
+`;
+
+export const ArticleContent = styled.div`
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
+
+export const ArticleTitle = styled.h3`
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  color: ${({ theme }) => theme.colors.textPrimary};
+  margin-bottom: 0.75rem;
+  transition: color 0.2s ease;
+
+  ${ArticleCard}:hover & {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+`;
+
+export const ArticleSummary = styled.p`
+  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  line-height: 22px;
+  margin-bottom: 1.5rem;
+  flex: 1;
+`;
+
+export const ArticleFooter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid ${({ theme }) => theme.colors.borderHairline};
+  padding-top: 1rem;
+  margin-top: auto;
+`;
+
+export const ReadMore = styled.span`
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  svg {
+    transition: transform 0.2s ease;
+  }
+
+  ${ArticleCard}:hover & {
+    color: ${({ theme }) => theme.colors.primary};
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
 `;

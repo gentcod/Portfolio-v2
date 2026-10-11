@@ -6,14 +6,16 @@ import {
   HomeContentWrapper,
   LeftSection,
   RightSection,
+  HeroEyebrow,
+  EyebrowDot,
   Name,
   RoleTitle,
   Description,
   SocialLinks,
-  AccentBox,
   IntroTag,
-  ActionLink,
-  ImageContainer
+  ActionRow,
+  PrimaryButton,
+  ActionLink
 } from "./home.styles";
 
 import Projects from "../../components/backend-projects/backend.component";
@@ -27,17 +29,17 @@ const Home = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 15, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
@@ -50,26 +52,24 @@ const Home = () => {
       >
         <HomeContentWrapper>
           <LeftSection variants={itemVariants}>
-            <AccentBox />
-            <Name>Oyefule<br/>Oluwatayo.</Name>
+            <HeroEyebrow>
+              <EyebrowDot />
+              <span>Distributed Systems & Cloud Architecture</span>
+            </HeroEyebrow>
+            <Name>
+              Oyefule<br/>Oluwatayo<span className="period">.</span>
+            </Name>
             <SocialLinks>
-              <a href="https://github.com/gentcod" target="_blank" rel="noreferrer">
+              <a href="https://github.com/gentcod" target="_blank" rel="noreferrer" aria-label="GitHub">
                 <FiGithub />
               </a>
-              <a href="https://linkedin.com/in/oyefule-oluwatayo" target="_blank" rel="noreferrer">
+              <a href="https://linkedin.com/in/oyefule-oluwatayo" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 <FiLinkedin />
               </a>
-              <a href="mailto:oyefuleoluwatayo@gmail.com">
+              <a href="mailto:oyefuleoluwatayo@gmail.com" aria-label="Email">
                 <FiMail />
               </a>
             </SocialLinks>
-            <ImageContainer
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 0.15 }}
-              transition={{ duration: 1 }}
-            >
-              <img src="https://i.ibb.co/0CTV9JQ/flat-art.png" alt="Decorative" />
-            </ImageContainer>
           </LeftSection>
 
           <RightSection variants={itemVariants}>
@@ -80,9 +80,18 @@ const Home = () => {
             <Description>
               I have 5+ years of experience designing and optimizing cloud-native applications, distributed systems, and real-time data processing pipelines. I build solutions that impact the positive outlook for businesses and their customers.
             </Description>
-            <ActionLink to="/about" whileHover={{ x: 5 }}>
-              My story <FiArrowRight />
-            </ActionLink>
+            <ActionRow>
+              <PrimaryButton 
+                to="/contact"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Get In Touch
+              </PrimaryButton>
+              <ActionLink to="/about">
+                My story <FiArrowRight />
+              </ActionLink>
+            </ActionRow>
           </RightSection>
         </HomeContentWrapper>
       </HeroSection>

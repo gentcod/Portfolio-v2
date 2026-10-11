@@ -1,67 +1,93 @@
+import { FiArrowRight } from "react-icons/fi";
 import {
   Container,
-  Contents,
-  Featured,
-  FeaturedContents,
-  FeaturedReadButton,
-  FeaturedSummary,
-  FeaturedTitle,
-  BlogsHeading,
   HeadingContainer,
+  Eyebrow,
+  BlogsHeading,
   SubHeading,
-  SubTitile,
+  FeaturedArticleCard,
+  FeaturedImagePane,
+  FeaturedContentPane,
+  TagRow,
+  Tag,
+  DateSpan,
+  FeaturedTitle,
+  FeaturedSummary,
+  ActionButton,
+  ArticlesGrid,
+  ArticleCard,
+  ArticleImage,
+  ArticleContent,
+  ArticleTitle,
+  ArticleSummary,
+  ArticleFooter,
+  ReadMore,
 } from "./blog.style";
 import { data } from "../../dev-data/blog";
-import {
-  Blog,
-  BlogContentCon,
-  BlogsContainer,
-  BlogSummary,
-  BlogThumnail,
-  BlogTitle,
-  ReadButton,
-} from "../../components/featured-blogs/featured-blogs.style";
-import Heading from "../../components/heading/heading.component";
-import { useRandomNumber } from "../../hooks/randomNum";
 
 const Blogs = () => {
-  const randomId = useRandomNumber(30,data.length); // 30-day interval
+  const featured = data[0]; // "The Architecture of Equilibrium"
+  const others = data.slice(1);
 
   return (
     <Container>
-      <Heading title="BLOGS" />
       <HeadingContainer>
-        <SubTitile>The Blog</SubTitile>
-        <BlogsHeading>Writings from me</BlogsHeading>
+        <Eyebrow>PUBLICATIONS & ARCHIVES</Eyebrow>
+        <BlogsHeading>Articles & Technical Writing<span className="accent">.</span></BlogsHeading>
         <SubHeading>
-          I write about anything and everything, but more specifically about
-          mental stuff and programming. From discussing about how to stay
-          productive, to discussing my approach to solving algorithms and
-          sharing knowledge.
+          Writings on distributed systems architecture, engineering efficiency, algorithms, and modern software design philosophies.
         </SubHeading>
       </HeadingContainer>
-      <Contents>
-        <Featured imageUrl={data[randomId].imgSrc}>
-          <FeaturedContents>
-            <FeaturedTitle>{data[randomId].title}</FeaturedTitle>
-            <FeaturedSummary>{data[randomId].summary}</FeaturedSummary>
-            <FeaturedReadButton href={data[randomId].link} target="_blank" rel="noreferrer">Read More</FeaturedReadButton>
-          </FeaturedContents>
-        </Featured>
-        <BlogsContainer>
-          {data.filter(el => el.id !== randomId).map((el) => (
-               <Blog key={el.id}>
-                 <BlogContentCon>
-                   <BlogThumnail src={el.imgSrc} />
-                   <BlogTitle>{el.title}</BlogTitle>
-                   <BlogSummary>{el.summary}</BlogSummary>
-                   <ReadButton href={el.link} target="_blank" rel="noreferrer">Read More</ReadButton>
-                 </BlogContentCon>
-               </Blog>
-             )
-          )}
-        </BlogsContainer>
-      </Contents>
+
+      {/* Flagship Featured Article */}
+      <FeaturedArticleCard
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <FeaturedImagePane>
+          <img src={featured.imgSrc} alt={featured.title} />
+        </FeaturedImagePane>
+        <FeaturedContentPane>
+          <TagRow>
+            <Tag>{featured.tag}</Tag>
+            <DateSpan>JUL 2026 · 5 MIN READ</DateSpan>
+          </TagRow>
+          <FeaturedTitle>{featured.title}</FeaturedTitle>
+          <FeaturedSummary>{featured.summary}</FeaturedSummary>
+          <ActionButton href={featured.link} target="_blank" rel="noreferrer">
+            Read on Substack <FiArrowRight />
+          </ActionButton>
+        </FeaturedContentPane>
+      </FeaturedArticleCard>
+
+      {/* Articles Grid */}
+      <ArticlesGrid>
+        {others.map((el, index) => (
+          <ArticleCard 
+            key={el.id} 
+            href={el.link} 
+            target="_blank" 
+            rel="noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+          >
+            <ArticleImage src={el.imgSrc} alt={el.title} loading="lazy" />
+            <ArticleContent>
+              <ArticleTitle>{el.title}</ArticleTitle>
+              <ArticleSummary>{el.summary}</ArticleSummary>
+              <ArticleFooter>
+                <Tag>{el.tag}</Tag>
+                <ReadMore>
+                  Read More <FiArrowRight />
+                </ReadMore>
+              </ArticleFooter>
+            </ArticleContent>
+          </ArticleCard>
+        ))}
+      </ArticlesGrid>
     </Container>
   );
 };

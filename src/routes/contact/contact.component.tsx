@@ -4,6 +4,7 @@ import {
   ContactPageContainer,
   ContactContent,
   ContactLeft,
+  ContactEyebrow,
   ContactHeading,
   ContactText,
   EmailLink,
@@ -19,15 +20,15 @@ const Contact = () => {
     >
       <ContactContent>
         <ContactLeft
-          initial={{ x: -30, opacity: 0 }}
+          initial={{ x: -20, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          <ContactText>-- Contact</ContactText>
-          <ContactHeading>Any Type Of Query & Discussion.</ContactHeading>
+          <ContactEyebrow>GET IN TOUCH</ContactEyebrow>
+          <ContactHeading>Initiate Conversation<span className="accent">.</span></ContactHeading>
           <ContactText>
-            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            Whether you are exploring potential distributed systems architecture collaborations, contract engineering, or technical leadership roles, my inbox is open.
           </ContactText>
           <EmailLink href="mailto:oyefuleoluwatayo@gmail.com">
             oyefuleoluwatayo@gmail.com <FiArrowRight />
@@ -35,10 +36,10 @@ const Contact = () => {
         </ContactLeft>
 
         <ContactRight
-          initial={{ x: 30, opacity: 0 }}
+          initial={{ x: 20, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
         >
           <ContactForm />
         </ContactRight>

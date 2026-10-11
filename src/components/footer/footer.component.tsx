@@ -32,7 +32,7 @@ const Footer = () => {
             </FooterImageContainer>
             <Button 
                link={`mailto:oyefuleoluwatayo@gmail.com?subject=${mailSubject}&body=${mailBodySocial}`} 
-               value="Hire Me"
+               value="Get In Touch"
             />
          </FooterTop>
 
@@ -45,7 +45,7 @@ const Footer = () => {
             </FooterColumn>
 
             <FooterColumn>
-               <Copyright>© {currentYear} Oyefule Oluwatayo. All Rights Reserved.</Copyright>
+               <Copyright>© {currentYear} Oyefule Oluwatayo<span className="accent">.</span> All Rights Reserved.</Copyright>
             </FooterColumn>
 
             <FooterColumn>

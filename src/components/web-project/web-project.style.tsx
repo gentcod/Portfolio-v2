@@ -3,119 +3,129 @@ import styled from "styled-components";
 import { devices } from "../../dev-data/media-queries";
 
 export const Container = styled.div`
-   margin: 0 auto;
-   padding: 2rem;
-   border-bottom: 1px solid #45a25a;
-   display: flex;
-   flex-direction: column;
-   row-gap: 1rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: ${({ theme }) => theme.colors.surfaceSubtle};
+  border: 1px solid ${({ theme }) => theme.colors.borderHairline};
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 100%;
+  transition: border-color 0.25s ease;
 
-   @media only screen and ${devices.tabLand} {
-      padding: 0;
-   }
-`
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.borderActive};
+  }
+
+  @media only screen and ${devices.tabLand} {
+    padding: 1.5rem;
+  }
+`;
 
 export const SubTopContainer = styled.div`
-   height: 12rem;
-   display: flex;
-   justify-content: center;
-   column-gap: 15rem;
-   text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  align-items: flex-start;
 
-   @media only screen and ${devices.phone} {
-      flex-direction: column;
-   }
-`
+  @media only screen and ${devices.phone} {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+`;
 
 export const SubBottomContainer = styled.div`
-
-`
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid ${({ theme }) => theme.colors.borderHairline};
+`;
 
 export const SubTopLeftContainer = styled.div`
-   width: 25rem;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
 
 export const SubTopRightContainer = styled.div`
-   width: 45rem;
-   display: flex;
-   flex-direction: column;
-   margin: auto 0;
-   row-gap: 2rem;
-
-   @media only screen and ${devices.tabPort} {
-      width: auto;
-   }
-`
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+`;
 
 export const Heading = styled.h3`
-   font-size: 4rem;
-   font-weight: 1000;
-   text-align: left;
-   line-height: 1;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: ${({ theme }) => theme.colors.textPrimary};
+  line-height: 1.2;
 
-   @media only screen and ${devices.phone} {
-      font-size: 2rem;  
-   }
-`
+  @media only screen and ${devices.phone} {
+    font-size: 22px;
+  }
+`;
 
-export const SubHeading = styled.h5`
-   text-transform: uppercase;
-   color: #acacac;
-   padding: 1rem 0;
+export const SubHeading = styled.span`
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: ${({ theme }) => theme.colors.secondary};
 
-   @media only screen and ${devices.phone} {
-      font-size: 1.4rem;
-   }
-`
+  &::before {
+    content: '// ';
+    color: ${({ theme }) => theme.colors.textTertiary};
+  }
+`;
 
 export const Description = styled.p`
-   font-size: 1.3rem;
-
-   @media only screen and ${devices.phone} {
-      font-size: 1.2rem;
-   }
-`
-
-export const LinkIcon = styled.img`
-   height: 2rem;
-   transform: translateY(.5rem);
-   margin-left: .5rem;
-   transition: .8s all ease;
-`
+  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  color: ${({ theme }) => theme.colors.textSecondary};
+`;
 
 export const ProjectLink = styled(Link)`
-   height: 3rem;
-   width: 15rem;
-   color: #275933;
-   font-weight: 1000;
-   margin: auto 0;
-   backface-visibility: hidden;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.textPrimary};
+  background-color: transparent;
+  border: 1px solid ${({ theme }) => theme.colors.borderHairline};
+  padding: 8px 16px;
+  border-radius: 4px;
+  width: fit-content;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
 
-   &:hover {
-      border-bottom: 2px solid #45a25a;
-   }
+  svg {
+    transition: transform 0.2s ease;
+    color: ${({ theme }) => theme.colors.secondary};
+  }
 
-   &:hover ${LinkIcon} {
-      margin-left: 1.5rem;
-   }
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.surfaceElevated};
 
-   @media only screen and ${devices.phone} {
-      width: 100%; 
-      font-size: 1.2rem; 
-   }
-`
+    svg {
+      transform: translateX(4px);
+    }
+  }
+`;
 
 export const Image = styled.img`
-   height: 40rem;
-   width: 100%;
-   object-fit: cover;
-   border-radius: 2rem;
-   border: 5px solid #0d1e11;
+  height: 22rem;
+  width: 100%;
+  object-fit: cover;
+  display: block;
 
-   @media only screen and ${devices.tabLand} {
-      height: 25rem;
-   }
-`
+  @media only screen and ${devices.tabLand} {
+    height: 16rem;
+  }
+`;
