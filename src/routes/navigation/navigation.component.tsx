@@ -8,7 +8,13 @@ import NavigationItem, {
   NAVIGATION_TYPE,
 } from "../../components/navigation-item/navigation-item.component";
 
-import { NavigationContainer, NavigationLinks, ThemeToggleBtn } from "./navigation.styles";
+import { 
+  NavigationContainer, 
+  NavBrandGroup,
+  NavigationLinks, 
+  ContactNavButton,
+  ThemeToggleBtn 
+} from "./navigation.styles";
 
 type NavData = {
   id: number;
@@ -16,10 +22,10 @@ type NavData = {
 }[];
 
 const navData: NavData = [
-  { id: 0, name: "contact" },
-  { id: 1, name: "about" },
-  { id: 2, name: "explore" },
-  { id: 3, name: "blogs" },
+  { id: 0, name: "about" },
+  { id: 1, name: "explore" },
+  { id: 2, name: "blogs" },
+  { id: 3, name: "contact" },
 ];
 
 const Navigation = () => {
@@ -30,11 +36,14 @@ const Navigation = () => {
   return (
     <>
       <NavigationContainer
-        initial={{ y: -50, opacity: 0 }}
+        initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
-        <Logo />
+        <NavBrandGroup>
+          <Logo />
+        </NavBrandGroup>
+
         <NavigationLinks>
           {navData.map((data) =>
             path === data.name ? (
@@ -47,10 +56,16 @@ const Navigation = () => {
               <NavigationItem key={data.id} name={data.name} />
             )
           )}
+          <ContactNavButton
+            to="/contact"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Get In Touch
+          </ContactNavButton>
           <ThemeToggleBtn 
             onClick={toggleTheme}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            aria-label="Toggle Theme"
           >
             {themeMode === 'dark' ? <FiSun /> : <FiMoon />}
           </ThemeToggleBtn>

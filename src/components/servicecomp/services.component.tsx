@@ -1,34 +1,43 @@
 import Heading from "../heading/heading.component";
-import { Container, ServiceCard, ServiceContent, ServiceHeader, ServicesContainer } from "./services.style";
+import { 
+  Container, 
+  ServiceCard, 
+  ServiceContent, 
+  ServiceHeader, 
+  ServicesContainer,
+  CorePhilosophyBadge,
+  ServiceNumber 
+} from "./services.style";
 
 type ServiceProp = {
    id: number;
+   number: string;
    header: string;
    content: string;
+   isHighlighted?: boolean;
 }[]
 
 const serviceData: ServiceProp = [
    {
       id: 1,
+      number: '01 // ARCHITECTURE',
       header: 'Software Development',
-      content: `Crafting digital solutions - From concept to creation, I tailor innovative web and mobile applications to meet your unique business needs.
-      Empowering your vision - I build secure, efficient, and scalable software, taking your ideas from blueprint to reality.`
+      content: 'Crafting digital solutions from concept to creation. Tailoring resilient web services, microservices, and mobile-ready backend architectures designed for enterprise scale and fault tolerance.'
    },
-
    {
       id: 2,
+      number: '02 // DISCIPLINE',
       header: 'Product-Minded Software Engineering',
-      content: `Bridging the gap between ideas and impact: I marry technical expertise with a user-centric approach to build innovative products that delight and solve real problems.
-      Crafting solutions with purpose: I combine engineering prowess with product thinking, bringing your vision to life through functional, user-friendly, and market-driven products.`
+      content: 'Bridging low-level systems engineering with user-centric product impact. Marrying technical execution with product intuition to ship solutions that move real metrics and deliver seamless end-user experiences.',
+      isHighlighted: true
    },
-
    {
       id: 3,
-      header: 'Soft Skills',
-      content: `Good communication and people relation - Bridging the technical divide: I translate complex solutions into clear communication, fostering collaboration and driving successful software development.
-      Empowering teams, exceeding expectations: I leverage strong communication, problem-solving, and adaptability to create positive experiences and deliver high-impact software.`
+      number: '03 // COLLABORATION',
+      header: 'Technical Leadership & Soft Skills',
+      content: 'Translating complex distributed systems into crisp cross-functional consensus. Fostering engineering culture, conducting architectural reviews, and leading high-velocity sprint executions.'
    }
-]
+];
 
 const Services = () => {
    return (
@@ -36,29 +45,34 @@ const Services = () => {
          initial={{ opacity: 0 }}
          whileInView={{ opacity: 1 }}
          viewport={{ once: true }}
-         transition={{ duration: 0.8 }}
+         transition={{ duration: 0.6 }}
       >
-         <Heading title="What do I offer" />
+         <Heading 
+            eyebrow="CAPABILITIES & VALUE PROPOSITION"
+            title="Core Engineering Focus." 
+         />
          <ServicesContainer>
-            {serviceData.map((el, index) => {
-               const isHighlighted = el.id % 2 === 0;
-               return (
-                  <ServiceCard 
-                     key={el.id} 
-                     isHighlighted={isHighlighted}
-                     initial={{ y: 30, opacity: 0 }}
-                     whileInView={{ y: 0, opacity: 1 }}
-                     viewport={{ once: true }}
-                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                     <ServiceHeader isHighlighted={isHighlighted}>{el.header}</ServiceHeader>
-                     <ServiceContent isHighlighted={isHighlighted}>{el.content}</ServiceContent>
-                  </ServiceCard>
-               );
-            })}
+            {serviceData.map((el, index) => (
+               <ServiceCard 
+                  key={el.id} 
+                  isHighlighted={el.isHighlighted}
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: index * 0.1 }}
+               >
+                  {el.isHighlighted ? (
+                     <CorePhilosophyBadge>CORE PHILOSOPHY</CorePhilosophyBadge>
+                  ) : (
+                     <ServiceNumber>{el.number}</ServiceNumber>
+                  )}
+                  <ServiceHeader isHighlighted={el.isHighlighted}>{el.header}</ServiceHeader>
+                  <ServiceContent isHighlighted={el.isHighlighted}>{el.content}</ServiceContent>
+               </ServiceCard>
+            ))}
          </ServicesContainer>
       </Container>
-   )
+   );
 };
 
 export default Services;

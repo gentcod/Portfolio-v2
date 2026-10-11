@@ -2,15 +2,16 @@ import Heading from "../heading/heading.component";
 import { 
    ContentsBlock, 
    ContentsContainer, 
+   CardHeader,
+   TerminalStatus,
    Description, 
    ProjectName, 
    ProjectsContainer, 
+   BadgesSection,
    StackContainer, 
    StackHeading, 
    StackTag, 
    Tag, 
-   TagsContainer, 
-   TagsHeading 
 } from "./backend.style";
 
 type Backend = {
@@ -20,45 +21,45 @@ type Backend = {
    link: string;
    stack: string[];
    tags: string[];
+   status?: string;
 }[]
 
 const data: Backend = [
    {
       id: 0,
       name: 'PHOTO COMPRESSOR',
-      description: `Developed a lightweight image compressor compiled to WebAssembly, released as a Chrome Extension.`,
+      description: `Lightweight image compressor compiled to WebAssembly and deployed as a high-performance Chrome Extension. Optimizes imagery locally with zero server latency.`,
       link: 'https://chromewebstore.google.com/detail/ojlkefdlieblgnbeebpbhimlajobeldj?utm_source=item-share-cb',
       stack: ['Golang', 'WASM', 'JavaScript', 'Chrome Extension'],
-      tags: ['Tool', 'Extension', 'WASM'],
+      tags: ['WASM', 'Extension'],
+      status: 'SHIPPED'
    },
    {
       id: 1,
       name: 'NLP-TO-SQL',
-      description: `A backend application that enables conversational database interactions, 
-      leveraging Retrieval-Augmented Generation (RAG) to generate context-aware, tailored responses. 
-      It converts NLP to SQL queries. 
-      It takes a textual request and returns a textual response based on the queried data.`,
+      description: `Backend engine enabling conversational database interactions, leveraging Retrieval-Augmented Generation (RAG) to translate natural language inquiries into optimized SQL queries.`,
       link: 'https://github.com/gentcod/nlp-to-sql',
-      stack: ['Golang','SQL','MYSQL','POSTGRES','OpenAI','Gemini'],
-      tags: ['Artificial Intelligence','SQL', 'Database', 'Natural Language Processing'],
+      stack: ['Golang', 'PostgreSQL', 'MySQL', 'OpenAI', 'Gemini RAG'],
+      tags: ['AI/RAG', 'Databases'],
+      status: 'ACTIVE'
    },
    {
       id: 2,
       name: 'DO-NGINX',
-      description: `A SaaS project that is to be run once to help initialize an Nginx Proxied Web Server on
-      your virtual machine. It solves the hassle of having to run commands when spinning off a server on
-      a virtual machine`,
+      description: `Automated SaaS provisioning utility that bootstraps Nginx Reverse Proxy infrastructure on virtual machine instances with single-command orchestration.`,
       link: 'https://github.com/gentcod/do-nginx-app',
-      stack: ['Golang','Bash','CI','Docker','Linux','SSH'],
-      tags: ['Server','Cloud','Virtual Machine'],
+      stack: ['Golang', 'Bash', 'Docker', 'Linux', 'SSH Automation'],
+      tags: ['Cloud', 'DevOps'],
+      status: 'PRODUCTION'
    },
    {
       id: 3,
       name: 'ENVIRON',
-      description: `This is a simple Go package that helps you load environment configurations from your .env file`,
+      description: `Minimalist Go package for robust and safe environment configuration parsing, decryption, and runtime validation.`,
       link: 'https://pkg.go.dev/github.com/gentcod/environ',
-      stack: ['Golang','ENV.'],
-      tags: ['Environments','Secrets','ENV.'],
+      stack: ['Golang', 'Env Parser', 'Runtime Config'],
+      tags: ['Go Package', 'Open Source'],
+      status: 'PUBLISHED'
    },
 ]
 
@@ -68,30 +69,39 @@ const Projects = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6 }}
     >
-      <Heading title="Backend Projects" />
+      <Heading 
+        eyebrow="SYSTEMS & INFRASTRUCTURE"
+        title="Backend Architecture." 
+      />
       <ContentsContainer>
          {data.map((el, index) => (
             <ContentsBlock 
                key={el.id} 
                href={el.link} 
                target="_blank"
-               initial={{ y: 30, opacity: 0 }}
+               rel="noreferrer"
+               initial={{ y: 20, opacity: 0 }}
                whileInView={{ y: 0, opacity: 1 }}
                viewport={{ once: true }}
-               transition={{ duration: 0.5, delay: index * 0.1 }}
+               transition={{ duration: 0.4, delay: index * 0.08 }}
             >
-               <ProjectName>{el.name}</ProjectName>
+               <CardHeader>
+                  <ProjectName>{el.name}</ProjectName>
+                  <TerminalStatus>{el.status || 'ACTIVE'}</TerminalStatus>
+               </CardHeader>
                <Description>{el.description}</Description>
-               <StackContainer>
-                  <StackHeading>STACK:</StackHeading>
-                  {el.stack.map((t,i) => (<StackTag key={i}>{t}</StackTag>))}
-               </StackContainer>
-               <TagsContainer>
-                  <TagsHeading>TAGS:</TagsHeading>
-                  {el.tags.map((t,i) => (<Tag key={i}>{t}</Tag>))}
-               </TagsContainer>
+               <BadgesSection>
+                  <StackContainer>
+                     <StackHeading>STACK:</StackHeading>
+                     {el.stack.map((t, i) => (<StackTag key={i}>{t}</StackTag>))}
+                  </StackContainer>
+                  <StackContainer>
+                     <StackHeading>TAGS:</StackHeading>
+                     {el.tags.map((t, i) => (<Tag key={i}>{t}</Tag>))}
+                  </StackContainer>
+               </BadgesSection>
             </ContentsBlock>
          ))}
       </ContentsContainer>

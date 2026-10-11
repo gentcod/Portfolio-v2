@@ -2,55 +2,40 @@ import styled from "styled-components";
 import { devices } from "../../dev-data/media-queries";
 
 export const Container = styled.div`
-   height: 70vh;
-   width: 100%;
-   overflow: hidden;
-   margin: 0 auto;
-   margin-bottom: 2rem;
-
-   @media only screen and ${devices.tabLand} {
-      height: fit-content;
-   }
-`
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+`;
 
 export const FrameOuter = styled.div`
-   width: 100%;
-   height: 55rem;
-   background-color: ${({ theme }) => theme.colors.surface};
-   margin-top: 2rem;;
-   margin: auto;
-   overflow: hidden;
-   position: relative;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.surfaceSubtle};
+  border: 1px solid ${({ theme }) => theme.colors.borderHairline};
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  padding: 2.5rem 2rem;
 
-   @media only screen and ${devices.phone} {
-      height: 60rem;
-   }
-`
+  @media only screen and ${devices.phone} {
+    padding: 1.5rem 1rem;
+  }
+`;
 
 export const CarourselHeader = styled.h3`
-   color: ${({ theme }) => theme.colors.textSecondary};
-   text-transform: uppercase;
-   text-align: left;
-   font-weight: 100;
-   font-size: 1.4rem;
-   letter-spacing: .3rem;
-   margin-top: 1rem;
-   margin-left: 5rem;
-`
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: ${({ theme }) => theme.colors.textPrimary};
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 2rem;
+  text-align: left;
+`;
 
 export const FramerInner = styled.div`
-   display: inline-block;
-   width: 100%;
-   height: 45rem;
-   padding: 2rem;
-   margin: 0 auto; 
-
-   position: absolute;
-   transform: translate(-50%, -50%);
-   top: 50%;
-   left: 50%;
-
-   @media only screen and ${devices.tabLand} {
-      height: auto;
-   }
-`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

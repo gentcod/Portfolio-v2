@@ -7,128 +7,116 @@ export type CarouselProp = {
 
 export const CarouselSlideLeft = keyframes`
    0% {
-     transform: translateX(-50%);
+     transform: translateX(-30px);
      opacity: 0;
    }
    100% {
      transform: translateX(0);
      opacity: 1;
    }
-`
+`;
 
 export const CarouselSlideRight = keyframes`
    0% {
-     transform: translateX(50%);
+     transform: translateX(30px);
      opacity: 0;
    }
    100% {
      transform: translateX(0);
      opacity: 1;
    }
-`
+`;
 
 export const moveRight = css`
-  animation: ${CarouselSlideRight} 1.5s ease;
-`
+  animation: ${CarouselSlideRight} 0.5s ease-out;
+`;
 
 export const moveLeft = css`
-  animation: ${CarouselSlideLeft} 1.5s ease;
-`
+  animation: ${CarouselSlideLeft} 0.5s ease-out;
+`;
 
 export const Container = styled.div`
   position: relative;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  background-color: ${({ theme }) => theme.colors.background};
-`
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  background-color: transparent;
+`;
    
 export const InnerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 5rem;
-
-  @media only screen and ${devices.tabLand} {
-    padding: 0;
-  }
+  gap: 1.5rem;
+  padding: 0;
 `;
 
 export const SliderContainer = styled.div`
-  height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  column-gap: 5rem;
-
-  @media only screen and ${devices.phone} {
-    flex-direction: column;
-  }
-`
+  position: relative;
+`;
 
 export const Slide = styled.div`
   display: none;
-  padding: 2rem;
-  
-  @media only screen and ${devices.phone} {
-    width: 100%;
-    display: flex;
-  }
+  width: 100%;
 `;
   
 export const CurrentSlide = styled(Slide)<CarouselProp>`
   display: flex;
+  width: 100%;
   ${({start}) => start ? moveRight : moveLeft};
-`
-// animation: ${start === true ? CarouselSlideLeft: CarouselSlideRight} 1.5s ease;
+`;
 
 export const DotContainer = styled.div`
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: .6rem;
-  bottom: 1rem;
-  margin: auto, 0;
-
-  @media only screen and ${devices.phone} {
-    display: none;
-  }
-`
+  gap: 0.5rem;
+  margin-top: 2rem;
+`;
 
 export const Dot = styled.span`
-  width: .6rem;
-  height: .6rem;
-  border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.accent};
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background-color: ${({ theme }) => theme.colors.surfaceHighlight};
+  border: 1px solid ${({ theme }) => theme.colors.borderHairline};
   cursor: pointer;
-`
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.borderActive};
+  }
+`;
   
 export const CurrentDot = styled(Dot)`
-  background-color: ${({ theme }) => theme.colors.textPrimary};
+  background-color: ${({ theme }) => theme.colors.primary};
+  border-color: ${({ theme }) => theme.colors.primary};
+  width: 24px;
 `;
 
 export const GlassNavBtn = styled.button`
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  background: ${({ theme }) => theme.colors.surfaceSubtle};
+  border: 1px solid ${({ theme }) => theme.colors.borderHairline};
+  border-radius: 4px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  color: ${({ theme }) => theme.colors.textPrimary};
+  transition: all 0.2s ease;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  flex-shrink: 0;
 
   &:hover {
-    background: ${({ theme }) => theme.colors.secondaryAccent};
-    color: #0d1e11;
-    transform: scale(1.1);
-    border-color: ${({ theme }) => theme.colors.secondaryAccent};
+    background: ${({ theme }) => theme.colors.surfaceElevated};
+    color: ${({ theme }) => theme.colors.primary};
+    border-color: ${({ theme }) => theme.colors.borderActive};
   }
 
   @media only screen and ${devices.phone} {

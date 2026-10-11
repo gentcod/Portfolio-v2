@@ -26,7 +26,7 @@ const About = () => {
                animate={{ x: 0, opacity: 1 }}
                transition={{ duration: 0.6, delay: 0.2 }}
             >
-               <AboutHeading>{about.heading}</AboutHeading>
+               <AboutHeading>Hi, I am Oyefule<span className="accent">.</span></AboutHeading>
                <AboutSummary>{about.summary}</AboutSummary>
             </AboutContent>
             <TechStackContainer />

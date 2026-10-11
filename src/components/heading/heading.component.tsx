@@ -1,13 +1,17 @@
-import {FeaturedHeader} from './heading.style';
+import { HeaderContainer, EyebrowTag, FeaturedHeader } from './heading.style';
 
 type HeaderProp = {
    title: string;
+   eyebrow?: string;
 }
 
-const Heading = ({title}: HeaderProp) => {
+const Heading = ({ title, eyebrow }: HeaderProp) => {
    return (
-      <FeaturedHeader>{title}</FeaturedHeader>
-   )
-}
+      <HeaderContainer>
+         {eyebrow && <EyebrowTag>{eyebrow}</EyebrowTag>}
+         <FeaturedHeader>{title}</FeaturedHeader>
+      </HeaderContainer>
+   );
+};
 
 export default Heading;

@@ -1,5 +1,6 @@
 import {
   ExploreContainer,
+  Eyebrow,
   ExploreHeading,
   ExploreSubheading
 } from "./explore.styles";
@@ -15,8 +16,11 @@ const Explore = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <ExploreHeading>Selected Works.</ExploreHeading>
-      <ExploreSubheading>A collection of my recent projects and experiments.</ExploreSubheading>
+      <Eyebrow>COMPREHENSIVE INDEX</Eyebrow>
+      <ExploreHeading>Selected Works & Systems<span className="accent">.</span></ExploreHeading>
+      <ExploreSubheading>
+        An exhaustive catalog spanning distributed infrastructure tools, cloud automation scripts, and client-facing web applications.
+      </ExploreSubheading>
       
       <Projects />
       <CarouselWebProject />

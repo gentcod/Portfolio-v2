@@ -1,5 +1,16 @@
-import {Container, SubTopContainer, SubBottomContainer, SubTopLeftContainer,
-    SubTopRightContainer, Heading, SubHeading, Description, Image, ProjectLink, LinkIcon } from './web-project.style';
+import { FiArrowRight } from 'react-icons/fi';
+import {
+  Container, 
+  SubTopContainer, 
+  SubBottomContainer, 
+  SubTopLeftContainer,
+  SubTopRightContainer, 
+  Heading, 
+  SubHeading, 
+  Description, 
+  Image, 
+  ProjectLink 
+} from './web-project.style';
 
 type WebProjectProp = {
    heading: string;
@@ -10,25 +21,37 @@ type WebProjectProp = {
 }
 
 const WebProject = ({heading, subheading, description, imgSrc, link}: WebProjectProp) => {
+   const isExternal = link.startsWith('http');
+
    return (
       <Container>
          <SubTopContainer>
             <SubTopLeftContainer>
-               <Heading>{heading}</Heading>
                <SubHeading>{subheading}</SubHeading>
+               <Heading>{heading}</Heading>
             </SubTopLeftContainer>
 
             <SubTopRightContainer>
                <Description>{description}</Description>
-               <ProjectLink to={link}> <span>View Project</span> {<LinkIcon src='icons/right-arrow.svg'/>} </ProjectLink>
+               {isExternal ? (
+                  <ProjectLink as="a" href={link} target="_blank" rel="noreferrer">
+                     <span>View Project</span>
+                     <FiArrowRight />
+                  </ProjectLink>
+               ) : (
+                  <ProjectLink to={link}>
+                     <span>View Project</span>
+                     <FiArrowRight />
+                  </ProjectLink>
+               )}
             </SubTopRightContainer>
          </SubTopContainer>
 
          <SubBottomContainer>
-            <Image src={imgSrc}/>
+            <Image src={imgSrc} alt={heading} loading="lazy" />
          </SubBottomContainer>
       </Container>
-   )
-}
+   );
+};
 
 export default WebProject;
