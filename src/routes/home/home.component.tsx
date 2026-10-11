@@ -75,10 +75,10 @@ const Home = () => {
           <RightSection variants={itemVariants}>
             <IntroTag>Introduction</IntroTag>
             <RoleTitle>
-              Product-Minded Software Engineer, based in Lagos, Nigeria.
+              Product-Minded Software Engineer.
             </RoleTitle>
             <Description>
-              I have 5+ years of experience designing and optimizing cloud-native applications, distributed systems, and real-time data processing pipelines. I build solutions that impact the positive outlook for businesses and their customers.
+              I design, build, and optimize resilient, high-performance distributed systems and cloud-native applications. I specialize in creating real-time data processing pipelines and scalable backend infrastructure that directly translate to measurable business impact.
             </Description>
             <ActionRow>
               <PrimaryButton 
