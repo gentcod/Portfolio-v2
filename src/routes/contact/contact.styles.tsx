@@ -32,6 +32,7 @@ export const ContactContent = styled.div`
 export const ContactLeft = styled(motion.div)`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 `;
 
 export const ContactEyebrow = styled.p`
@@ -74,6 +75,7 @@ export const ContactText = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
   line-height: 24px;
   margin-bottom: 2rem;
+  text-align: left;
 `;
 
 export const EmailLink = styled.a`
