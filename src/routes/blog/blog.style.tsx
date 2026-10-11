@@ -59,6 +59,7 @@ export const SubHeading = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
   line-height: 26px;
   max-width: 750px;
+  margin: 0 auto;
 `;
 
 export const FeaturedArticleCard = styled(motion.div)`
