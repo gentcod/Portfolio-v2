@@ -26,8 +26,12 @@ import {
 import { data } from "../../dev-data/blog";
 
 const Blogs = () => {
-  const featured = data[0]; // "The Architecture of Equilibrium"
+  const featured = data[0];
   const others = data.slice(1);
+
+  const featuredDateString = featured.date 
+    ? `${featured.date} · ${(featured.readTime || '6 MIN READ').toUpperCase()}`
+    : 'NOV 2026 · 6 MIN READ';
 
   return (
     <Container>
@@ -51,7 +55,7 @@ const Blogs = () => {
         <FeaturedContentPane>
           <TagRow>
             <Tag>{featured.tag}</Tag>
-            <DateSpan>JUL 2026 · 5 MIN READ</DateSpan>
+            <DateSpan>{featuredDateString}</DateSpan>
           </TagRow>
           <FeaturedTitle>{featured.title}</FeaturedTitle>
           <FeaturedSummary>{featured.summary}</FeaturedSummary>

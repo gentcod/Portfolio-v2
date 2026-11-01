@@ -21,12 +21,13 @@ type ArticleMeta = {
   readTime: string;
 };
 
-// Map article metadata
+// Map article metadata fallback
 const metaMap: Record<number, ArticleMeta> = {
-  0: { date: 'JUL 2026', readTime: '5 min read' },
-  1: { date: 'OCT 2024', readTime: '4 min read' },
-  2: { date: 'NOV 2024', readTime: '5 min read' },
-  3: { date: 'JAN 2025', readTime: '6 min read' },
+  0: { date: 'NOV 2026', readTime: '6 min read' },
+  1: { date: 'JUL 2026', readTime: '5 min read' },
+  2: { date: 'OCT 2024', readTime: '4 min read' },
+  3: { date: 'NOV 2024', readTime: '5 min read' },
+  4: { date: 'JAN 2025', readTime: '6 min read' },
 };
 
 const FeaturedBlogs = () => {
@@ -45,7 +46,10 @@ const FeaturedBlogs = () => {
       />
       <ArticlesList>
         {featured.map((el, index) => {
-          const meta = metaMap[index] || { date: 'RECENT', readTime: '4 min read' };
+          const meta = {
+            date: el.date || metaMap[el.id]?.date || 'RECENT',
+            readTime: el.readTime || metaMap[el.id]?.readTime || '4 min read',
+          };
           return (
             <ArticleRow 
               key={el.id}
