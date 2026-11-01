@@ -42,7 +42,7 @@ const FeaturedBlogs = () => {
     >
       <Heading 
         eyebrow="PUBLICATIONS & WRITING"
-        title="Technical Writing & Insights." 
+        title="Articles & Insights." 
       />
       <ArticlesList>
         {featured.map((el, index) => {
