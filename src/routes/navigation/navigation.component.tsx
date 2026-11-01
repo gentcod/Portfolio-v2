@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { useThemeContext } from "../../context/ThemeContext";
@@ -28,10 +29,23 @@ const navData: NavData = [
   { id: 3, name: "contact" },
 ];
 
+const pageTitles: Record<string, string> = {
+  "": "Oyefule Oluwatayo | Senior Software Engineer & Systems Architect",
+  "about": "About & Experience | Oyefule Oluwatayo",
+  "explore": "Projects & Systems | Oyefule Oluwatayo",
+  "blogs": "Articles & Technical Writing | Oyefule Oluwatayo",
+  "contact": "Contact & Collaboration | Oyefule Oluwatayo",
+};
+
 const Navigation = () => {
   const location = useLocation();
   const path = location.pathname.replace("/", "");
   const { themeMode, toggleTheme } = useThemeContext();
+
+  useEffect(() => {
+    const nextTitle = pageTitles[path] || "Oyefule Oluwatayo | Senior Software Engineer";
+    document.title = nextTitle;
+  }, [path]);
 
   return (
     <>

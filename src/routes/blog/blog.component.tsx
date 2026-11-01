@@ -37,9 +37,9 @@ const Blogs = () => {
     <Container>
       <HeadingContainer>
         <Eyebrow>PUBLICATIONS & ARCHIVES</Eyebrow>
-        <BlogsHeading>Articles & Technical Writing<span className="accent">.</span></BlogsHeading>
+        <BlogsHeading>Articles & Insights<span className="accent">.</span></BlogsHeading>
         <SubHeading>
-          Writings on distributed systems architecture, engineering efficiency, algorithms, and modern software design philosophies.
+          Writings on distributed systems architecture, engineering efficiency, behavioral psychology, habit formation, and modern software philosophies.
         </SubHeading>
       </HeadingContainer>
 
