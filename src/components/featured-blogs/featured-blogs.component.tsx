@@ -23,11 +23,11 @@ type ArticleMeta = {
 
 // Map article metadata fallback
 const metaMap: Record<number, ArticleMeta> = {
-  0: { date: 'NOV 2026', readTime: '6 min read' },
-  1: { date: 'JUL 2026', readTime: '5 min read' },
-  2: { date: 'OCT 2024', readTime: '4 min read' },
-  3: { date: 'NOV 2024', readTime: '5 min read' },
-  4: { date: 'JAN 2025', readTime: '6 min read' },
+  0: { date: 'NOV 2026', readTime: '4 min read' },
+  1: { date: 'NOV 2026', readTime: '6 min read' },
+  2: { date: 'JUL 2026', readTime: '5 min read' },
+  3: { date: 'OCT 2024', readTime: '4 min read' },
+  4: { date: 'NOV 2024', readTime: '5 min read' },
 };
 
 const FeaturedBlogs = () => {
